@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenderAI — The AI procurement co-pilot for government</title>
+  <meta name="description" content="TenderAI helps government procurement officers plan, draft, evaluate, award and execute tenders, faster and audit-ready, with compliance checks and role-based confidentiality at every step." />
+  <meta name="theme-color" content="#0F5EE8" />
+  <meta property="og:title" content="TenderAI — The AI procurement co-pilot for government" />
+  <meta property="og:description" content="Audit-proof tenders, defensible evaluations and tracked approvals, with AI assistance at every step and confidential data protected by role." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ UTILITY BAR ============ -->
+  <div class="utilitybar">
+    <div class="container">
+      <p class="utilitybar__note">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Built for India's public procurement <span class="hide-sm">· GFR 2017 · CVC · Manual for Procurement</span></span>
+      </p>
+      <nav class="utilitybar__links" aria-label="Utility">
+        <a href="#accessibility">Accessibility</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="#main" lang="en">English</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="#request">Sign in</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="TenderAI home">
+        <span class="brand__mark" aria-hidden="true">T</span>
+        <span>
+          <span class="brand__name">TenderAI</span>
+          <span class="brand__sub">Procurement Portal</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#lifecycle">Lifecycle</a>
+        <a href="#modules">Modules</a>
+        <a href="#ai">AI co-pilot</a>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn-secondary" href="#request">Sign in</a>
+        <a class="btn btn-primary" href="#request">Request a demo</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <a href="#lifecycle">Lifecycle</a>
+        <a href="#modules">Modules</a>
+        <a href="#ai">AI co-pilot</a>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary btn-block" href="#request">Request a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            Procurement, de-risked
+          </span>
+          <h1 id="hero-title">The AI procurement <span class="accent">co-pilot</span> for government.</h1>
+          <p class="hero__lead">
+            TenderAI helps officers plan, draft, evaluate, award and execute tenders: faster and audit-ready, with compliance checks and role-based confidentiality built into every step. It assists the officer; it never replaces the officer.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn-primary btn-lg" href="#request">
+              Request a demo
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-secondary btn-lg" href="#lifecycle">See the lifecycle</a>
+          </div>
+          <div class="hero__trust">
+            <p class="hero__trust-label">Aligned with India's procurement framework</p>
+            <div class="hero__chips">
+              <span class="chip">GFR 2017</span>
+              <span class="chip">CVC Guidelines</span>
+              <span class="chip">Manual for Procurement</span>
+              <span class="chip chip--primary">GIGW 3.0 / UX4G</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hand-built in-app product mock (no stock screenshot) -->
+        <div class="hero__visual">
+          <div class="appwin" role="img" aria-label="Illustration of the TenderAI workspace: a CVC pre-check showing market-rate basis and eligibility passing, one item to review, and live tender statistics.">
+            <div class="appwin__bar" aria-hidden="true">
+              <span class="appwin__dots"><i></i><i></i><i></i></span>
+              <span class="appwin__url">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                portal.tenderai.gov · Tender Creation
+              </span>
+            </div>
+            <div class="appwin__body" aria-hidden="true">
+              <div class="appwin__rail">
+                <span class="logo">T</span>
+                <i class="navdot"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></i>
+                <i class="navdot active"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></i>
+                <i class="navdot"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg></i>
+                <i class="navdot"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></i>
+              </div>
+              <div class="appwin__main">
+                <div class="appwin__crumb">Tenders / AMC/2026/Roads/114</div>
+                <div class="appwin__title">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#0F5EE8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
+                  Reconstruction of Ward-7 internal roads
+                </div>
+                <div class="appwin__stats">
+                  <div class="appstat"><div class="k">Est. cost</div><div class="v">₹4.2<small> Cr</small></div></div>
+                  <div class="appstat"><div class="k">PQ criteria</div><div class="v">6</div></div>
+                  <div class="appstat"><div class="k">Days to bid</div><div class="v">21</div></div>
+                </div>
+
+                <div class="checkcard">
+                  <div class="checkcard__head">
+                    <span class="t">
+                      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                      CVC pre-check
+                    </span>
+                    <span class="chip chip--success" style="padding:.2rem .5rem">Ready</span>
+                  </div>
+                  <div class="checkrow">
+                    <span class="label"><span class="ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="width:14px;height:14px"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span> Market-rate cost basis documented</span>
+                    <span class="chip chip--success" style="padding:.18rem .45rem">Pass</span>
+                  </div>
+                  <div class="checkrow">
+                    <span class="label"><span class="ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="width:14px;height:14px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span> Eligibility criteria proportionate</span>
+                    <span class="chip chip--success" style="padding:.18rem .45rem">Pass</span>
+                  </div>
+                  <div class="checkrow">
+                    <span class="label"><span class="ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="width:14px;height:14px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> Turnover clause needs a basis note</span>
+                    <span class="chip chip--warning" style="padding:.18rem .45rem">Fix →</span>
+                  </div>
+                  <div class="checkcard__foot">
+                    <svg class="icon-sm spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
+                    AI predicts what a reviewer would flag, before you publish.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appwin__float" aria-hidden="true">
+            <span class="pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg></span>
+            <span>NIT drafted: 100+ pages, section by section</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section section--tint" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--muted">The reality today</span>
+          <h2 id="problem-title">Public procurement shouldn't carry this much risk.</h2>
+          <p>A single tender can take months of file movement and approvals. Most delays and audit objections trace back to the same few causes, and officers are expected to get them right without structured guidance.</p>
+        </div>
+        <div class="bento" style="grid-template-columns:repeat(3,1fr)">
+          <div class="module" style="grid-column:auto">
+            <span class="module__icon" style="background:var(--danger-light);color:var(--danger)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></span>
+            <h3>Paper-first, desk to desk</h3>
+            <p>Documents and approvals scattered across physical files: slow to move, hard to trace, easy to misplace.</p>
+          </div>
+          <div class="module" style="grid-column:auto">
+            <span class="module__icon" style="background:var(--warning-light);color:var(--warning)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m10.29 3.86-8.18 14a2 2 0 0 0 1.71 3h16.36a2 2 0 0 0 1.71-3l-8.18-14a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <h3>Audit objections</h3>
+            <p>Missing documentation, the wrong cost basis or disproportionate eligibility: the recurring sources of CVC and CAG findings.</p>
+          </div>
+          <div class="module" style="grid-column:auto">
+            <span class="module__icon" style="background:var(--surface-2);color:var(--ink-600)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+            <h3>No structured guidance</h3>
+            <p>Officers carry the process in their heads and fear getting it wrong, with little support and no safety net.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIFECYCLE ============ -->
+    <section class="section lifecycle" id="lifecycle" aria-labelledby="lifecycle-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">One system, end to end</span>
+          <h2 id="lifecycle-title">The full procurement lifecycle, in one place.</h2>
+          <p>From the planning document to the final running-account bill, every stage is connected, guided and recorded.</p>
+        </div>
+        <ol class="rail__track">
+          <li class="stage reveal">
+            <div class="stage__node"><span class="stage__step">1</span><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></svg></div>
+            <h3>Plan</h3>
+            <p>Build the DPR with AI-suggested scope, BOQ and rates, plus a documented cost basis.</p>
+            <span class="stage__tag">DPR Creation</span>
+          </li>
+          <li class="stage reveal">
+            <div class="stage__node"><span class="stage__step">2</span><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg></div>
+            <h3>Tender</h3>
+            <p>Draft a complete NIT with AI, run the CVC pre-check, then refine by conversation.</p>
+            <span class="stage__tag">Tender Creation</span>
+          </li>
+          <li class="stage reveal">
+            <div class="stage__node"><span class="stage__step">3</span><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m7 7-3 6a3 3 0 0 0 6 0Z"/><path d="m17 7-3 6a3 3 0 0 0 6 0Z"/><path d="M7 21h10"/></svg></div>
+            <h3>Evaluate</h3>
+            <p>PQ, technical and financial scoring, with quotes masked and committee sign-offs recorded.</p>
+            <span class="stage__tag">Bid Evaluation</span>
+          </li>
+          <li class="stage reveal">
+            <div class="stage__node"><span class="stage__step">4</span><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/></svg></div>
+            <h3>Award</h3>
+            <p>Comparative statement, committee recommendation and LoA, signed offline and uploaded back.</p>
+            <span class="stage__tag">Bid Management</span>
+          </li>
+          <li class="stage reveal">
+            <div class="stage__node"><span class="stage__step">5</span><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+            <h3>Execute</h3>
+            <p>Track milestones and RA bills with automatic deductions, and watch the analytics.</p>
+            <span class="stage__tag">Execution</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MODULES (bento) ============ -->
+    <section class="section section--tint" id="modules" aria-labelledby="modules-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Six modules</span>
+          <h2 id="modules-title">Built around how procurement actually works.</h2>
+          <p>Each module mirrors a real stage of the file, with AI assistance, compliance pointers and a complete audit trail throughout.</p>
+        </div>
+
+        <div class="bento">
+          <!-- Flagship -->
+          <article class="module module--flagship">
+            <span class="chip chip--primary module__badge">Flagship module</span>
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg></span>
+            <h3>Tender Creation</h3>
+            <p>A five-tab form (Classification, PQ/TQ criteria, Project &amp; BOQ, Dates, CVC check), then a one-way AI generation that drafts a complete, ~100-page NIT section by section. Refine it by conversation: change a value once and TenderAI applies it everywhere, with a summary and a single confirm.</p>
+            <div class="nitgen" aria-hidden="true">
+              <div class="nitgen__head"><span class="t"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg> Generating NIT</span><span class="chip" style="padding:.18rem .5rem">EN · हिं · मर</span></div>
+              <div class="nitgen__list">
+                <div class="nitline"><span class="tick"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:11px;height:11px"><path d="M20 6 9 17l-5-5"/></svg></span> Instructions to Bidders</div>
+                <div class="nitline"><span class="tick"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:11px;height:11px"><path d="M20 6 9 17l-5-5"/></svg></span> Eligibility &amp; Qualification</div>
+                <div class="nitline pending"><span class="tick"></span> Scope of Work &amp; BOQ <span class="bar"><span style="width:62%"></span></span></div>
+                <div class="nitline pending"><span class="tick"></span> Conditions of Contract</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- DPR -->
+          <article class="module">
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></svg></span>
+            <h3>DPR Creation</h3>
+            <p>Multi-step planning report with AI suggestions for scope, BOQ and rates, market-enquiry cost basis and budget-head classification.</p>
+            <div class="module__tags"><span class="chip">Cost basis</span><span class="chip">Readiness checks</span></div>
+          </article>
+
+          <!-- Pre-bid -->
+          <article class="module">
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
+            <h3>Pre-Bid Queries</h3>
+            <p>Import and AI-group vendor questions, draft responses from a standard library, and issue corrigenda through an approval chain.</p>
+            <div class="module__tags"><span class="chip">Corrigenda</span><span class="chip">Approvals</span></div>
+          </article>
+
+          <!-- Evaluation -->
+          <article class="module">
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m7 7-3 6a3 3 0 0 0 6 0Z"/><path d="m17 7-3 6a3 3 0 0 0 6 0Z"/><path d="M7 21h10"/></svg></span>
+            <h3>Bid Evaluation</h3>
+            <p>PQ, technical and financial evaluation across L1, QCBS, LCS, QBS and FBS, with quotes masked until formally revealed.</p>
+            <div class="module__tags"><span class="chip chip--purple">Masked quotes</span><span class="chip">e-Sign</span></div>
+          </article>
+
+          <!-- Bid Management -->
+          <article class="module">
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/></svg></span>
+            <h3>Bid Management</h3>
+            <p>Comparative statement, committee recommendation, sanction recording and LoA. The committee recommends; the authority awards.</p>
+            <div class="module__tags"><span class="chip">LoA drafting</span><span class="chip">Offline sign</span></div>
+          </article>
+
+          <!-- Execution -->
+          <article class="module">
+            <span class="module__icon"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+            <h3>Execution</h3>
+            <p>Contract dashboard, milestone tracking with photo evidence, and an RA-bill register that calculates retention, TDS, GST&nbsp;TDS and LD automatically.</p>
+            <div class="module__tags"><span class="chip">RA bills</span><span class="chip">Analytics</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI CO-PILOT ============ -->
+    <section class="section" id="ai" aria-labelledby="ai-title">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
+            AI at every step
+          </span>
+          <h2 id="ai-title">Assistance that guides, and never overrules.</h2>
+          <p class="section-head" style="margin-bottom:0">Every compliance pointer is advisory and deep-linked to the exact field to fix. TenderAI speeds the officer up and keeps them audit-safe; it never hard-blocks a decision that is theirs to make.</p>
+
+          <div class="split__list">
+            <div class="feature">
+              <span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg></span>
+              <div><h3>Drafts documents in minutes</h3><p>From DPR to a complete NIT, generated section by section, in English, Hindi or Marathi.</p></div>
+            </div>
+            <div class="feature">
+              <span class="feature__icon" style="background:var(--purple-light);color:var(--purple)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
+              <div><h3>Refines by conversation</h3><p>Ask for a change in plain language. When a value repeats across the document, every instance updates at once, with a summary and a single confirm.</p></div>
+            </div>
+            <div class="feature">
+              <span class="feature__icon" style="background:var(--warning-light);color:var(--warning)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div><h3>Predicts what a reviewer will flag</h3><p>The consolidated CVC pre-check and eligibility risk check surface issues before you publish, not after the objection lands.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eligibility risk card mock -->
+        <div class="riskcard" role="img" aria-label="Eligibility risk check showing two passing criteria and one warning (a turnover requirement that may be disproportionate), each with a Fix deep-link to the exact field.">
+          <div class="riskcard__head">
+            <span class="t">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#0F5EE8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+              AI Eligibility Risk Check
+            </span>
+            <span class="chip chip--warning">1 to review</span>
+          </div>
+          <div class="riskitem">
+            <span class="riskitem__ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg></span>
+            <div class="body"><div class="h">Class of registration</div><div class="d">Proportionate to the estimated value.</div></div>
+          </div>
+          <div class="riskitem">
+            <span class="riskitem__ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg></span>
+            <div class="body"><div class="h">Similar-work experience</div><div class="d">Within the norm for works of this category.</div></div>
+          </div>
+          <div class="riskitem" style="background:var(--warning-light)">
+            <span class="riskitem__ic"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="m10.3 3.9-8.2 14a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3l-8.2-14a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <div class="body"><div class="h">Annual-turnover requirement</div><div class="d">Set at 3× the estimate, which may deter eligible MSMEs. Consider revising.</div></div>
+            <a class="fixlink" href="#request">Fix <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <div class="riskcard__foot">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Advisory only. The final decision stays with the officer.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECURITY / TRUST ============ -->
+    <section class="section section--ink" id="security" aria-labelledby="security-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Confidentiality by role</span>
+          <h2 id="security-title" style="color:#fff">Sensitive by default. Auditable by design.</h2>
+          <p style="color:#AEB9CA">Procurement data is confidential and contested. TenderAI is built so the right people see the right things, and so every critical action leaves a record.</p>
+        </div>
+
+        <div class="trustgrid">
+          <div class="trust">
+            <span class="trust__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <h3>Role-based access</h3>
+            <p>Officers, committee members, finance and authorities each see only what their role permits; restricted data is never exposed.</p>
+          </div>
+          <div class="trust">
+            <span class="trust__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M6.61 6.61A18.5 18.5 0 0 0 2 12s3 8 10 8a9.1 9.1 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg></span>
+            <h3>Masked quotes</h3>
+            <p>Confidential bid amounts stay hidden until they are formally revealed in a deliberate, two-step action.</p>
+          </div>
+          <div class="trust">
+            <span class="trust__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></span>
+            <h3>Audit trail &amp; surveillance</h3>
+            <p>Critical actions are logged, and a Super Admin view shows who accessed which confidential data, and when.</p>
+          </div>
+          <div class="trust">
+            <span class="trust__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.4-7.6L2 2l3.4 14.6L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span>
+            <h3>Offline-first signing</h3>
+            <p>TenderAI drafts and tracks; the actual signings and approvals happen offline, with signed copies uploaded back.</p>
+          </div>
+        </div>
+
+        <div class="complong">
+          <p class="complong__label">Designed to honour the norms officers are accountable to</p>
+          <div class="badges">
+            <span class="badge-pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> GFR 2017</span>
+            <span class="badge-pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> CVC Guidelines</span>
+            <span class="badge-pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Manual for Procurement</span>
+            <span class="badge-pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> CAG-ready trail</span>
+            <span class="badge-pill"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10Z"/></svg> GIGW 3.0 / UX4G</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OUTCOMES ============ -->
+    <section class="section" aria-labelledby="outcomes-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What changes for your office</span>
+          <h2 id="outcomes-title">Faster files. Defensible decisions. Fewer surprises.</h2>
+        </div>
+        <div class="outcomes">
+          <div class="outcome">
+            <div class="outcome__top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17 13.5 8.5l-5 5L2 7"/><path d="M16 17h6v-6"/></svg> Weeks to days</div>
+            <h3>Drafting that keeps pace</h3>
+            <p>AI generation turns a multi-week NIT effort into a same-day draft you refine, instead of starting from a blank page.</p>
+          </div>
+          <div class="outcome">
+            <div class="outcome__top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> Audit-ready</div>
+            <h3>Defensible by default</h3>
+            <p>Cost basis, eligibility and approvals are documented as you go, so the file holds up when it's examined.</p>
+          </div>
+          <div class="outcome">
+            <div class="outcome__top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 2 2 4-4"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></svg> Nothing slips</div>
+            <h3>Every step accounted for</h3>
+            <p>Approvals, corrigenda and confidential access are tracked end to end. No untracked decisions, no lost paper.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tint" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow eyebrow--muted">Questions</span>
+          <h2 id="faq-title">Answers for procurement teams.</h2>
+        </div>
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__q"><span>Does TenderAI replace the officer or the approval process?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>No. TenderAI is a co-pilot. It drafts, checks and tracks, but every compliance pointer is advisory and never hard-blocking, and all major signings and approvals happen offline. The decision always stays with the officer and the competent authority.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>How does it keep confidential bid data protected?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>Access is role-based: each role sees only what it is permitted to. Confidential quote amounts stay masked until they are formally revealed in a deliberate two-step action, and a Super Admin surveillance view records who accessed which confidential data, and when.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>Which compliance norms does it align with?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>The workflow follows Indian government norms (GFR 2017, CVC guidelines and the Manual for Procurement of Works, Goods and Services), and the consolidated CVC pre-check predicts the issues a reviewer is most likely to raise.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>Can it generate documents in Hindi and Marathi?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>Yes. Tender documents can be generated in English, Hindi or Marathi, with controls for logo and seal placement and for adding custom sections.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>Is the portal accessible for all officers?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>TenderAI is designed to meet India's GIGW 3.0 and UX4G guidance and WCAG 2.1 AA, including keyboard operation, visible focus, sufficient contrast and screen-reader support.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>How does evaluation handle different methods?</span><svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p>Bid Evaluation supports L1, QCBS, LCS, QBS and FBS, with committee scoring, e-signatures, comparative statements and abnormally-low-bid detection, all under the same role-based confidentiality.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA + FORM ============ -->
+    <section class="section" id="request" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band">
+          <div class="cta-band__grid">
+            <div>
+              <h2 id="cta-title">Make every tender audit-ready.</h2>
+              <p>See how TenderAI fits your department's workflow, from the DPR to the final running-account bill.</p>
+              <div class="reassure">
+                <span><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No procurement disruption</span>
+                <span><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Role-based by design</span>
+                <span><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built for Indian government</span>
+              </div>
+            </div>
+
+            <form class="reqform" id="demoForm" novalidate>
+              <h3>Request a demo</h3>
+              <div class="field">
+                <label for="f-name">Full name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="f-org">Department / Municipal corporation</label>
+                <input id="f-org" name="organisation" type="text" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label for="f-email">Official email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-hint" />
+                <span class="hint" id="email-hint">We'll only use this to arrange your walkthrough.</span>
+              </div>
+              <div class="field">
+                <label for="f-role">Your role</label>
+                <select id="f-role" name="role">
+                  <option value="">Select a role</option>
+                  <option>Procurement officer</option>
+                  <option>Evaluation committee member</option>
+                  <option>Finance / Accounts officer</option>
+                  <option>Approving authority</option>
+                  <option>Super Admin</option>
+                </select>
+              </div>
+              <button class="btn btn-primary btn-block btn-lg" type="submit" style="margin-top:1rem">Request a demo</button>
+              <p class="formok" id="formOk" role="status">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Thank you. We'll be in touch to schedule your walkthrough.
+              </p>
+              <p class="reqform__note">By requesting a demo you agree to be contacted about TenderAI. We never share your details.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="accessibility">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="#top" aria-label="TenderAI home">
+            <span class="brand__mark" aria-hidden="true">T</span>
+            <span>
+              <span class="brand__name">TenderAI</span>
+              <span class="brand__sub">Procurement Portal</span>
+            </span>
+          </a>
+          <p class="footer__about">The AI procurement co-pilot for government. Plan, tender, evaluate, award and execute, audit-ready at every step.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Modules">
+          <h4>Modules</h4>
+          <a href="#modules">DPR Creation</a>
+          <a href="#modules">Tender Creation</a>
+          <a href="#modules">Pre-Bid Queries</a>
+          <a href="#modules">Bid Evaluation</a>
+          <a href="#modules">Execution</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Lifecycle">
+          <h4>Lifecycle</h4>
+          <a href="#lifecycle">Plan</a>
+          <a href="#lifecycle">Tender</a>
+          <a href="#lifecycle">Evaluate</a>
+          <a href="#lifecycle">Award</a>
+          <a href="#lifecycle">Execute</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Trust">
+          <h4>Trust</h4>
+          <a href="#security">Security</a>
+          <a href="#security">Role-based access</a>
+          <a href="#security">Audit trail</a>
+          <a href="#faq">Compliance</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="#request">Request a demo</a>
+          <a href="#request">Sign in</a>
+          <a href="#faq">FAQ</a>
+          <a href="#accessibility">Accessibility</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 TenderAI. Designed to meet GIGW 3.0 / UX4G and WCAG 2.1 AA.</p>
+        <div class="links">
+          <a href="#accessibility">Accessibility statement</a>
+          <a href="#request">Privacy</a>
+          <a href="#request">Terms</a>
+          <span class="footer__gov"><span class="tri" aria-hidden="true"></span> Made for Indian government</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

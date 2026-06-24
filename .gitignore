@@ -1,0 +1,4 @@
+# Tooling / OS cruft — not part of the deployed site
+.impeccable/
+.DS_Store
+*.log
