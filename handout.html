@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TenderAI — Product Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#0F5EE8;--primary-dk:#0943C0;--primary-lt:#EFF6FF;--primary-bd:#BFDBFE;
+  --ink:#0B1220;--ink-mid:#1E293B;--muted:#64748B;--muted-lt:#94A3B8;
+  --surface:#F8FAFF;--band:#0B1220;
+  --green:#15803D;--green-lt:#DCFCE7;--green-bd:#86EFAC;
+  --amber:#B45309;--amber-lt:#FEF3C7;--amber-bd:#FCD34D;
+  --teal:#0E7490;--teal-lt:#ECFEFF;--teal-bd:#A5F3FC;
+  --line:#E2E8F0;
+}
+body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;background:#B8BCC8;}
+.page{width:794px;height:1123px;margin:32px auto;display:flex;flex-direction:column;overflow:hidden;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.22);}
+@media print{body{background:#fff;margin:0;}.page{width:100%;height:100vh;margin:0;box-shadow:none;}@page{size:A4 portrait;margin:0;}*{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
+
+/* ═══ HEADER ═══ */
+.hdr{flex-shrink:0;height:148px;background:linear-gradient(130deg,#071A4F 0%,#0B2C96 50%,#0F5EE8 100%);display:flex;flex-direction:column;}
+.hdr-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 204px;gap:18px;padding:13px 24px 10px;}
+.eyebrow{font-size:6px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px;}
+.brand-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.lm{width:24px;height:24px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.22);border-radius:5px;color:#fff;font-size:11px;font-weight:800;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;}
+.bn{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.3px;font-family:'Syne',sans-serif;}
+.headline{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;line-height:1.28;letter-spacing:-.2px;margin-bottom:5px;}
+.headline em{color:#7DD3FC;font-style:normal;}
+.sub{font-size:7.5px;color:rgba(255,255,255,.42);line-height:1.7;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;align-content:start;}
+.sc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:7px;padding:7px 9px;text-align:center;}
+.sc-n{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1;display:block;margin-bottom:3px;}
+.sc-l{font-size:6px;color:rgba(255,255,255,.36);line-height:1.4;}
+.trust{flex-shrink:0;display:flex;border-top:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.14);padding:5px 0;}
+.ti{flex:1;display:flex;align-items:center;gap:4px;padding:0 10px;font-size:6px;color:rgba(255,255,255,.48);font-weight:500;}
+.ti:not(:first-child){border-left:1px solid rgba(255,255,255,.08);}
+.tick{width:10px;height:10px;border-radius:50%;background:#16A34A;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* ═══ LIFECYCLE STAIRCASE ═══ */
+.lc{flex-shrink:0;height:200px;background:#EEF3FF;border-bottom:1px solid var(--line);display:flex;flex-direction:column;padding:13px 24px 0;}
+.lc-cap{flex-shrink:0;margin-bottom:9px;}
+.lc-eyebrow{font-family:'Syne',sans-serif;font-size:5.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-lt);margin-bottom:3px;}
+.lc-title{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:var(--ink-mid);}
+.stairs{flex:1;min-height:0;display:flex;align-items:flex-end;gap:5px;position:relative;overflow:hidden;}
+
+/* Muted connector steps */
+.sm{flex-shrink:0;width:64px;height:60px;background:#fff;border:1px solid var(--line);border-top:2px solid #CBD5E1;border-radius:6px 6px 0 0;display:flex;flex-direction:column;justify-content:flex-start;padding:7px 7px 0;overflow:hidden;}
+.sm-name{font-family:'DM Sans',sans-serif;font-size:6.5px;font-weight:600;color:var(--muted);line-height:1.25;}
+.sm-num{font-size:5px;color:var(--muted-lt);margin-top:2px;font-weight:500;}
+
+/* Hero treads */
+.sh{flex:1;border-radius:8px 8px 0 0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 11px 10px;position:relative;overflow:hidden;}
+.sh::after{content:'';position:absolute;top:0;left:0;right:0;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;}
+.sh-h1{height:90px;background:linear-gradient(155deg,#1A5CE0 0%,#0F5EE8 100%);}
+.sh-h2{height:118px;background:linear-gradient(155deg,#1250CC 0%,#0F5EE8 100%);}
+.sh-h3{height:152px;background:linear-gradient(155deg,#0D42B4 0%,#0F5EE8 60%,#0878C4 100%);}
+.sh-num{position:absolute;top:9px;right:10px;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;color:rgba(255,255,255,.15);}
+.sh-icon{width:20px;height:20px;display:flex;align-items:center;justify-content:center;margin-bottom:5px;flex-shrink:0;}
+.sh-name{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:3px;}
+.sh-stat{font-family:'DM Sans',sans-serif;font-size:6.5px;color:rgba(255,255,255,.6);font-weight:500;line-height:1.35;}
+
+/* ═══ BODY ═══ */
+.body{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.col{display:flex;flex-direction:column;padding:13px 18px 11px;overflow:hidden;}
+.col:first-child{border-right:1px solid var(--line);}
+.col-lbl{font-family:'Syne',sans-serif;font-size:6px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;flex-shrink:0;}
+.cards{flex:1;display:grid;grid-template-rows:repeat(4,1fr);gap:8px;min-height:0;}
+
+/* Core module cards */
+.mc{border:1px solid var(--primary-bd);border-top:2.5px solid var(--primary);border-radius:8px;background:var(--surface);padding:9px 11px 8px;display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.mc-ico{width:22px;height:22px;border-radius:5px;background:var(--primary-lt);border:1px solid var(--primary-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:5px;}
+.mc-h{font-family:'Syne',sans-serif;font-size:8px;font-weight:700;color:var(--ink);margin-bottom:3px;line-height:1.28;}
+.mc-b{font-size:6.5px;color:var(--muted);line-height:1.72;flex:1;overflow:hidden;}
+.badge{font-size:5.5px;font-weight:600;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:4px;align-self:flex-start;flex-shrink:0;}
+.bb{background:var(--primary-lt);color:var(--primary);border:1px solid var(--primary-bd);}
+.bg{background:var(--green-lt);color:var(--green);border:1px solid var(--green-bd);}
+.bt{background:var(--teal-lt);color:var(--teal);border:1px solid var(--teal-bd);}
+
+/* Platform capability cards */
+.cc{border:1px solid var(--line);border-radius:8px;background:#fff;padding:9px 11px 8px;display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.cc-ico{width:22px;height:22px;border-radius:5px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:5px;}
+.cc-h{font-family:'Syne',sans-serif;font-size:8px;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.28;}
+.cc-kpi{font-family:'Syne',sans-serif;font-size:7px;font-weight:700;margin-bottom:4px;line-height:1.2;}
+.cc-b{font-size:6.5px;color:var(--muted);line-height:1.72;flex:1;overflow:hidden;}
+
+/* ═══ FOOTER ═══ */
+.footer{flex-shrink:0;background:var(--band);border-top:1px solid rgba(255,255,255,.05);padding:8px 24px;display:flex;align-items:center;gap:12px;}
+.fb{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+.fl{width:18px;height:18px;background:var(--primary);border-radius:4px;color:#fff;font-size:8px;font-weight:800;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;}
+.fn{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:#fff;letter-spacing:-.1px;}
+.fs{font-size:5.5px;color:rgba(255,255,255,.26);}
+.vsep{width:1px;height:20px;background:rgba(255,255,255,.1);flex-shrink:0;}
+.fm{flex:1;font-size:6px;color:rgba(255,255,255,.27);line-height:1.65;}
+.fcta{background:var(--primary);color:#fff;font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;padding:7px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="page" role="document">
+
+<!-- ── HEADER ── -->
+<header class="hdr">
+  <div class="hdr-main">
+    <div>
+      <div class="eyebrow">AI-Powered Procurement Solution</div>
+      <div class="brand-row">
+        <div class="lm">T</div>
+        <span class="bn">TenderAI</span>
+      </div>
+      <div class="headline">AI-Based <em>Tender Creation</em><br>&amp; Evaluation Tool</div>
+      <div class="sub">End-to-end procurement intelligence — creation, queries, evaluation, award and analytics — on a sovereign, self-hosted AI stack.</div>
+    </div>
+    <div class="stats-grid">
+      <div class="sc"><span class="sc-n">&lt;1 min</span><div class="sc-l">per tender draft</div></div>
+      <div class="sc"><span class="sc-n">3 min</span><div class="sc-l">for complex tenders</div></div>
+      <div class="sc"><span class="sc-n">30 min</span><div class="sc-l">200+ pre-bid queries</div></div>
+      <div class="sc"><span class="sc-n">1,000+</span><div class="sc-l">tenders in corpus</div></div>
+    </div>
+  </div>
+  <div class="trust">
+    <div class="ti"><div class="tick"><svg width="6" height="6" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Out of the box &amp; production-ready</div>
+    <div class="ti"><div class="tick"><svg width="6" height="6" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Fine-tuned on your historical tenders</div>
+    <div class="ti"><div class="tick"><svg width="6" height="6" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Human-first AI: officer makes every call</div>
+    <div class="ti"><div class="tick"><svg width="6" height="6" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Sovereign by design: all data within India</div>
+  </div>
+</header>
+
+<!-- ── LIFECYCLE STAIRCASE ── -->
+<section class="lc" aria-label="Procurement lifecycle">
+  <div class="lc-cap">
+    <div class="lc-eyebrow">The Procurement Lifecycle — End to End</div>
+    <div class="lc-title">Three flagship capabilities, one platform.</div>
+  </div>
+  <div class="stairs">
+
+    <!-- Ascent line: runs through tops of the three hero treads -->
+    <svg width="746" height="160" viewBox="0 0 746 160" style="position:absolute;top:0;left:0;pointer-events:none;" aria-hidden="true">
+      <defs>
+        <marker id="arrw" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 1.5 L6 4 L0 6.5" stroke="rgba(255,255,255,0.8)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <!-- Points: top-centres of hero h1(x≈146,y≈70), h2(x≈302,y≈42), h3(x≈458,y≈8) -->
+      <polyline points="146,70 302,42 458,8"
+        stroke="rgba(255,255,255,0.5)"
+        stroke-width="1.5"
+        fill="none"
+        stroke-dasharray="4 3"
+        marker-end="url(#arrw)"/>
+    </svg>
+
+    <!-- 1. DPR (muted) -->
+    <div class="sm">
+      <div class="sm-name">DPR</div>
+      <div class="sm-num">Stage 1</div>
+    </div>
+
+    <!-- 2. Tender Creation — HERO TREAD 1 -->
+    <div class="sh sh-h1">
+      <div class="sh-num">02</div>
+      <div class="sh-icon">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+          <rect x="4" y="2" width="12" height="16" rx="2" stroke="#fff" stroke-width="1.6" opacity=".9"/>
+          <path d="M7 7h6M7 10h6M7 13h4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+          <path d="M12 2v4h4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="sh-name">Tender Creation</div>
+      <div class="sh-stat">&lt; 1 min / draft</div>
+    </div>
+
+    <!-- 3. Pre-Bid Query — HERO TREAD 2 -->
+    <div class="sh sh-h2">
+      <div class="sh-num">03</div>
+      <div class="sh-icon">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+          <path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H11l-4 3v-3H5a2 2 0 0 1-2-2V5Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" opacity=".9"/>
+          <path d="M7 8h6M7 11h4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
+        </svg>
+      </div>
+      <div class="sh-name">Pre-Bid Query</div>
+      <div class="sh-stat">3–4 days → 30 min</div>
+    </div>
+
+    <!-- 4. Bid Evaluation — HERO TREAD 3 (tallest) -->
+    <div class="sh sh-h3">
+      <div class="sh-num">04</div>
+      <div class="sh-icon">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2v2M5 4l1.5 1.5M15 4l-1.5 1.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+          <path d="M4 8h4l-2 4h4l-2-4h4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+          <path d="M3 12c0 1.5 1.5 2.5 3 2.5M17 12c0 1.5-1.5 2.5-3 2.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+          <path d="M5 17h10" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+          <path d="M10 14.5V17" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="sh-name">Bid Evaluation</div>
+      <div class="sh-stat">Claim → evidence, verified</div>
+    </div>
+
+    <!-- 5. Bid Comparison (muted) -->
+    <div class="sm">
+      <div class="sm-name">Bid Comparison</div>
+      <div class="sm-num">Stage 5</div>
+    </div>
+
+    <!-- 6. Award (muted) -->
+    <div class="sm">
+      <div class="sm-name">Award</div>
+      <div class="sm-num">Stage 6</div>
+    </div>
+
+    <!-- 7. Analytics (muted) -->
+    <div class="sm">
+      <div class="sm-name">Analytics</div>
+      <div class="sm-num">Stage 7</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BODY: Two-column ── -->
+<main class="body">
+
+  <!-- LEFT: Core Modules -->
+  <div class="col">
+    <div class="col-lbl">Core Modules</div>
+    <div class="cards">
+
+      <!-- AI Tender Creation Wizard -->
+      <div class="mc">
+        <div class="mc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><rect x="4" y="2" width="12" height="16" rx="2" stroke="#0F5EE8" stroke-width="1.6"/><path d="M7 7h6M7 10h6M7 13h4" stroke="#0F5EE8" stroke-width="1.4" stroke-linecap="round"/><path d="M12 2v4h4" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="mc-h">AI Tender Creation Wizard</div>
+        <div class="mc-b">Five-step guided workflow: department inputs, benchmarking panel, AI draft, CVC compliance check, officer review and publish. LLM fine-tuned on 1,000+ real tenders, drafting in your organisation's voice and standard clauses.</div>
+        <span class="badge bb">CVC-compliant · Bilingual PDF &amp; DOCX</span>
+      </div>
+
+      <!-- Pre-Bid Query -->
+      <div class="mc">
+        <div class="mc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H11l-4 3v-3H5a2 2 0 0 1-2-2V5Z" stroke="#0F5EE8" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 8h6M7 11h4" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mc-h">Pre-Bid Query &amp; Corrigendum Management</div>
+        <div class="mc-b">Reduces 3–4 days of manual query processing to 30 minutes. AI clusters 200+ queries by theme, ranks top issues by frequency, and drafts consistent officer-approved responses. Zero contradictions across all vendors.</div>
+        <span class="badge bg">3–4 days → 30 min</span>
+      </div>
+
+      <!-- Data Extraction -->
+      <div class="mc">
+        <div class="mc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="5" stroke="#0F5EE8" stroke-width="1.5"/><path d="M13.5 13.5l3 3" stroke="#0F5EE8" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7v4M7 9h4" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mc-h">Tender Data Extraction Engine</div>
+        <div class="mc-b">Accepts PDF, DOCX, XLSX, JPEG, ZIP. 12 focused LLM tasks run in parallel for accurate, hallucination-resistant extraction. Every field validated; low-confidence outputs flagged for human review.</div>
+        <span class="badge bt">12 parallel LLM threads</span>
+      </div>
+
+      <!-- Bid Evaluation & Award -->
+      <div class="mc">
+        <div class="mc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="11" r="6" stroke="#0F5EE8" stroke-width="1.5"/><path d="M7.5 11l2 2 3.5-3.5" stroke="#0F5EE8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5V3" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mc-h">Bid Evaluation &amp; Award</div>
+        <div class="mc-b">AI independently re-extracts every bidder claim and reconciles against evidence with source citation and confidence score. Per-slab scoring; committee confirms or overrides. Every action is immutably logged at DB level.</div>
+        <span class="badge bb">Claim → Verified · Source cited</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: Platform Capabilities -->
+  <div class="col">
+    <div class="col-lbl">Platform Capabilities</div>
+    <div class="cards">
+
+      <!-- Post Go-Live Contract Tracker (KEEP) -->
+      <div class="cc">
+        <div class="cc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M10 3l1 3h3l-2.5 1.8 1 3L10 9l-2.5 1.8 1-3L6 6h3l1-3Z" stroke="#B45309" stroke-width="1.4" stroke-linejoin="round" fill="none"/><circle cx="10" cy="10" r="8" stroke="#B45309" stroke-width="1.3" opacity=".35"/></svg>
+        </div>
+        <div class="cc-h">Post Go-Live Contract Tracker</div>
+        <div class="cc-kpi" style="color:var(--amber);">Reactive → Proactive</div>
+        <div class="cc-b">Tracks contract milestones after award, alerting officers before deadlines rather than after a breach. Structured timelines extracted from the awarded contract; AI flags upcoming deliverables and payment milestones proactively so no obligation is missed.</div>
+      </div>
+
+      <!-- Pre-Bid Eligibility Self-Assessment (KEEP) -->
+      <div class="cc">
+        <div class="cc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="#0F5EE8" stroke-width="1.5"/><path d="M7 7h6M7 10h6M7 13h3" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round"/><path d="M14 13l-1.5 1.5L11 13" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cc-h">Pre-Bid Eligibility Self-Assessment</div>
+        <div class="cc-kpi" style="color:var(--primary);">Met · Not Met · Borderline</div>
+        <div class="cc-b">Vendors self-screen against tender eligibility criteria before bidding — each criterion assessed as Met, Not Met, or Borderline. Reduces ineligible bids and disqualification disputes. Officers see the vendor-submitted evidence at evaluation time.</div>
+      </div>
+
+      <!-- Live Bid Comparison (NEW) -->
+      <div class="cc">
+        <div class="cc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M3 14l4-4 3 3 3-5 4 4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 17h14" stroke="#15803D" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cc-h">Live Bid Comparison</div>
+        <div class="cc-kpi" style="color:var(--green);">Auto-ranked + anomaly-flagged</div>
+        <div class="cc-b">Side-by-side comparative statement across all bids — TQ score, quoted amount, financial score and combined QCBS rank, downloadable in your template. AI flags abnormally low bids (e.g. −15.2% vs estimate) and recommends a course of action. Committee confirms; AI advises only.</div>
+      </div>
+
+      <!-- Procurement Analytics (NEW) -->
+      <div class="cc">
+        <div class="cc-ico">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><rect x="3" y="10" width="3" height="7" rx="1" fill="#0E7490" opacity=".7"/><rect x="8.5" y="7" width="3" height="10" rx="1" fill="#0E7490" opacity=".85"/><rect x="14" y="4" width="3" height="13" rx="1" fill="#0E7490"/><path d="M3 17h14" stroke="#0E7490" stroke-width="1.2" stroke-linecap="round" opacity=".5"/></svg>
+        </div>
+        <div class="cc-h">Procurement Analytics</div>
+        <div class="cc-kpi" style="color:var(--teal);">3 role-scoped lenses</div>
+        <div class="cc-b">Procurement Health (draft time, compliance adherence, evaluation cycle, savings vs estimate), Vendor Intelligence (win rate, repeat disqualification, savings per vendor), and AI Agent Performance (flag precision, draft acceptance, drift, confidence calibration) — each scoped to the viewer's role.</div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="fb">
+    <div class="fl">T</div>
+    <div>
+      <div class="fn">TenderAI</div>
+      <div class="fs">AI-Based Tender Creation &amp; Evaluation Tool</div>
+    </div>
+  </div>
+  <div class="vsep"></div>
+  <div class="fm">Adapters for ERP · e-procurement portals · e-challan · SSO · REST-first with file-based fallback · Bilingual UI (English + Gujarati)</div>
+  <a class="fcta" href="#">Get in touch →</a>
+</footer>
+
+</div>
+</body>
+</html>
