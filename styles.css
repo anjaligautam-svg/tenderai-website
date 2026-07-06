@@ -237,14 +237,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .brand { display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0; }
 .brand:hover { text-decoration: none; }
-.brand__mark {
+.brand__logo {
   width: 36px; height: 36px; border-radius: 9px;
-  background: var(--primary); color: #fff;
-  display: grid; place-items: center;
-  font-family: var(--font-body);
-  font-weight: 700; font-size: 16px;
+  flex-shrink: 0; display: block;
   box-shadow: var(--shadow-soft);
-  flex-shrink: 0;
+}
+.footer__brand .brand__logo {
+  background: #fff; padding: 3px; border-radius: 10px;
 }
 .brand__name { font-size: 15px; font-weight: 700; color: var(--ink-900); line-height: 1.1; display: block; }
 .brand__sub  { font-size: 11px; color: var(--ink-500); line-height: 1.1; display: block; }
