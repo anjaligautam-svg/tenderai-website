@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -607,63 +607,129 @@
     </section>
 
     <!-- ================================================================
-         HOW IT WORKS : Lifecycle in 5 stages
+         HOW IT WORKS : Interactive stage story-switcher
     ================================================================ -->
-    <section class="section" id="how-it-works" aria-labelledby="lifecycle-title">
+    <section class="section journey-section" id="how-it-works" aria-labelledby="journey-title">
       <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow">One system, end to end</span>
-          <h2 id="lifecycle-title">From planning document to running-account bill.</h2>
-          <p>Every stage connected, guided, and recorded. No more paper files jumping between departments.</p>
+
+        <div class="journey-head">
+          <span class="eyebrow">How it works</span>
+          <h2 id="journey-title">Five stages. One system.</h2>
         </div>
 
-        <ol class="lifecycle" aria-label="Scribe procurement lifecycle: 5 stages">
-          <li class="lc-stage reveal">
-            <div class="lc-stage__node">
-              <span class="lc-stage__num" aria-hidden="true">1</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></svg>
+        <!-- Stage tabs -->
+        <div class="journey-tabs" role="tablist" aria-label="Procurement stages">
+          <button class="journey-tab active" role="tab" aria-selected="true"  aria-controls="jp-0" data-stage="0"><span class="journey-tab__num">01</span><span class="journey-tab__name">Plan</span></button>
+          <button class="journey-tab"        role="tab" aria-selected="false" aria-controls="jp-1" data-stage="1"><span class="journey-tab__num">02</span><span class="journey-tab__name">Tender</span></button>
+          <button class="journey-tab"        role="tab" aria-selected="false" aria-controls="jp-2" data-stage="2"><span class="journey-tab__num">03</span><span class="journey-tab__name">Pre-bid</span></button>
+          <button class="journey-tab"        role="tab" aria-selected="false" aria-controls="jp-3" data-stage="3"><span class="journey-tab__num">04</span><span class="journey-tab__name">Evaluate</span></button>
+          <button class="journey-tab"        role="tab" aria-selected="false" aria-controls="jp-4" data-stage="4"><span class="journey-tab__num">05</span><span class="journey-tab__name">Award</span></button>
+        </div>
+
+        <!-- Auto-advance progress bar -->
+        <div class="journey-progress" aria-hidden="true"><div class="journey-progress__fill"></div></div>
+
+        <!-- Stage panels -->
+        <div class="journey-panels">
+
+          <!-- 01: Plan -->
+          <div class="journey-panel active" id="jp-0" role="tabpanel">
+            <div class="journey-panel__copy">
+              <div class="journey-panel__num" aria-hidden="true">01</div>
+              <h3 class="journey-panel__title">Plan</h3>
+              <p class="journey-panel__desc">AI-suggested scope, BOQ, and market-rate cost basis — before the first draft.</p>
+              <span class="journey-panel__tag">DPR Creation</span>
             </div>
-            <h3>Plan</h3>
-            <p>Build the DPR with AI-suggested scope, BOQ, and a documented market-rate cost basis.</p>
-            <span class="lc-stage__tag">DPR Creation</span>
-          </li>
-          <li class="lc-stage reveal">
-            <div class="lc-stage__node">
-              <span class="lc-stage__num" aria-hidden="true">2</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg>
+            <div class="journey-panel__visual">
+              <div class="journey-frame">
+                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="journey-frame__body">
+                  <div class="jf-plan">
+                    <div class="jf-plan__row">
+                      <div class="jf-plan__card"><div class="jf-plan__label">Project Scope</div><div class="jf-plan__val">AI suggested · 4 items</div></div>
+                      <div class="jf-plan__card"><div class="jf-plan__label">BOQ Line Items</div><div class="jf-plan__val">24 items · ₹2.4 Cr</div></div>
+                    </div>
+                    <div class="jf-plan__card jf-plan__card--wide">
+                      <div class="jf-plan__label">Market Benchmark</div>
+                      <div class="jf-plan__val jf-plan__val--primary">Aligned with CPWD SOR · DPIIT reference</div>
+                      <div class="jf-plan__bar"><div class="jf-plan__bar-fill"></div></div>
+                    </div>
+                    <div class="jf-plan__row">
+                      <div class="jf-plan__pill jf-plan__pill--done">Scope finalised ✓</div>
+                      <div class="jf-plan__pill jf-plan__pill--done">Cost approved ✓</div>
+                      <div class="jf-plan__pill">Tender draft →</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3>Tender</h3>
-            <p>AI drafts a complete NIT, runs the CVC pre-check, refines by conversation.</p>
-            <span class="lc-stage__tag">Tender Creation</span>
-          </li>
-          <li class="lc-stage reveal">
-            <div class="lc-stage__node lc-stage__node--pre">
-              <span class="lc-stage__num" aria-hidden="true">3</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg>
+          </div>
+
+          <!-- 02: Tender -->
+          <div class="journey-panel" id="jp-1" role="tabpanel">
+            <div class="journey-panel__copy">
+              <div class="journey-panel__num" aria-hidden="true">02</div>
+              <h3 class="journey-panel__title">Tender</h3>
+              <p class="journey-panel__desc">Describe the project in plain language. Scribe drafts a CVC-compliant NIT in under a minute.</p>
+              <span class="journey-panel__tag">&lt;1 min to first draft</span>
             </div>
-            <h3>Pre-bid</h3>
-            <p>AI clusters 200 vendor queries, drafts responses, issues corrigenda through approval chains.</p>
-            <span class="lc-stage__tag">Pre-bid Queries</span>
-          </li>
-          <li class="lc-stage reveal">
-            <div class="lc-stage__node">
-              <span class="lc-stage__num" aria-hidden="true">4</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m7 7-3 6a3 3 0 0 0 6 0Z"/><path d="m17 7-3 6a3 3 0 0 0 6 0Z"/><path d="M7 21h10"/></svg>
+            <div class="journey-panel__visual">
+              <div class="journey-frame">
+                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="assets/screens/Describe to AI.png" alt="Tender creation: describe project to AI, Scribe generates the NIT" loading="lazy" width="1440" height="1032">
+              </div>
             </div>
-            <h3>Evaluate &amp; Award</h3>
-            <p>PQ, technical, financial scoring with quotes masked until formally revealed. Committee signs, authority awards.</p>
-            <span class="lc-stage__tag">Bid Evaluation</span>
-          </li>
-          <li class="lc-stage reveal">
-            <div class="lc-stage__node">
-              <span class="lc-stage__num" aria-hidden="true">5</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          </div>
+
+          <!-- 03: Pre-bid -->
+          <div class="journey-panel" id="jp-2" role="tabpanel">
+            <div class="journey-panel__copy">
+              <div class="journey-panel__num" aria-hidden="true">03</div>
+              <h3 class="journey-panel__title">Pre-bid</h3>
+              <p class="journey-panel__desc">200 vendor queries resolved in 30 minutes. AI clusters, drafts responses, officer approves.</p>
+              <span class="journey-panel__tag">3–4 days → 30 min</span>
             </div>
-            <h3>Execute</h3>
-            <p>Milestone tracking, RA bills with auto-deductions, and full analytics from plan to payment.</p>
-            <span class="lc-stage__tag">Execution</span>
-          </li>
-        </ol>
+            <div class="journey-panel__visual">
+              <div class="journey-frame">
+                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="assets/screens/Queries & Responses.png" alt="Pre-bid query management interface" loading="lazy" width="1440" height="1032">
+              </div>
+            </div>
+          </div>
+
+          <!-- 04: Evaluate -->
+          <div class="journey-panel" id="jp-3" role="tabpanel">
+            <div class="journey-panel__copy">
+              <div class="journey-panel__num" aria-hidden="true">04</div>
+              <h3 class="journey-panel__title">Evaluate</h3>
+              <p class="journey-panel__desc">Technical and financial scoring with a source citation on every point. QCBS and L1 both supported.</p>
+              <span class="journey-panel__tag">QCBS · L1 · Hybrid</span>
+            </div>
+            <div class="journey-panel__visual">
+              <div class="journey-frame">
+                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="assets/screens/QCBS.png" alt="QCBS evaluation scoring interface" loading="lazy" width="1440" height="1032">
+              </div>
+            </div>
+          </div>
+
+          <!-- 05: Award -->
+          <div class="journey-panel" id="jp-4" role="tabpanel">
+            <div class="journey-panel__copy">
+              <div class="journey-panel__num" aria-hidden="true">05</div>
+              <h3 class="journey-panel__title">Award</h3>
+              <p class="journey-panel__desc">Award recommendation with a complete, immutable audit trail — ready before the CAG asks.</p>
+              <span class="journey-panel__tag">100% audit trail</span>
+            </div>
+            <div class="journey-panel__visual">
+              <div class="journey-frame">
+                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="assets/screens/Winner Reveal.png" alt="Award winner reveal and recommendation" loading="lazy" width="1440" height="1032">
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /journey-panels -->
       </div>
     </section>
 
@@ -1228,6 +1294,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

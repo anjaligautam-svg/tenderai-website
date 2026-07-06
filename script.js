@@ -132,3 +132,79 @@
 
   requestAnimationFrame(tick);
 })();
+
+/* ── Journey Stage Auto-Switcher ────────────────────────────────────────── */
+(function () {
+  var tabs   = document.querySelectorAll('.journey-tab');
+  var panels = document.querySelectorAll('.journey-panel');
+  var fill   = document.querySelector('.journey-progress__fill');
+  if (!tabs.length || !fill) return;
+
+  var current  = 0;
+  var DURATION = 4000;
+  var rafId    = null;
+  var startTs  = null;
+  var paused   = false;
+  var pausedAt = 0; /* fraction 0-1 of progress when paused */
+
+  function goTo(idx) {
+    tabs[current].classList.remove('active');
+    tabs[current].setAttribute('aria-selected', 'false');
+    panels[current].classList.remove('active');
+    current = idx;
+    tabs[current].classList.add('active');
+    tabs[current].setAttribute('aria-selected', 'true');
+    panels[current].classList.add('active');
+    startFill(0);
+  }
+
+  function startFill(from) {
+    if (rafId) cancelAnimationFrame(rafId);
+    fill.style.width = (from * 100) + '%';
+    startTs = null;
+    var elapsed0 = from * DURATION;
+
+    function tick(now) {
+      if (paused) return;
+      if (!startTs) startTs = now - elapsed0;
+      var elapsed = now - startTs;
+      var pct     = Math.min(1, elapsed / DURATION);
+      fill.style.width = (pct * 100) + '%';
+      if (pct < 1) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        goTo((current + 1) % tabs.length);
+      }
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function pause() {
+    if (paused) return;
+    paused = true;
+    pausedAt = parseFloat(fill.style.width) / 100 || 0;
+    if (rafId) cancelAnimationFrame(rafId);
+  }
+
+  function resume() {
+    if (!paused) return;
+    paused = false;
+    startFill(pausedAt);
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+      if (i !== current) { paused = false; goTo(i); }
+    });
+  });
+
+  var section = document.querySelector('.journey-section');
+  if (section) {
+    section.addEventListener('mouseenter', pause);
+    section.addEventListener('mouseleave', resume);
+    section.addEventListener('focusin',    pause);
+    section.addEventListener('focusout',   resume);
+  }
+
+  startFill(0);
+})();
