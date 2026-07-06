@@ -1,4 +1,4 @@
-/* TenderAI landing — progressive enhancement only.
+/* Scribe landing — progressive enhancement only.
    The page is fully readable and navigable without JavaScript;
    this script adds the mobile menu, scroll reveal, and demo-form feedback. */
 (function () {
