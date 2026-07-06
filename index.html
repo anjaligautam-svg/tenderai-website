@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -351,112 +351,128 @@
 
     <!-- ================================================================
          PAIN SECTION : "The reality today"
-         6 pain-point cards — storytelling-first, officers feel seen.
+         Dark banded cards — stat-first, visual-led, minimal text.
     ================================================================ -->
-    <section class="section section--tint pain-section" id="pain" aria-labelledby="pain-title">
+    <section class="section pain-section pain-section--dark" id="pain" aria-labelledby="pain-title">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow eyebrow--muted">The reality today</span>
-          <h2 id="pain-title">Government procurement is built on paper. And paper breaks.</h2>
-          <p>Every tender is a web of manual steps, missing documentation, and institutional risk — carried by officers with no system to fall back on.</p>
+        <div class="section-head pain-head">
+          <span class="eyebrow pain-eyebrow">The reality today</span>
+          <h2 id="pain-title" class="pain-h2">Government procurement is built on paper. And paper breaks.</h2>
         </div>
 
         <div class="pain-grid">
 
           <!-- 1 · Tender creation -->
-          <div class="pain-card reveal" data-stagger-delay="0">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--amber" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div class="pain-card pain-card--amber reveal" data-stagger-delay="0">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Timeline mini-viz -->
+              <div class="pviz pviz--timeline">
+                <div class="pviz__months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span></div>
+                <div class="pviz__track"><div class="pviz__prog"></div></div>
+                <div class="pviz__flag">NIT Approved ✓</div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">01</span>
+              <span class="pain-band__num">01</span>
             </div>
-            <h3 class="pain-card__title">Tender creation drags on for months</h3>
-            <p class="pain-card__desc">A single NIT touches 12+ departments. Counter-signatures, re-submissions, and unanswered questions loop back endlessly — weeks pass before one clause gets confirmed. Every time, from scratch.</p>
-            <span class="pain-card__tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l2.5 1.5"/></svg>
-              2–3 months per NIT
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">2–3<em>mo</em></div>
+              <h3 class="pain-title">Tender creation takes months</h3>
+              <p class="pain-desc">12+ departments, counter-signatures, re-submissions — weeks lost before one clause is approved.</p>
+            </div>
           </div>
 
           <!-- 2 · Pre-bid queries -->
-          <div class="pain-card reveal" data-stagger-delay="80">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--violet" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.4-2.5 2.1-2.5 3"/><path d="M12 16h.01"/></svg>
+          <div class="pain-card pain-card--violet reveal" data-stagger-delay="80">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Inbox stack mini-viz -->
+              <div class="pviz pviz--inbox">
+                <div class="pviz__msg"><span class="pviz__dot"></span><span class="pviz__mtext">Re: Clause 4.2 clarification…</span></div>
+                <div class="pviz__msg"><span class="pviz__dot"></span><span class="pviz__mtext">Please confirm the EMD amount…</span></div>
+                <div class="pviz__msg pviz__msg--fade"><span class="pviz__dot"></span><span class="pviz__mtext">Same as query #47, please…</span></div>
+                <div class="pviz__overflow">+197 more unread</div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">02</span>
+              <span class="pain-band__num">02</span>
             </div>
-            <h3 class="pain-card__title">200 queries. No record of any answer.</h3>
-            <p class="pain-card__desc">Vendors flood the inbox with the same question phrased ten different ways. There's no system to track what was asked or answered before. Officers read, group, and draft responses manually — one inconsistent reply can invalidate the entire process.</p>
-            <span class="pain-card__tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              3–4 days per tender
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">200+<em>queries</em></div>
+              <h3 class="pain-title">No record of what was answered</h3>
+              <p class="pain-desc">The same question, a hundred phrasings — with no log of prior answers, one inconsistent reply can void the process.</p>
+            </div>
           </div>
 
-          <!-- 3 · Evaluation confidentiality (featured — gradient border) -->
-          <div class="pain-card pain-card--featured reveal" data-stagger-delay="160">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--red" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+          <!-- 3 · Evaluation confidentiality -->
+          <div class="pain-card pain-card--red pain-card--featured reveal" data-stagger-delay="160">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Pulse risk mini-viz -->
+              <div class="pviz pviz--risk">
+                <div class="pviz__ring pviz__ring--1"></div>
+                <div class="pviz__ring pviz__ring--2"></div>
+                <div class="pviz__core">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                </div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">03</span>
+              <span class="pain-band__num">03</span>
             </div>
-            <h3 class="pain-card__title">Evaluation confidentiality has no guard</h3>
-            <p class="pain-card__desc">Physical bid boxes, hand-scored sheets, no log of who accessed what. One allegation of a leak — real or not — invites CVC scrutiny, stalls the project, and puts officers' careers on the line.</p>
-            <span class="pain-card__tag pain-card__tag--red">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Zero audit trail
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">ZERO<em>audit trail</em></div>
+              <h3 class="pain-title">Evaluation has no confidentiality guard</h3>
+              <p class="pain-desc">Physical boxes, handwritten scores, no access log — one allegation of bias stalls the project and ends careers.</p>
+            </div>
           </div>
 
           <!-- 4 · Requirement matching -->
-          <div class="pain-card reveal" data-stagger-delay="0">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--blue" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="13" y2="18"/></svg>
+          <div class="pain-card pain-card--blue reveal" data-stagger-delay="0">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Comparison table mini-viz -->
+              <div class="pviz pviz--compare">
+                <div class="pviz__thead"><span>Tender req.</span><span>Bid doc.</span></div>
+                <div class="pviz__trow pviz__trow--ok"><span>Clause 4.1</span><span class="pviz__ok">✓</span></div>
+                <div class="pviz__trow pviz__trow--ok"><span>Clause 4.2</span><span class="pviz__ok">✓</span></div>
+                <div class="pviz__trow pviz__trow--err"><span>Clause 4.3</span><span class="pviz__err">✗ Missing</span></div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">04</span>
+              <span class="pain-band__num">04</span>
             </div>
-            <h3 class="pain-card__title">Matching bids to tender — clause by clause</h3>
-            <p class="pain-card__desc">Evaluators manually cross-check each vendor's submission against 50+ tender clauses. One missed requirement means a failed evaluation — or a successful legal challenge down the line, after months of work.</p>
-            <span class="pain-card__tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              50+ clauses per vendor
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">50+<em>clauses</em></div>
+              <h3 class="pain-title">Bids matched to tender by hand</h3>
+              <p class="pain-desc">Miss one clause and the evaluation fails — or worse, succeeds only to be legally challenged months later.</p>
+            </div>
           </div>
 
           <!-- 5 · Bid comparison -->
-          <div class="pain-card reveal" data-stagger-delay="80">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--teal" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          <div class="pain-card pain-card--teal reveal" data-stagger-delay="80">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Bar chart mini-viz -->
+              <div class="pviz pviz--bars">
+                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:68%"></div><span>A</span></div>
+                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:42%"></div><span>B</span></div>
+                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:91%"></div><span>C</span></div>
+                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:55%"></div><span>D</span></div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">05</span>
+              <span class="pain-band__num">05</span>
             </div>
-            <h3 class="pain-card__title">Comparing bids is a spreadsheet exercise</h3>
-            <p class="pain-card__desc">Financial bids arrive in uneven formats. L1 calculation is done on ad-hoc spreadsheets, scoring is undocumented, and there's no audit trail — just an officer's word that the numbers were right.</p>
-            <span class="pain-card__tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-              No standard format
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">L1<em>on a spreadsheet</em></div>
+              <h3 class="pain-title">Bid evaluation with no standard</h3>
+              <p class="pain-desc">Four vendors, four formats — comparison is ad-hoc, scoring undocumented, and no trail of who decided what.</p>
+            </div>
           </div>
 
           <!-- 6 · Reference documents -->
-          <div class="pain-card reveal" data-stagger-delay="160">
-            <div class="pain-card__top">
-              <div class="pain-icon pain-icon--orange" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+          <div class="pain-card pain-card--orange reveal" data-stagger-delay="160">
+            <div class="pain-band" aria-hidden="true">
+              <!-- Scattered files mini-viz -->
+              <div class="pviz pviz--files">
+                <div class="pviz__file" style="--rot:-13deg; --tx:-36px; --ty:6px">PWD_2019.pdf</div>
+                <div class="pviz__file" style="--rot:8deg; --tx:34px; --ty:-14px">NIT_old.docx</div>
+                <div class="pviz__file" style="--rot:-4deg; --tx:-4px; --ty:20px">GFR_ref.pdf</div>
               </div>
-              <span class="pain-card__num" aria-hidden="true">06</span>
+              <span class="pain-band__num">06</span>
             </div>
-            <h3 class="pain-card__title">Every new tender starts from zero</h3>
-            <p class="pain-card__desc">Reference documents are buried in filing cabinets, old desktop folders, or officers' memories. When someone transfers, knowledge walks out the door. New tenders duplicate old work — with the same gaps.</p>
-            <span class="pain-card__tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              No institutional memory
-            </span>
+            <div class="pain-body">
+              <div class="pain-stat">LOST<em>every transfer</em></div>
+              <h3 class="pain-title">Institutional knowledge has no home</h3>
+              <p class="pain-desc">Reference docs buried in drawers or officers' heads — when someone transfers, that knowledge leaves too.</p>
+            </div>
           </div>
 
         </div>
