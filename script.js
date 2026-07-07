@@ -263,38 +263,40 @@
   window.addEventListener('resize', onScroll);
 })();
 
-/* ── Spotlight grid (How it works background) ───────────────────────────── */
+/* ── Spotlight grid (How it works + closing CTA/footer backgrounds) ─────── */
 /* Grid lines brighten in a circle around the pointer; a soft glow follows.
-   Position is written as CSS vars on the section; rAF-throttled. */
+   Position is written as CSS vars on each host; rAF-throttled. */
 (function () {
-  var sec = document.querySelector('.journey-section');
-  if (!sec) return;
+  var hosts = document.querySelectorAll('.journey-section, .close-wrap');
+  if (!hosts.length) return;
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) return; /* spotlight stays at its CSS default position */
 
-  var lx = 0, ly = 0, ticking = false;
+  hosts.forEach(function (sec) {
+    var lx = 0, ly = 0, ticking = false;
 
-  function apply() {
-    ticking = false;
-    var r = sec.getBoundingClientRect();
-    sec.style.setProperty('--jx', ((lx - r.left) / r.width * 100) + '%');
-    sec.style.setProperty('--jy', ((ly - r.top) / r.height * 100) + '%');
-  }
-
-  function onMove(e) {
-    var t = e.touches ? e.touches[0] : e;
-    if (!t) return;
-    lx = t.clientX;
-    ly = t.clientY;
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(apply);
+    function apply() {
+      ticking = false;
+      var r = sec.getBoundingClientRect();
+      sec.style.setProperty('--jx', ((lx - r.left) / r.width * 100) + '%');
+      sec.style.setProperty('--jy', ((ly - r.top) / r.height * 100) + '%');
     }
-  }
 
-  sec.addEventListener('mousemove', onMove);
-  sec.addEventListener('touchmove', onMove, { passive: true });
+    function onMove(e) {
+      var t = e.touches ? e.touches[0] : e;
+      if (!t) return;
+      lx = t.clientX;
+      ly = t.clientY;
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(apply);
+      }
+    }
+
+    sec.addEventListener('mousemove', onMove);
+    sec.addEventListener('touchmove', onMove, { passive: true });
+  });
 })();
 
 /* ── AI card stack (AI at every step) ───────────────────────────────────── */

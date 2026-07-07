@@ -1631,6 +1631,68 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @media (max-width: 860px) { .footer__top { grid-template-columns: 1fr 1fr; } .footer__brand { grid-column: 1 / -1; } }
 @media (max-width: 520px)  { .footer__top { grid-template-columns: 1fr; } }
 
+/* ── Close block : CTA + footer on one blue canvas + spotlight grid ─────── */
+.close-wrap {
+  position: relative;
+  overflow: hidden;
+  --jx: 50%;   /* spotlight position, driven by pointer */
+  --jy: 40%;
+  --jtile: 34px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-700) 100%);
+}
+@media (min-width: 768px) { .close-wrap { --jtile: 48px; } }
+.close-wrap > section,
+.close-wrap > footer { position: relative; z-index: 1; }
+
+.close-bg { position: absolute; inset: 0; }
+.close-bg__vignette {
+  position: absolute; inset: 0;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 40%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 40%, #000 35%, transparent 100%);
+}
+.close-bg__base {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.09) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+}
+.close-bg__overlay {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.75) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.75) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+  -webkit-mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+  mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+}
+.close-bg__glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(380px circle at var(--jx) var(--jy), rgba(255,255,255,.14), transparent 70%);
+  mix-blend-mode: screen;
+}
+.close-bg__fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--primary) 0%, transparent 12%, transparent 88%, var(--primary-700) 100%);
+}
+
+/* CTA band flattens onto the shared canvas */
+.close-wrap .cta-band { background: none; border-radius: 0; padding: 0; overflow: visible; }
+.close-wrap .cta-band::after { display: none; }
+
+/* Footer inherits the blue */
+.close-wrap .footer { background: transparent; color: rgba(255,255,255,.78); }
+.close-wrap .footer__top { border-bottom-color: rgba(255,255,255,.22); }
+.close-wrap .footer__brand .brand__sub { color: rgba(255,255,255,.72); }
+.close-wrap .footer__about { color: rgba(255,255,255,.78); }
+.close-wrap .footer__flag { color: rgba(255,255,255,.68); }
+.close-wrap .footer__col h4 { color: #fff; }
+.close-wrap .footer__col a { color: rgba(255,255,255,.75); }
+.close-wrap .footer__col a:hover { color: #fff; }
+.close-wrap .footer__bottom { color: rgba(255,255,255,.68); }
+.close-wrap .footer__links a { color: rgba(255,255,255,.68); }
+.close-wrap .footer__links a:hover { color: #fff; }
+
 /* ── Journey story-switcher (How it works) — dark, centered glimpses ─────── */
 .journey-section {
   position: relative;
