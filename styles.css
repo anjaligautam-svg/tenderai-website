@@ -1570,8 +1570,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   --jx: 50%;   /* spotlight position, driven by pointer */
   --jy: 42%;
   --jtile: 34px;
-  --jbg: #08090C;
-  background: var(--jbg);
+  --jbg: #070E1C; /* matches the pain section's navy; fade layer reuses it */
+  background: linear-gradient(180deg, var(--jbg) 0%, #0D1730 52%, var(--jbg) 100%);
 }
 @media (min-width: 768px) { .journey-section { --jtile: 48px; } }
 .journey-section .container { position: relative; z-index: 1; }
