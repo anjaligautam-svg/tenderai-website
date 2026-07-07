@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=30" />
+  <link rel="stylesheet" href="styles.css?v=31" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -927,11 +927,19 @@
     ================================================================ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow eyebrow--muted">Questions</span>
-          <h2 id="faq-title">What procurement teams ask us.</h2>
-        </div>
-        <div class="faq">
+        <div class="faq-grid">
+
+          <div class="faq-intro">
+            <span class="faq-badge">FAQ</span>
+            <h2 id="faq-title">The questions every procurement office asks first.</h2>
+            <p>Scribe touches confidential bids, public money, and career-defining audits — so the questions are rightly sharp. Here are the ones we hear most, answered plainly. For anything deeper, walk through it with our team on a live file.</p>
+            <a class="btn faq-btn" href="#request">
+              Any questions? Reach out
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+
+          <div class="faq">
           <details class="faq__item">
             <summary class="faq__q">
               <span>Does Scribe replace the officer or the approval process?</span>
@@ -974,6 +982,8 @@
             </summary>
             <div class="faq__a"><p>Scribe is designed to meet GIGW 3.0, UX4G guidance, and WCAG 2.1 AA, including full keyboard operation, visible focus indicators, sufficient colour contrast (AA+ on all text), and screen-reader compatibility.</p></div>
           </details>
+          </div>
+
         </div>
       </div>
     </section>
