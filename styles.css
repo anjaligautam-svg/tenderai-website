@@ -353,7 +353,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   flex-direction: column;
 }
 
-/* Digital NIT (top) — clipped to LEFT of scan-x, reveals from left */
+/* Digital tender (top) — clipped to LEFT of scan-x, reveals from left */
 .dta__layer--digital {
   background: #F6F8FD;
   z-index: 2;
