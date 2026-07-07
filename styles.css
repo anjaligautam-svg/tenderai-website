@@ -1692,21 +1692,23 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 /* ── Journey story-switcher (How it works) — dark, centered glimpses ─────── */
 .journey-section {
-  background: #070E1C;
-  background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background:
+    radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    radial-gradient(ellipse 55% 48% at 8% -6%, rgba(37,99,235,.2), transparent 62%),
+    radial-gradient(ellipse 45% 42% at 96% 108%, rgba(124,58,237,.16), transparent 65%),
+    linear-gradient(180deg, #070E1C 0%, #0A1224 52%, #070E1C 100%);
+  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
 }
 .journey-section .eyebrow { color: rgba(255,255,255,.4); }
 
-.journey-head { margin-bottom: 2rem; text-align: center; }
-.journey-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-top: .3rem; max-width: 520px; margin-inline: auto; color: #F1F5F9; }
+.journey-head { margin-bottom: 2rem; }
+.journey-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-top: .3rem; max-width: 520px; color: #F1F5F9; }
 
 /* Tabs */
 .journey-tabs {
   display: flex;
   gap: .4rem;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .journey-tab {
   display: inline-flex;
@@ -1732,17 +1734,17 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-tab.active .journey-tab__name { color: #fff; }
 
 /* Progress bar */
-.journey-progress { height: 2px; background: rgba(255,255,255,.12); border-radius: 1px; margin: .9rem auto 0; max-width: 560px; overflow: hidden; }
+.journey-progress { height: 2px; background: rgba(255,255,255,.12); border-radius: 1px; margin: .9rem 0 0; overflow: hidden; }
 .journey-progress__fill { height: 100%; background: #60A5FA; border-radius: 1px; width: 0%; }
 
-/* Panels — centered story */
-.journey-panels { margin-top: 2.75rem; position: relative; min-height: 740px; }
+/* Panels — copy left, glimpse right */
+.journey-panels { margin-top: 3rem; position: relative; min-height: 540px; }
 .journey-panel { display: none; }
 .journey-panel.active {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  text-align: center;
   animation: journey-in .35s ease;
 }
 
@@ -1766,16 +1768,17 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   margin: .45rem 0 .5rem;
   line-height: 1.2;
 }
+.journey-panel__title { font-size: clamp(1.45rem, 2.3vw, 1.9rem); }
 .journey-panel__desc {
   font-size: .92rem;
   color: #94A3B8;
   line-height: 1.65;
   margin: 0;
-  max-width: 460px;
+  max-width: 380px;
 }
 
 /* Glimpse — cropped product fragment with glow + annotation chips */
-.glimpse { position: relative; margin-top: 2.1rem; width: min(640px, 100%); }
+.glimpse { position: relative; width: min(640px, 100%); justify-self: end; }
 .glimpse__glow {
   position: absolute; inset: -48px -64px;
   background: radial-gradient(ellipse 60% 55% at 50% 45%, var(--jg, rgba(96,165,250,.3)), transparent 70%);
@@ -1837,6 +1840,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 @media (max-width: 900px) {
   .journey-panels { min-height: 0; }
+  .journey-panel.active { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+  .glimpse { justify-self: auto; margin-top: 1.7rem; }
 }
 @media (max-width: 560px) {
   .journey-tab__name { display: none; }
