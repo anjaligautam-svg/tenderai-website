@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -503,104 +503,159 @@
     </section>
 
     <!-- ================================================================
-         PRODUCT BENTO : Feature screenshots grid (light theme)
+         PRODUCT BENTO : crafted procurement artifacts (light theme)
     ================================================================ -->
     <section class="section bento-section" id="product" aria-labelledby="bento-title">
       <div class="container">
         <div class="section-head center">
           <span class="eyebrow">Meet Scribe</span>
           <h2 id="bento-title">One platform. The complete procurement lifecycle.</h2>
-          <p>From NIT creation to award letter — every step AI-assisted, officer-approved, and audit-ready.</p>
+          <p>From NIT to Letter of Acceptance — every step AI-assisted, officer-approved, audit-ready.</p>
         </div>
 
-        <div class="bento-grid">
+        <div class="feat-grid">
 
-          <!-- Card 1: Describe to AI (2-wide hero) -->
-          <div class="bento-card bento-card--wide reveal" data-stagger-delay="0">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">Tender Creation</span>
-              <h3 class="bento-card__title">Describe it. Scribe drafts it.</h3>
-              <p class="bento-card__desc">Type your project scope in plain language. Scribe generates a complete, CVC-compliant NIT — section by section, with source citations and compliance checks built in.</p>
+          <!-- 1 · NIT document (wide) -->
+          <article class="feat-card feat-card--w4 reveal" data-stagger-delay="0">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Tender Creation</h3>
+              <p class="feat-card__tag">Describe the work. Scribe writes the NIT.</p>
+            </header>
+            <div class="feat-card__art feat-art--sky" aria-hidden="true">
+              <div class="fa-doc">
+                <div class="fa-doc__org">
+                  <span class="fa-doc__hi">लोक निर्माण विभाग</span>
+                  <span>OFFICE OF THE EXECUTIVE ENGINEER (CIVIL), DIVISION–IV</span>
+                  <strong>NOTICE INVITING e-TENDER</strong>
+                  <em>NIT No. 24/EE(C)/DIV-IV/2026-27 &nbsp;·&nbsp; e-Tender ID: 2026_PWD_812345_1</em>
+                </div>
+                <table class="fa-doc__table">
+                  <tr><td>Name of Work</td><td>Construction &amp; upgradation of stormwater drains, Zone-IV (Package-II)</td></tr>
+                  <tr><td>Estimated Cost</td><td>₹ 2,40,00,000</td></tr>
+                  <tr><td>Earnest Money @ 2%</td><td>₹ 4,80,000 &nbsp;<i>(Rule 170, GFR 2017)</i></td></tr>
+                  <tr><td>Period of Completion</td><td>12 (Twelve) Months</td></tr>
+                  <tr><td>Bid Submission End</td><td>28.07.2026, 15:00 hrs<span class="fa-caret"></span></td></tr>
+                </table>
+              </div>
+              <div class="fa-float fa-float--tr fa-float--green">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                CVC pre-check passed · 0 deviations
+              </div>
+              <div class="fa-float fa-float--br fa-float--blue">Drafted in 47 sec</div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/Describe to AI.png" alt="Scribe AI tender creation: describe project in plain language, AI generates the full NIT" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 2: AI generation -->
-          <div class="bento-card reveal" data-stagger-delay="80">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">AI Drafting</span>
-              <h3 class="bento-card__title">Every clause, cited and ready.</h3>
+          <!-- 2 · Compliance scan -->
+          <article class="feat-card reveal" data-stagger-delay="80">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Compliance</h3>
+              <p class="feat-card__tag">Checked before you publish.</p>
+            </header>
+            <div class="feat-card__art feat-art--mint" aria-hidden="true">
+              <div class="fa-panel fa-checks">
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>EMD @ 2% — Rule 170, GFR 2017</span></div>
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>MSE &amp; DPIIT-startup exemption clause</span></div>
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>Similar works: 3×40% / 2×60% / 1×80%</span></div>
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>Bid validity — 90 days</span></div>
+                <div class="fa-checks__row fa-checks__row--scan"><span class="fa-tick fa-tick--scan"></span><span>Arbitration clause — checking…</span></div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/AI generation.png" alt="AI generation view — NIT sections drafted automatically with source citations" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 3: Queries & Responses -->
-          <div class="bento-card reveal" data-stagger-delay="0">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">Pre-bid Queries</span>
-              <h3 class="bento-card__title">200 queries. 30&nbsp;minutes.</h3>
-              <p class="bento-card__desc">AI clusters similar queries, drafts consistent responses, officer approves — done before lunch.</p>
+          <!-- 3 · Pre-bid queries -->
+          <article class="feat-card reveal" data-stagger-delay="0">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Pre-bid Queries</h3>
+              <p class="feat-card__tag">212 queries. 5 themes. 30 minutes.</p>
+            </header>
+            <div class="feat-card__art feat-art--violet" aria-hidden="true">
+              <div class="fa-panel fa-queries">
+                <div class="fa-queries__head">Pre-bid queries · 212 received</div>
+                <div class="fa-qrow"><span>EMD &amp; exemptions</span><b>46</b><i style="--w:100%"></i></div>
+                <div class="fa-qrow"><span>Similar work definition</span><b>38</b><i style="--w:82%"></i></div>
+                <div class="fa-qrow"><span>JV eligibility</span><b>31</b><i style="--w:67%"></i></div>
+                <div class="fa-qrow"><span>BOQ item 14 — rate query</span><b>22</b><i style="--w:48%"></i></div>
+                <div class="fa-chip">Corrigendum No. 01 → EE approval</div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/Queries & Responses.png" alt="Pre-bid query management — AI clusters and drafts responses for officer approval" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 4: QCBS -->
-          <div class="bento-card reveal" data-stagger-delay="80">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">QCBS Evaluation</span>
-              <h3 class="bento-card__title">Score. Cite. Decide.</h3>
+          <!-- 4 · Evaluation scorecard -->
+          <article class="feat-card reveal" data-stagger-delay="80">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Bid Evaluation</h3>
+              <p class="feat-card__tag">Every mark, cited.</p>
+            </header>
+            <div class="feat-card__art feat-art--sky" aria-hidden="true">
+              <div class="fa-panel fa-score">
+                <div class="fa-score__head">Technical Evaluation — QCBS 70:30</div>
+                <div class="fa-srow"><span>Similar works experience</span><b>27/30</b><em>Vol-II p.47</em></div>
+                <div class="fa-srow"><span>Avg. annual turnover</span><b>18/20</b><em>CA cert.</em></div>
+                <div class="fa-srow"><span>Key personnel</span><b>13/15</b><em>Annex-E</em></div>
+                <div class="fa-srow"><span>Plant &amp; machinery</span><b>12/15</b><em>Sch-F</em></div>
+                <div class="fa-score__total"><span>Technical score</span><b>84/100 — Qualified</b></div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/QCBS.png" alt="QCBS evaluation scoring — AI evaluates bids with cited scores per criterion" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 5: Winner Reveal -->
-          <div class="bento-card reveal" data-stagger-delay="160">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">Award</span>
-              <h3 class="bento-card__title">Award with full confidence.</h3>
+          <!-- 5 · Comparative statement -->
+          <article class="feat-card reveal" data-stagger-delay="160">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Comparative Statement</h3>
+              <p class="feat-card__tag">L1 in one look.</p>
+            </header>
+            <div class="feat-card__art feat-art--amber" aria-hidden="true">
+              <div class="fa-panel fa-compare">
+                <div class="fa-compare__head">Financial bids · opened 21.08.2026, 15:00</div>
+                <div class="fa-crow fa-crow--l1"><span>M/s Shivam Constructions</span><b>₹ 2,31,84,000</b><em>3.40% below</em><i>L1</i></div>
+                <div class="fa-crow"><span>M/s NexBuild Infra LLP</span><b>₹ 2,39,52,000</b><em>0.20% below</em><i>L2</i></div>
+                <div class="fa-crow"><span>M/s R.K. &amp; Sons</span><b>₹ 2,46,00,000</b><em>2.50% above</em><i>L3</i></div>
+                <div class="fa-chip fa-chip--green">Rates justified against DSR ✓</div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/Winner Reveal.png" alt="Winner reveal — award recommendation with full decision trail" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 6: Date & Timeline -->
-          <div class="bento-card reveal" data-stagger-delay="0">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">Timelines</span>
-              <h3 class="bento-card__title">Set milestones that hold.</h3>
+          <!-- 6 · Approval chain -->
+          <article class="feat-card reveal" data-stagger-delay="0">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Approvals</h3>
+              <p class="feat-card__tag">Files move. Not officers.</p>
+            </header>
+            <div class="feat-card__art feat-art--mint" aria-hidden="true">
+              <div class="fa-panel fa-flow">
+                <div class="fa-frow fa-frow--done"><span class="fa-fdot"></span><div><b>AA &amp; ES accorded</b><em>Competent Authority · 02.06.2026</em></div></div>
+                <div class="fa-frow fa-frow--done"><span class="fa-fdot"></span><div><b>Technical Sanction</b><em>SE (Circle-III) · 18.06.2026</em></div></div>
+                <div class="fa-frow fa-frow--done"><span class="fa-fdot"></span><div><b>NIT approved</b><em>EE, Division-IV · DSC signed</em></div></div>
+                <div class="fa-frow fa-frow--live"><span class="fa-fdot"></span><div><b>Published on CPPP</b><em>eprocure.gov.in · live</em></div></div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/Date & Timeline.png" alt="Date and timeline configuration for tender milestones" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
-          <!-- Card 7: After Evaluation (2-wide hero) -->
-          <div class="bento-card bento-card--wide reveal" data-stagger-delay="80">
-            <div class="bento-card__content">
-              <span class="bento-card__eyebrow">Audit Trail</span>
-              <h3 class="bento-card__title">Audit-ready by default.</h3>
-              <p class="bento-card__desc">Every score, override, and award recommendation immutably logged. When the CAG arrives, you're already prepared — with a complete decision trail from first draft to final award.</p>
+          <!-- 7 · Award + audit trail (wide) -->
+          <article class="feat-card feat-card--w4 reveal" data-stagger-delay="80">
+            <header class="feat-card__head">
+              <h3 class="feat-card__title">Award &amp; Audit Trail</h3>
+              <p class="feat-card__tag">Ready before the CAG asks.</p>
+            </header>
+            <div class="feat-card__art feat-art--violet feat-art--split" aria-hidden="true">
+              <div class="fa-doc fa-doc--loa">
+                <div class="fa-doc__org">
+                  <strong>LETTER OF ACCEPTANCE</strong>
+                  <em>No. EE(C)/DIV-IV/LOA/2026-27/114</em>
+                </div>
+                <p class="fa-doc__body">To, M/s Shivam Constructions — your bid of <b>₹ 2,31,84,000</b> for “Construction &amp; upgradation of stormwater drains, Zone-IV” is hereby accepted.</p>
+                <p class="fa-doc__body">Performance Security @ 5% to be furnished within 15 days.</p>
+              </div>
+              <div class="fa-panel fa-log">
+                <div class="fa-log__head">Audit trail · 100% actions logged</div>
+                <div class="fa-lrow"><em>09.07 · 11:42</em><span>NIT draft generated · EE reviewed</span></div>
+                <div class="fa-lrow"><em>14.07 · 17:05</em><span>Corrigendum 01 published on CPPP</span></div>
+                <div class="fa-lrow"><em>05.08 · 15:00</em><span>Technical bids opened — 11 received</span></div>
+                <div class="fa-lrow"><em>21.08 · 15:00</em><span>Financial bids opened — 8 qualified</span></div>
+                <div class="fa-lrow fa-lrow--hl"><em>26.08 · 12:31</em><span>LOA issued · DSC signed</span></div>
+              </div>
             </div>
-            <div class="bento-card__media">
-              <div class="bento-card__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/screens/After Evaluation.png" alt="Post-evaluation audit view — complete decision log from bid intake to award" loading="lazy" width="1440" height="1032">
-            </div>
-          </div>
+          </article>
 
         </div>
       </div>
