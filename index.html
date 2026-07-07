@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=18" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -640,103 +640,81 @@
         <!-- Auto-advance progress bar -->
         <div class="journey-progress" aria-hidden="true"><div class="journey-progress__fill"></div></div>
 
-        <!-- Stage panels -->
+        <!-- Stage panels : centered glimpses from the actual product -->
         <div class="journey-panels">
 
           <!-- 01: Plan -->
           <div class="journey-panel active" id="jp-0" role="tabpanel">
-            <div class="journey-panel__copy">
-              <div class="journey-panel__num" aria-hidden="true">01</div>
-              <h3 class="journey-panel__title">Plan</h3>
-              <p class="journey-panel__desc">AI-suggested scope, BOQ, and market-rate cost basis — before the first draft.</p>
-              <span class="journey-panel__tag">DPR Creation</span>
-            </div>
-            <div class="journey-panel__visual">
-              <div class="journey-frame">
-                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-                <div class="journey-frame__body">
-                  <div class="jf-plan">
-                    <div class="jf-plan__row">
-                      <div class="jf-plan__card"><div class="jf-plan__label">Project Scope</div><div class="jf-plan__val">AI suggested · 4 items</div></div>
-                      <div class="jf-plan__card"><div class="jf-plan__label">BOQ Line Items</div><div class="jf-plan__val">24 items · ₹2.4 Cr</div></div>
-                    </div>
-                    <div class="jf-plan__card jf-plan__card--wide">
-                      <div class="jf-plan__label">Market Benchmark</div>
-                      <div class="jf-plan__val jf-plan__val--primary">Aligned with CPWD SOR · DPIIT reference</div>
-                      <div class="jf-plan__bar"><div class="jf-plan__bar-fill"></div></div>
-                    </div>
-                    <div class="jf-plan__row">
-                      <div class="jf-plan__pill jf-plan__pill--done">Scope finalised ✓</div>
-                      <div class="jf-plan__pill jf-plan__pill--done">Cost approved ✓</div>
-                      <div class="jf-plan__pill">Tender draft →</div>
-                    </div>
-                  </div>
-                </div>
+            <span class="journey-panel__eyebrow">01 · DPR Creation</span>
+            <h3 class="journey-panel__title">The BOQ builds itself.</h3>
+            <p class="journey-panel__desc">AI-suggested items with a defensible, market-rate cost basis — mismatches flagged before you submit.</p>
+            <div class="glimpse" style="--jg: rgba(96,165,250,.3); --jc: #60A5FA;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/glimpse-plan.png" alt="Scribe DPR wizard: AI-suggested Bill of Quantities with rates, totals, and a flag when BOQ total differs from the estimated cost" width="380" height="302">
               </div>
+              <span class="glimpse__chip glimpse__chip--tl">AI-suggested BOQ items</span>
+              <span class="glimpse__chip glimpse__chip--br">Flags cost mismatches</span>
             </div>
           </div>
 
           <!-- 02: Tender -->
           <div class="journey-panel" id="jp-1" role="tabpanel">
-            <div class="journey-panel__copy">
-              <div class="journey-panel__num" aria-hidden="true">02</div>
-              <h3 class="journey-panel__title">Tender</h3>
-              <p class="journey-panel__desc">Describe the project in plain language. Scribe drafts a CVC-compliant NIT in under a minute.</p>
-              <span class="journey-panel__tag">&lt;1 min to first draft</span>
-            </div>
-            <div class="journey-panel__visual">
-              <div class="journey-frame">
-                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-                <img src="assets/screens/Describe to AI.png" alt="Tender creation: describe project to AI, Scribe generates the NIT" loading="lazy" width="1440" height="1032">
+            <span class="journey-panel__eyebrow">02 · Tender Creation</span>
+            <h3 class="journey-panel__title">The NIT writes itself, section by section.</h3>
+            <p class="journey-panel__desc">Describe the work once. Scribe drafts the full document live — you watch it happen.</p>
+            <div class="glimpse" style="--jg: rgba(129,140,248,.32); --jc: #818CF8;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/glimpse-tender.png" alt="Scribe AI document generation: progress ring, section checklist, and the NIT being written live" width="360" height="326">
               </div>
+              <span class="glimpse__chip glimpse__chip--tl">Live, section by section</span>
+              <span class="glimpse__chip glimpse__chip--br">CVC pre-check built in</span>
             </div>
           </div>
 
           <!-- 03: Pre-bid -->
           <div class="journey-panel" id="jp-2" role="tabpanel">
-            <div class="journey-panel__copy">
-              <div class="journey-panel__num" aria-hidden="true">03</div>
-              <h3 class="journey-panel__title">Pre-bid</h3>
-              <p class="journey-panel__desc">200 vendor queries resolved in 30 minutes. AI clusters, drafts responses, officer approves.</p>
-              <span class="journey-panel__tag">3–4 days → 30 min</span>
-            </div>
-            <div class="journey-panel__visual">
-              <div class="journey-frame">
-                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-                <img src="assets/screens/Queries & Responses.png" alt="Pre-bid query management interface" loading="lazy" width="1440" height="1032">
+            <span class="journey-panel__eyebrow">03 · Pre-bid Queries</span>
+            <h3 class="journey-panel__title">Hundreds of queries. Grouped by AI.</h3>
+            <p class="journey-panel__desc">Similar questions cluster into themes — one consistent, officer-approved answer per group.</p>
+            <div class="glimpse" style="--jg: rgba(167,139,250,.32); --jc: #A78BFA;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/glimpse-prebid.png" alt="Scribe pre-bid module: AI-grouped vendor queries by theme with one group response drafted for approval" width="352" height="245">
               </div>
+              <span class="glimpse__chip glimpse__chip--tl">Auto-grouped by theme</span>
+              <span class="glimpse__chip glimpse__chip--br">One draft per group</span>
             </div>
           </div>
 
           <!-- 04: Evaluate -->
           <div class="journey-panel" id="jp-3" role="tabpanel">
-            <div class="journey-panel__copy">
-              <div class="journey-panel__num" aria-hidden="true">04</div>
-              <h3 class="journey-panel__title">Evaluate</h3>
-              <p class="journey-panel__desc">Technical and financial scoring with a source citation on every point. QCBS and L1 both supported.</p>
-              <span class="journey-panel__tag">QCBS · L1 · Hybrid</span>
-            </div>
-            <div class="journey-panel__visual">
-              <div class="journey-frame">
-                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-                <img src="assets/screens/QCBS.png" alt="QCBS evaluation scoring interface" loading="lazy" width="1440" height="1032">
+            <span class="journey-panel__eyebrow">04 · Bid Evaluation</span>
+            <h3 class="journey-panel__title">Every score, backed by evidence.</h3>
+            <p class="journey-panel__desc">PQ and TQ criteria checked against submitted documents — with AI confidence on every verdict.</p>
+            <div class="glimpse" style="--jg: rgba(56,189,248,.3); --jc: #38BDF8;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/glimpse-eval.png" alt="Scribe technical evaluation: pre-qualification criteria with linked evidence, AI confidence bars, and pass verdicts" width="352" height="322">
               </div>
+              <span class="glimpse__chip glimpse__chip--tl">Evidence on every criterion</span>
+              <span class="glimpse__chip glimpse__chip--br">AI confidence per verdict</span>
             </div>
           </div>
 
           <!-- 05: Award -->
           <div class="journey-panel" id="jp-4" role="tabpanel">
-            <div class="journey-panel__copy">
-              <div class="journey-panel__num" aria-hidden="true">05</div>
-              <h3 class="journey-panel__title">Award</h3>
-              <p class="journey-panel__desc">Award recommendation with a complete, immutable audit trail — ready before the CAG asks.</p>
-              <span class="journey-panel__tag">100% audit trail</span>
-            </div>
-            <div class="journey-panel__visual">
-              <div class="journey-frame">
-                <div class="journey-frame__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-                <img src="assets/screens/Winner Reveal.png" alt="Award winner reveal and recommendation" loading="lazy" width="1440" height="1032">
+            <span class="journey-panel__eyebrow">05 · Award</span>
+            <h3 class="journey-panel__title">Masked till reveal. Justified on award.</h3>
+            <p class="journey-panel__desc">Quotes stay hidden until the formal reveal — then L1 comes with the reasons written down.</p>
+            <div class="glimpse" style="--jg: rgba(52,211,153,.3); --jc: #34D399;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/glimpse-award.png" alt="Scribe financial evaluation: quoted amounts masked for all bidders, winner revealed with the reasons this vendor won" width="352" height="347">
               </div>
+              <span class="glimpse__chip glimpse__chip--tl">Quotes masked till reveal</span>
+              <span class="glimpse__chip glimpse__chip--br">“Why this vendor won” — logged</span>
             </div>
           </div>
 
