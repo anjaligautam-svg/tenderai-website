@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -53,7 +53,6 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#how-it-works">How it works</a>
-        <a href="#modules">Modules</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -69,7 +68,6 @@
     <div class="mobile-menu" id="mobileMenu">
       <div class="container">
         <a href="#how-it-works">How it works</a>
-        <a href="#modules">Modules</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
         <a class="btn btn-primary btn-block" href="#request">Request a demo</a>
@@ -881,91 +879,6 @@
     </section>
 
     <!-- ================================================================
-         MODULES : Bento grid, 6 modules
-    ================================================================ -->
-    <section class="section" id="modules" aria-labelledby="modules-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Six modules</span>
-          <h2 id="modules-title">Built around how procurement actually works in India.</h2>
-          <p>Each module mirrors a real stage of the file: guided, documented, and connected to what comes next.</p>
-        </div>
-
-        <div class="bento">
-          <!-- Flagship module -->
-          <article class="module module--flagship">
-            <span class="chip chip--primary module__badge">Flagship</span>
-            <div class="module__icon module__icon--primary">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg>
-            </div>
-            <h3>Tender Creation</h3>
-            <p>A five-tab wizard (Classification → PQ/TQ → BOQ → Dates → CVC check), then one-way AI generation of a complete, ~100-page NIT. Change a value in conversation: Scribe applies it everywhere, summarises, confirms once.</p>
-            <div class="nitgen" aria-hidden="true">
-              <div class="nitgen__head">
-                <span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
-                  Generating NIT
-                </span>
-                <span class="chip" style="padding:.18rem .5rem">EN · हिं · मर</span>
-              </div>
-              <div class="nitgen__list">
-                <div class="nitline"><span class="nitline__tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Instructions to Bidders</div>
-                <div class="nitline"><span class="nitline__tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Eligibility &amp; Qualification</div>
-                <div class="nitline nitline--active"><span class="nitline__tick"></span> Scope of Work &amp; BOQ <span class="nitline__bar"><span></span></span></div>
-                <div class="nitline nitline--idle"><span class="nitline__tick"></span> Conditions of Contract</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="module">
-            <div class="module__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></svg>
-            </div>
-            <h3>DPR Creation</h3>
-            <p>AI-suggested scope, BOQ and market-rate cost basis. The planning foundation that protects you in audit.</p>
-            <div class="module__tags"><span class="chip">Cost basis</span><span class="chip">Readiness checks</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module__icon" style="background:var(--purple-light);color:var(--purple)">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
-            </div>
-            <h3>Pre-bid Queries</h3>
-            <p>200 queries from 80 agencies, clustered by AI into 5–6 themes, responded to in 30 minutes.</p>
-            <div class="module__tags"><span class="chip chip--purple">AI clustering</span><span class="chip">Corrigenda</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module__icon" style="background:var(--warning-light);color:var(--warning)">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m7 7-3 6a3 3 0 0 0 6 0Z"/><path d="m17 7-3 6a3 3 0 0 0 6 0Z"/><path d="M7 21h10"/></svg>
-            </div>
-            <h3>Bid Evaluation</h3>
-            <p>PQ, technical and financial scoring across L1, QCBS, LCS, with quote amounts masked until formally revealed.</p>
-            <div class="module__tags"><span class="chip">Masked quotes</span><span class="chip">e-Sign</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/></svg>
-            </div>
-            <h3>Bid Management &amp; Award</h3>
-            <p>Comparative statement, committee recommendation, and LoA drafting — with authority workflows that keep the competent authority in control at every stage.</p>
-            <div class="module__tags"><span class="chip">LoA drafting</span><span class="chip">Offline sign</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module__icon" style="background:var(--success-light);color:var(--success)">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-            </div>
-            <h3>Execution</h3>
-            <p>Milestone tracking with photo evidence. RA bills with automatic deductions: retention, TDS, GST TDS, LD.</p>
-            <div class="module__tags"><span class="chip chip--success">RA bills</span><span class="chip">Analytics</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
          AI CO-PILOT : Split: copy + risk card mock
     ================================================================ -->
     <section class="section section--tint" id="ai" aria-labelledby="ai-title">
@@ -1263,11 +1176,11 @@
 
         <nav class="footer__col" aria-label="Modules">
           <h4>Modules</h4>
-          <a href="#modules">DPR Creation</a>
-          <a href="#modules">Tender Creation</a>
-          <a href="#modules">Pre-bid Queries</a>
-          <a href="#modules">Bid Evaluation</a>
-          <a href="#modules">Execution</a>
+          <a href="#product">DPR Creation</a>
+          <a href="#product">Tender Creation</a>
+          <a href="#product">Pre-bid Queries</a>
+          <a href="#product">Bid Evaluation</a>
+          <a href="#product">Execution</a>
         </nav>
 
         <nav class="footer__col" aria-label="Lifecycle">
