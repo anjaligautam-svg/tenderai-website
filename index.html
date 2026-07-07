@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=32" />
+  <link rel="stylesheet" href="styles.css?v=33" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -832,7 +832,15 @@
          AI CO-PILOT : copy left, AI-moment card stack right
     ================================================================ -->
     <section class="section ai-section" id="ai" aria-labelledby="ai-title">
-      <div class="ai-grid-noise" aria-hidden="true"></div>
+      <!-- Spotlight grid : brightens where the cursor moves -->
+      <div class="ai-bg" aria-hidden="true">
+        <div class="ai-bg__vignette">
+          <div class="ai-bg__base"></div>
+          <div class="ai-bg__overlay"></div>
+          <div class="ai-bg__glow"></div>
+        </div>
+        <div class="ai-bg__fade"></div>
+      </div>
       <div class="container">
         <div class="ai-grid">
 
@@ -1137,6 +1145,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

@@ -1312,21 +1312,49 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .ai-section {
   position: relative;
   overflow: hidden;
+  --jx: 50%;   /* spotlight position, driven by pointer */
+  --jy: 42%;
+  --jtile: 34px;
   background:
     radial-gradient(60% 50% at 12% 18%, rgba(37,99,235,.14), transparent 62%),
     radial-gradient(50% 48% at 88% 85%, rgba(124,58,237,.12), transparent 65%),
     #070E1C;
 }
-.ai-grid-noise {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
-}
+@media (min-width: 768px) { .ai-section { --jtile: 48px; } }
 .ai-section .container { position: relative; z-index: 1; }
+
+/* Spotlight grid layers */
+.ai-bg { position: absolute; inset: 0; pointer-events: none; }
+.ai-bg__vignette {
+  position: absolute; inset: 0;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 42%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 42%, #000 35%, transparent 100%);
+}
+.ai-bg__base {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+}
+.ai-bg__overlay {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.65) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.65) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+  -webkit-mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+  mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+}
+.ai-bg__glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(380px circle at var(--jx) var(--jy), rgba(110,135,248,.17), transparent 70%);
+  mix-blend-mode: screen;
+}
+.ai-bg__fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #070E1C 0%, transparent 14%, transparent 86%, #070E1C 100%);
+}
 
 .ai-grid {
   display: grid;
