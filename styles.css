@@ -1467,55 +1467,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .ai-card { transition: none; }
 }
 
-/* ── Security dark section ──────────────────────────────────────────────── */
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  margin-top: .5rem;
-}
-.trust-card {
-  background: rgba(255,255,255,.02);
-  padding: 1.5rem 1.25rem;
-  transition: background .15s ease;
-}
-.trust-card:hover { background: rgba(255,255,255,.04); }
-.trust-card__icon {
-  width: 42px; height: 42px; border-radius: 11px;
-  background: rgba(127,176,255,.1); color: #7FB0FF;
-  display: grid; place-items: center;
-  margin-bottom: .9rem;
-}
-.trust-card h3 { color: #EDF1F7; font-size: 1.05rem; }
-.trust-card p  { color: #8A97B0; font-size: var(--fs-sm); margin-top: .4rem; line-height: 1.6; }
-
-.compliance-row {
-  margin-top: 2.25rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid rgba(255,255,255,.07);
-  text-align: center;
-}
-.compliance-row__label { font-size: var(--fs-xs); font-weight: 600; color: #6A7B95; letter-spacing: .04em; text-transform: uppercase; }
-.compliance-badges {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: .6rem; margin-top: .9rem;
-}
-.comp-badge {
-  display: inline-flex; align-items: center; gap: .45rem;
-  padding: .5rem .9rem; border-radius: var(--r-pill);
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  color: #C0CCE0; font-size: var(--fs-sm); font-weight: 600;
-}
-.comp-badge svg { color: #5B8FD4; }
-
-@media (max-width: 900px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .trust-grid { grid-template-columns: 1fr; } }
-
 /* ── FAQ ────────────────────────────────────────────────────────────────── */
 .faq { max-width: 800px; margin-inline: auto; }
 .faq__item {

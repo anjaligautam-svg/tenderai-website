@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=30" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -53,7 +53,6 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#how-it-works">How it works</a>
-        <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
       </nav>
 
@@ -68,7 +67,6 @@
     <div class="mobile-menu" id="mobileMenu">
       <div class="container">
         <a href="#how-it-works">How it works</a>
-        <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
         <a class="btn btn-primary btn-block" href="#request">Request a demo</a>
       </div>
@@ -925,61 +923,6 @@
     </section>
 
     <!-- ================================================================
-         SECURITY : Dark section
-    ================================================================ -->
-    <section class="section section--ink" id="security" aria-labelledby="security-title">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow">Confidentiality by role</span>
-          <h2 id="security-title" style="color:#fff">Sensitive by default. Auditable by design.</h2>
-          <p style="color:#AEB9CA;max-width:46rem;margin-inline:auto">Your tender data is confidential and contested. Scribe is built so the right people see the right things, and every critical action leaves an immutable record.</p>
-        </div>
-
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-card__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Role-based access</h3>
-            <p>Officers, committee members, finance and authorities each see only what their role permits.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-card__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M6.61 6.61A18.5 18.5 0 0 0 2 12s3 8 10 8a9.1 9.1 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg>
-            </div>
-            <h3>Masked quotes</h3>
-            <p>Confidential bid amounts stay hidden until formally revealed: a deliberate, two-step action.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-card__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
-            </div>
-            <h3>Immutable audit trail</h3>
-            <p>Every action logged at DB level. No deletions, only appends. Super Admin surveillance view shows who touched what, and when.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-card__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <h3>Self-hosted LLM</h3>
-            <p>No third-party AI API ever sees your data. Runs on MeitY-empanelled cloud within India. DPDP + IT Act compliant.</p>
-          </div>
-        </div>
-
-        <div class="compliance-row">
-          <p class="compliance-row__label">Designed to honour the norms officers are accountable to</p>
-          <div class="compliance-badges">
-            <span class="comp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> GFR 2017</span>
-            <span class="comp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> CVC Guidelines</span>
-            <span class="comp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Manual for Procurement</span>
-            <span class="comp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> CAG-ready trail</span>
-            <span class="comp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg> GIGW 3.0 / UX4G</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
          FAQ
     ================================================================ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
@@ -1148,9 +1091,9 @@
 
         <nav class="footer__col" aria-label="Trust">
           <h4>Trust &amp; Security</h4>
-          <a href="#security">Role-based access</a>
-          <a href="#security">Immutable audit trail</a>
-          <a href="#security">Data sovereignty</a>
+          <a href="#faq">Role-based access</a>
+          <a href="#faq">Immutable audit trail</a>
+          <a href="#faq">Data sovereignty</a>
           <a href="#faq">Compliance</a>
         </nav>
 
