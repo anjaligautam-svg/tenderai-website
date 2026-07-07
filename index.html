@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=22" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -505,13 +505,16 @@
     ================================================================ -->
     <section class="section bento-section" id="product" aria-labelledby="bento-title">
       <div class="container">
-        <div class="section-head center">
+        <div class="section-head center cs-head" id="csHead">
           <span class="eyebrow">Meet Scribe</span>
           <h2 id="bento-title">One platform. The complete procurement lifecycle.</h2>
           <p>From NIT to Letter of Acceptance — every step AI-assisted, officer-approved, audit-ready.</p>
         </div>
 
-        <div class="feat-grid">
+        <div class="cs-perspective">
+          <div class="cs-card" id="csCard">
+            <div class="cs-card__inner">
+              <div class="feat-grid">
 
           <!-- 1 · NIT document (wide) -->
           <article class="feat-card feat-card--w4 reveal" data-stagger-delay="0">
@@ -613,7 +616,10 @@
             </div>
           </article>
 
-        </div>
+              </div><!-- /feat-grid -->
+            </div><!-- /cs-card__inner -->
+          </div><!-- /cs-card -->
+        </div><!-- /cs-perspective -->
       </div>
     </section>
 
@@ -1229,6 +1235,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

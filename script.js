@@ -216,3 +216,46 @@
   paint();
   startFill(0);
 })();
+
+/* ── Container-Scroll tilt (Meet Scribe bento shell) ────────────────────── */
+/* The dark shell starts tilted back 20° in 3D and straightens to flat as
+   the section scrolls into view; the header drifts up slightly. */
+(function () {
+  var card = document.getElementById('csCard');
+  var head = document.getElementById('csHead');
+  if (!card) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return; /* CSS reduce block pins transform: none */
+
+  var section = card.closest('.bento-section');
+  var ticking = false;
+
+  function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function update() {
+    ticking = false;
+    var rect = section.getBoundingClientRect();
+    var vh = window.innerHeight || 1;
+    /* 0 when the section top touches the viewport bottom,
+       1 when it has risen to 15% from the top */
+    var p = clamp01((vh - rect.top) / (vh * 0.85));
+    var isMobile = window.innerWidth <= 768;
+    var rot = lerp(20, 0, p);
+    var sc  = isMobile ? lerp(0.7, 0.9, p) : lerp(1.05, 1, p);
+    card.style.transform = 'rotateX(' + rot + 'deg) scale(' + sc + ')';
+    if (head) head.style.transform = 'translateY(' + lerp(0, -40, p) + 'px)';
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+})();
