@@ -262,3 +262,37 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 })();
+
+/* ── Spotlight grid (How it works background) ───────────────────────────── */
+/* Grid lines brighten in a circle around the pointer; a soft glow follows.
+   Position is written as CSS vars on the section; rAF-throttled. */
+(function () {
+  var sec = document.querySelector('.journey-section');
+  if (!sec) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return; /* spotlight stays at its CSS default position */
+
+  var lx = 0, ly = 0, ticking = false;
+
+  function apply() {
+    ticking = false;
+    var r = sec.getBoundingClientRect();
+    sec.style.setProperty('--jx', ((lx - r.left) / r.width * 100) + '%');
+    sec.style.setProperty('--jy', ((ly - r.top) / r.height * 100) + '%');
+  }
+
+  function onMove(e) {
+    var t = e.touches ? e.touches[0] : e;
+    if (!t) return;
+    lx = t.clientX;
+    ly = t.clientY;
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+  }
+
+  sec.addEventListener('mousemove', onMove);
+  sec.addEventListener('touchmove', onMove, { passive: true });
+})();
