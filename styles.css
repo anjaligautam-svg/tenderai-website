@@ -1568,44 +1568,47 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-section {
   position: relative;
   --jx: 50%;   /* spotlight position, driven by pointer */
-  --jy: 40%;
+  --jy: 42%;
   --jtile: 34px;
-  background:
-    radial-gradient(ellipse 55% 48% at 8% -6%, rgba(37,99,235,.18), transparent 62%),
-    radial-gradient(ellipse 45% 42% at 96% 108%, rgba(124,58,237,.14), transparent 65%),
-    linear-gradient(180deg, #070E1C 0%, #0A1224 52%, #070E1C 100%);
+  --jbg: #08090C;
+  background: var(--jbg);
 }
 @media (min-width: 768px) { .journey-section { --jtile: 48px; } }
 .journey-section .container { position: relative; z-index: 1; }
 .journey-section .eyebrow { color: rgba(255,255,255,.4); }
 
-/* Spotlight grid layers */
+/* Spotlight grid layers — faint base grid everywhere, a bright copy
+   revealed in a circle around the pointer, plus a soft indigo glow */
 .journey-bg { position: absolute; inset: 0; overflow: hidden; }
 .journey-bg__vignette {
   position: absolute; inset: 0;
-  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 45%, #000 35%, transparent 100%);
-  mask-image: radial-gradient(ellipse 80% 65% at 50% 45%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 42%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 42%, #000 35%, transparent 100%);
 }
 .journey-bg__base {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.055) 1px, transparent 1px);
   background-size: var(--jtile) var(--jtile);
 }
 .journey-bg__overlay {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(to right, rgba(191,219,254,.55) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(191,219,254,.55) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,.65) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.65) 1px, transparent 1px);
   background-size: var(--jtile) var(--jtile);
-  -webkit-mask-image: radial-gradient(260px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
-  mask-image: radial-gradient(260px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+  mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
 }
 .journey-bg__glow {
   position: absolute; inset: 0;
-  background: radial-gradient(340px circle at var(--jx) var(--jy), rgba(96,165,250,.15), transparent 70%);
+  background: radial-gradient(380px circle at var(--jx) var(--jy), rgba(110,135,248,.17), transparent 70%);
   mix-blend-mode: screen;
+}
+.journey-bg__fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--jbg) 0%, transparent 16%, transparent 84%, var(--jbg) 100%);
 }
 
 .journey-head { margin-bottom: 2rem; }
