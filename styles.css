@@ -1704,13 +1704,15 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-head { margin-bottom: 2rem; }
 .journey-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-top: .3rem; max-width: 520px; color: #F1F5F9; }
 
-/* Stage tracker — stepper with tick marks + filling connectors */
+/* Stage tracker — stepper with tick marks + filling connectors.
+   Spans the full container so it ends flush with the glimpse frame. */
 .journey-track {
   display: flex;
   align-items: flex-start;
   gap: .7rem;
-  max-width: 720px;
 }
+.journey-track .journey-step:first-child { align-items: flex-start; }
+.journey-track .journey-step:last-of-type { align-items: flex-end; }
 .journey-step {
   display: flex;
   flex-direction: column;
@@ -1731,8 +1733,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   color: #94A3B8;
   transition: border-color .25s, background .25s, color .25s, box-shadow .25s;
 }
+.journey-step__num,
+.journey-step__check {
+  grid-area: 1 / 1;
+  transition: opacity .25s ease, transform .25s ease;
+}
 .journey-step__num { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.journey-step__check { display: none; }
+.journey-step__check { opacity: 0; transform: scale(.4); }
 .journey-step__label {
   font-size: 12px; font-weight: 600; color: #94A3B8;
   transition: color .25s;
@@ -1751,10 +1758,17 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
+  animation: step-pop .4s ease;
 }
-.journey-step.done .journey-step__num { display: none; }
-.journey-step.done .journey-step__check { display: block; }
+.journey-step.done .journey-step__num { opacity: 0; transform: scale(.5); }
+.journey-step.done .journey-step__check { opacity: 1; transform: scale(1); }
 .journey-step.done .journey-step__label { color: #CBD5E1; }
+
+@keyframes step-pop {
+  0%   { transform: scale(.85); }
+  55%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
 
 .journey-track__seg {
   flex: 1;

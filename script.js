@@ -165,10 +165,13 @@
     startFill(0);
   }
 
+  /* Sine ease-in-out — the fill leaves a node gently and lands gently */
+  function ease(t) { return (1 - Math.cos(Math.PI * t)) / 2; }
+
   function startFill(from) {
     if (rafId) cancelAnimationFrame(rafId);
     var seg = segs[current] || null; /* connector after the active node; none on the last stage */
-    if (seg) seg.style.width = (from * 100) + '%';
+    if (seg) seg.style.width = (ease(from) * 100) + '%';
     startTs = null;
     var elapsed0 = from * DURATION;
 
@@ -177,7 +180,7 @@
       if (!startTs) startTs = now - elapsed0;
       var pct = Math.min(1, (now - startTs) / DURATION);
       pausedAt = pct;
-      if (seg) seg.style.width = (pct * 100) + '%';
+      if (seg) seg.style.width = (ease(pct) * 100) + '%';
       if (pct < 1) {
         rafId = requestAnimationFrame(tick);
       } else {
