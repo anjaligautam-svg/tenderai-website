@@ -1736,7 +1736,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-progress__fill { height: 100%; background: #60A5FA; border-radius: 1px; width: 0%; }
 
 /* Panels — centered story */
-.journey-panels { margin-top: 2.75rem; position: relative; min-height: 700px; }
+.journey-panels { margin-top: 2.75rem; position: relative; min-height: 740px; }
 .journey-panel { display: none; }
 .journey-panel.active {
   display: flex;
@@ -1775,7 +1775,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Glimpse — cropped product fragment with glow + annotation chips */
-.glimpse { position: relative; margin-top: 2.1rem; width: min(440px, 100%); }
+.glimpse { position: relative; margin-top: 2.1rem; width: min(640px, 100%); }
 .glimpse__glow {
   position: absolute; inset: -48px -64px;
   background: radial-gradient(ellipse 60% 55% at 50% 45%, var(--jg, rgba(96,165,250,.3)), transparent 70%);
@@ -1796,6 +1796,20 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   position: absolute; left: 0; right: 0; bottom: 0; height: 52px;
   background: linear-gradient(transparent, rgba(7,14,28,.4));
   pointer-events: none;
+}
+
+/* Highlight ring — points at the key component in the shot */
+.glimpse__ring {
+  position: absolute; z-index: 2;
+  border: 2px solid var(--jc, #60A5FA);
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.07), 0 0 28px var(--jg, rgba(96,165,250,.3));
+  pointer-events: none;
+  animation: glimpse-ring 2.6s ease-in-out infinite;
+}
+@keyframes glimpse-ring {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .4; }
 }
 
 .glimpse__chip {
