@@ -133,47 +133,55 @@
   requestAnimationFrame(tick);
 })();
 
-/* ── Journey Stage Auto-Switcher ────────────────────────────────────────── */
+/* ── Journey Stage Auto-Switcher (tracking stepper) ─────────────────────── */
+/* Steps tick off left to right; the connector after the active step fills
+   over the stage duration, then the next stage begins. Hover/focus pauses. */
 (function () {
-  var tabs   = document.querySelectorAll('.journey-tab');
+  var steps  = document.querySelectorAll('.journey-step');
   var panels = document.querySelectorAll('.journey-panel');
-  var fill   = document.querySelector('.journey-progress__fill');
-  if (!tabs.length || !fill) return;
+  var segs   = document.querySelectorAll('.journey-track__seg i');
+  if (!steps.length || !panels.length) return;
 
   var current  = 0;
   var DURATION = 4000;
   var rafId    = null;
   var startTs  = null;
   var paused   = false;
-  var pausedAt = 0; /* fraction 0-1 of progress when paused */
+  var pausedAt = 0; /* fraction 0-1 of the current stage elapsed */
+
+  function paint() {
+    steps.forEach(function (s, i) {
+      s.classList.toggle('active', i === current);
+      s.classList.toggle('done', i < current);
+      s.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+    panels.forEach(function (p, i) { p.classList.toggle('active', i === current); });
+    segs.forEach(function (f, i) { f.style.width = i < current ? '100%' : '0%'; });
+  }
 
   function goTo(idx) {
-    tabs[current].classList.remove('active');
-    tabs[current].setAttribute('aria-selected', 'false');
-    panels[current].classList.remove('active');
     current = idx;
-    tabs[current].classList.add('active');
-    tabs[current].setAttribute('aria-selected', 'true');
-    panels[current].classList.add('active');
+    paint();
     startFill(0);
   }
 
   function startFill(from) {
     if (rafId) cancelAnimationFrame(rafId);
-    fill.style.width = (from * 100) + '%';
+    var seg = segs[current] || null; /* connector after the active node; none on the last stage */
+    if (seg) seg.style.width = (from * 100) + '%';
     startTs = null;
     var elapsed0 = from * DURATION;
 
     function tick(now) {
       if (paused) return;
       if (!startTs) startTs = now - elapsed0;
-      var elapsed = now - startTs;
-      var pct     = Math.min(1, elapsed / DURATION);
-      fill.style.width = (pct * 100) + '%';
+      var pct = Math.min(1, (now - startTs) / DURATION);
+      pausedAt = pct;
+      if (seg) seg.style.width = (pct * 100) + '%';
       if (pct < 1) {
         rafId = requestAnimationFrame(tick);
       } else {
-        goTo((current + 1) % tabs.length);
+        goTo((current + 1) % steps.length);
       }
     }
     rafId = requestAnimationFrame(tick);
@@ -182,7 +190,6 @@
   function pause() {
     if (paused) return;
     paused = true;
-    pausedAt = parseFloat(fill.style.width) / 100 || 0;
     if (rafId) cancelAnimationFrame(rafId);
   }
 
@@ -192,8 +199,8 @@
     startFill(pausedAt);
   }
 
-  tabs.forEach(function (tab, i) {
-    tab.addEventListener('click', function () {
+  steps.forEach(function (step, i) {
+    step.addEventListener('click', function () {
       if (i !== current) { paused = false; goTo(i); }
     });
   });
@@ -206,5 +213,6 @@
     section.addEventListener('focusout',   resume);
   }
 
+  paint();
   startFill(0);
 })();

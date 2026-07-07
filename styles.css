@@ -1704,46 +1704,82 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-head { margin-bottom: 2rem; }
 .journey-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-top: .3rem; max-width: 520px; color: #F1F5F9; }
 
-/* Tabs */
-.journey-tabs {
+/* Stage tracker — stepper with tick marks + filling connectors */
+.journey-track {
   display: flex;
-  gap: .4rem;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: .7rem;
+  max-width: 720px;
 }
-.journey-tab {
-  display: inline-flex;
+.journey-step {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: .45rem;
-  padding: .45rem 1rem .45rem .65rem;
-  border: 1.5px solid rgba(255,255,255,.14);
-  border-radius: 100px;
+  gap: .5rem;
   background: transparent;
+  border: 0;
+  padding: 0;
   cursor: pointer;
-  transition: border-color .2s, background .2s, color .2s;
   font-family: var(--font-body);
-  line-height: 1;
+  flex-shrink: 0;
 }
-.journey-tab:hover { border-color: #60A5FA; background: rgba(96,165,250,.08); }
-.journey-tab.active { background: var(--primary); border-color: var(--primary); }
-.journey-tab__num {
-  font-size: 11px; font-weight: 700; color: #60A5FA;
-  font-variant-numeric: tabular-nums; transition: color .2s;
+.journey-step__node {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.2);
+  display: grid; place-items: center;
+  color: #94A3B8;
+  transition: border-color .25s, background .25s, color .25s, box-shadow .25s;
 }
-.journey-tab__name { font-size: 13px; font-weight: 600; color: #CBD5E1; transition: color .2s; }
-.journey-tab.active .journey-tab__num,
-.journey-tab.active .journey-tab__name { color: #fff; }
+.journey-step__num { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.journey-step__check { display: none; }
+.journey-step__label {
+  font-size: 12px; font-weight: 600; color: #94A3B8;
+  transition: color .25s;
+}
+.journey-step:hover .journey-step__node { border-color: #60A5FA; color: #E2E8F0; }
 
-/* Progress bar */
-.journey-progress { height: 2px; background: rgba(255,255,255,.12); border-radius: 1px; margin: .9rem 0 0; overflow: hidden; }
-.journey-progress__fill { height: 100%; background: #60A5FA; border-radius: 1px; width: 0%; }
+.journey-step.active .journey-step__node {
+  border-color: #60A5FA;
+  background: rgba(96,165,250,.14);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(96,165,250,.15);
+}
+.journey-step.active .journey-step__label { color: #fff; }
+
+.journey-step.done .journey-step__node {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.journey-step.done .journey-step__num { display: none; }
+.journey-step.done .journey-step__check { display: block; }
+.journey-step.done .journey-step__label { color: #CBD5E1; }
+
+.journey-track__seg {
+  flex: 1;
+  height: 2px;
+  min-width: 26px;
+  margin-top: 15px;
+  background: rgba(255,255,255,.12);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.journey-track__seg i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #60A5FA;
+  border-radius: 1px;
+}
 
 /* Panels — copy left, glimpse right */
-.journey-panels { margin-top: 3rem; position: relative; min-height: 540px; }
+.journey-panels { margin-top: 3rem; position: relative; min-height: 580px; }
 .journey-panel { display: none; }
 .journey-panel.active {
   display: grid;
-  grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
   align-items: center;
   animation: journey-in .35s ease;
 }
@@ -1778,7 +1814,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Glimpse — cropped product fragment with glow + annotation chips */
-.glimpse { position: relative; width: min(640px, 100%); justify-self: end; }
+.glimpse { position: relative; width: min(720px, 100%); justify-self: end; }
 .glimpse__glow {
   position: absolute; inset: -48px -64px;
   background: radial-gradient(ellipse 60% 55% at 50% 45%, var(--jg, rgba(96,165,250,.3)), transparent 70%);
@@ -1844,8 +1880,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .glimpse { justify-self: auto; margin-top: 1.7rem; }
 }
 @media (max-width: 560px) {
-  .journey-tab__name { display: none; }
-  .journey-tab { padding: .4rem .7rem; }
+  .journey-step__label { display: none; }
+  .journey-track { gap: .45rem; }
+  .journey-track__seg { margin-top: 15px; }
   .glimpse__chip--tl { left: 8px; }
   .glimpse__chip--br { right: 8px; }
 }
