@@ -23,46 +23,50 @@ body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antia
 @media print{body{background:#fff;margin:0;}.page{width:100%;height:100vh;margin:0;box-shadow:none;}@page{size:A4 portrait;margin:0;}*{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
 
 /* ═══ HEADER ═══ */
-.hdr{flex-shrink:0;height:148px;background:linear-gradient(130deg,#071A4F 0%,#0B2C96 50%,#0F5EE8 100%);display:flex;flex-direction:column;}
-.hdr-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 204px;gap:18px;padding:13px 24px 10px;}
-.eyebrow{font-size:6px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px;}
-.brand-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.hdr{flex-shrink:0;height:180px;background:linear-gradient(130deg,#071A4F 0%,#0B2C96 50%,#0F5EE8 100%);display:flex;flex-direction:column;}
+.hdr-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 222px;gap:18px;padding:12px 24px 8px;}
+.eyebrow{font-size:6px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:6px;}
+.brand-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
 .lm{width:24px;height:24px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.22);border-radius:5px;color:#fff;font-size:11px;font-weight:800;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;}
 .bn{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.3px;font-family:'Syne',sans-serif;}
-.headline{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;line-height:1.28;letter-spacing:-.2px;margin-bottom:5px;}
+.headline{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;color:#fff;line-height:1.28;letter-spacing:-.2px;margin-bottom:5px;}
 .headline em{color:#7DD3FC;font-style:normal;}
-.sub{font-size:7.5px;color:rgba(255,255,255,.42);line-height:1.7;}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;align-content:start;}
-.sc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:7px;padding:7px 9px;text-align:center;}
-.sc-n{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1;display:block;margin-bottom:3px;}
-.sc-l{font-size:6px;color:rgba(255,255,255,.36);line-height:1.4;}
+.sub{font-size:7px;color:rgba(255,255,255,.42);line-height:1.65;margin-bottom:8px;}
+/* Inline stat strip */
+.stat-strip{display:flex;align-items:center;gap:0;}
+.ss-item{display:flex;flex-direction:column;align-items:flex-start;padding:0 9px;flex-shrink:0;}
+.ss-item:first-child{padding-left:0;}
+.ss-val{font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1;}
+.ss-lbl{font-size:5.5px;color:rgba(255,255,255,.42);margin-top:2px;white-space:nowrap;}
+.ss-div{width:1px;height:22px;background:rgba(255,255,255,.18);flex-shrink:0;}
+/* Capability items — open grid, no card borders */
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:6px 10px;}
+.cap-item{display:flex;flex-direction:column;gap:2px;padding-left:6px;border-left:1.5px solid rgba(255,255,255,.2);overflow:hidden;}
+.cap-ico{display:flex;align-items:center;margin-bottom:1px;flex-shrink:0;}
+.cap-name{font-family:'Syne',sans-serif;font-size:6.5px;font-weight:700;color:#fff;line-height:1.2;}
+.cap-desc{font-size:5.5px;color:rgba(255,255,255,.44);line-height:1.5;overflow:hidden;}
 .trust{flex-shrink:0;display:flex;border-top:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.14);padding:5px 0;}
 .ti{flex:1;display:flex;align-items:center;gap:4px;padding:0 10px;font-size:6px;color:rgba(255,255,255,.48);font-weight:500;}
 .ti:not(:first-child){border-left:1px solid rgba(255,255,255,.08);}
 .tick{width:10px;height:10px;border-radius:50%;background:#16A34A;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
-/* ═══ LIFECYCLE STAIRCASE ═══ */
-.lc{flex-shrink:0;height:200px;background:#EEF3FF;border-bottom:1px solid var(--line);display:flex;flex-direction:column;padding:13px 24px 0;}
-.lc-cap{flex-shrink:0;margin-bottom:9px;}
-.lc-eyebrow{font-family:'Syne',sans-serif;font-size:5.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-lt);margin-bottom:3px;}
-.lc-title{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:var(--ink-mid);}
-.stairs{flex:1;min-height:0;display:flex;align-items:flex-end;gap:5px;position:relative;overflow:hidden;}
-
-/* Muted connector steps */
-.sm{flex-shrink:0;width:64px;height:60px;background:#fff;border:1px solid var(--line);border-top:2px solid #CBD5E1;border-radius:6px 6px 0 0;display:flex;flex-direction:column;justify-content:flex-start;padding:7px 7px 0;overflow:hidden;}
-.sm-name{font-family:'DM Sans',sans-serif;font-size:6.5px;font-weight:600;color:var(--muted);line-height:1.25;}
-.sm-num{font-size:5px;color:var(--muted-lt);margin-top:2px;font-weight:500;}
-
-/* Hero treads */
-.sh{flex:1;border-radius:8px 8px 0 0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 11px 10px;position:relative;overflow:hidden;}
-.sh::after{content:'';position:absolute;top:0;left:0;right:0;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;}
-.sh-h1{height:90px;background:linear-gradient(155deg,#1A5CE0 0%,#0F5EE8 100%);}
-.sh-h2{height:118px;background:linear-gradient(155deg,#1250CC 0%,#0F5EE8 100%);}
-.sh-h3{height:152px;background:linear-gradient(155deg,#0D42B4 0%,#0F5EE8 60%,#0878C4 100%);}
-.sh-num{position:absolute;top:9px;right:10px;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;color:rgba(255,255,255,.15);}
-.sh-icon{width:20px;height:20px;display:flex;align-items:center;justify-content:center;margin-bottom:5px;flex-shrink:0;}
-.sh-name{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:3px;}
-.sh-stat{font-family:'DM Sans',sans-serif;font-size:6.5px;color:rgba(255,255,255,.6);font-weight:500;line-height:1.35;}
+/* ═══ PROOF SHOWCASE ═══ */
+.showcase{flex-shrink:0;height:190px;background:#F7F9FF;border-bottom:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;}
+.sc-head{flex-shrink:0;padding:10px 24px 0;}
+.sc-eyebrow{font-family:'Syne',sans-serif;font-size:5.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-lt);}
+.sc-pillars{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:8px;}
+.pillar{display:flex;flex-direction:column;padding:11px 20px 0;overflow:hidden;}
+.pillar:not(:last-child){border-right:1px solid var(--line);}
+.p-tag{display:flex;align-items:center;gap:5px;margin-bottom:5px;}
+.p-ico{width:16px;height:16px;border-radius:4px;background:var(--primary-lt);border:1px solid var(--primary-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.p-tag-name{font-family:'Syne',sans-serif;font-size:6.5px;font-weight:700;color:var(--ink-mid);text-transform:uppercase;letter-spacing:.08em;}
+.p-metric{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--primary);letter-spacing:-1.2px;line-height:1;margin-bottom:4px;}
+.p-before{font-size:6px;color:var(--muted-lt);margin-bottom:5px;}
+.p-desc{font-size:6.5px;color:var(--muted);line-height:1.6;overflow:hidden;}
+.sc-foot{flex-shrink:0;border-top:1px solid var(--line);display:flex;align-items:stretch;}
+.sf-item{flex:1;display:flex;align-items:center;gap:5px;padding:6px 16px 7px;font-size:6.5px;color:var(--ink-mid);font-weight:500;}
+.sf-item:not(:first-child){border-left:1px solid var(--line);}
+.sf-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
 
 /* ═══ BODY ═══ */
 .body{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
@@ -89,14 +93,30 @@ body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antia
 .cc-b{font-size:6.5px;color:var(--muted);line-height:1.72;flex:1;overflow:hidden;}
 
 /* ═══ FOOTER ═══ */
-.footer{flex-shrink:0;background:var(--band);border-top:1px solid rgba(255,255,255,.05);padding:8px 24px;display:flex;align-items:center;gap:12px;}
-.fb{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+.footer{flex-shrink:0;background:var(--band);border-top:1px solid rgba(255,255,255,.05);display:grid;grid-template-columns:168px 1fr 1fr;overflow:hidden;}
+/* Brand col */
+.f-brand{display:flex;flex-direction:column;padding:14px 18px 13px;border-right:1px solid rgba(255,255,255,.07);}
+.fb{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
 .fl{width:18px;height:18px;background:var(--primary);border-radius:4px;color:#fff;font-size:8px;font-weight:800;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;}
 .fn{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:#fff;letter-spacing:-.1px;}
-.fs{font-size:5.5px;color:rgba(255,255,255,.26);}
-.vsep{width:1px;height:20px;background:rgba(255,255,255,.1);flex-shrink:0;}
-.fm{flex:1;font-size:6px;color:rgba(255,255,255,.27);line-height:1.65;}
-.fcta{background:var(--primary);color:#fff;font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;padding:7px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.fs{font-size:5.5px;color:rgba(255,255,255,.26);margin-bottom:8px;}
+.fm{font-size:5.5px;color:rgba(255,255,255,.22);line-height:1.65;flex:1;}
+.fcta{display:inline-block;margin-top:9px;background:var(--primary);color:#fff;font-family:'DM Sans',sans-serif;font-size:7.5px;font-weight:600;padding:6px 12px;border-radius:5px;text-decoration:none;align-self:flex-start;}
+/* Principles col */
+.f-principles{padding:14px 16px 13px;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;overflow:hidden;}
+.f-sec-lbl{font-family:'Syne',sans-serif;font-size:5.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:9px;flex-shrink:0;}
+.principle{display:flex;gap:6px;margin-bottom:8px;overflow:hidden;}
+.principle:last-child{margin-bottom:0;}
+.p-num{font-family:'Syne',sans-serif;font-size:7.5px;font-weight:800;color:var(--primary);flex-shrink:0;width:10px;line-height:1.1;}
+.p-pname{font-family:'Syne',sans-serif;font-size:7px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:2px;}
+.p-pbullet{font-size:5.5px;color:rgba(255,255,255,.38);line-height:1.55;}
+/* Security col */
+.f-security{padding:14px 16px 13px;display:flex;flex-direction:column;overflow:hidden;}
+.f-tagline{font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-bottom:9px;flex-shrink:0;}
+.sec-item{margin-bottom:7px;overflow:hidden;}
+.sec-item:last-child{margin-bottom:0;}
+.si-name{font-family:'Syne',sans-serif;font-size:6.5px;font-weight:700;color:#fff;margin-bottom:1px;}
+.si-desc{font-size:5.5px;color:rgba(255,255,255,.36);line-height:1.5;}
 </style>
 </head>
 <body>
@@ -105,21 +125,61 @@ body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antia
 <!-- ── HEADER ── -->
 <header class="hdr">
   <div class="hdr-main">
+
+    <!-- LEFT: headline + tagline + stat strip -->
     <div>
       <div class="eyebrow">AI-Powered Procurement Solution</div>
       <div class="brand-row">
         <div class="lm">T</div>
         <span class="bn">TenderAI</span>
       </div>
-      <div class="headline">AI-Based <em>Tender Creation</em><br>&amp; Evaluation Tool</div>
-      <div class="sub">End-to-end procurement intelligence — creation, queries, evaluation, award and analytics — on a sovereign, self-hosted AI stack.</div>
+      <div class="headline">An AI tender intelligence platform —<br><em>not just a proposal.</em></div>
+      <div class="sub">Pre-built, configurable, and fine-tuned on your historical tenders — designed to save thousands of officer-hours.</div>
+      <div class="stat-strip">
+        <div class="ss-item"><span class="ss-val">&lt; 1 min</span><span class="ss-lbl">per tender draft</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-val">12</span><span class="ss-lbl">parallel LLM threads</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-val">≤ 3 min</span><span class="ss-lbl">complex tenders</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-val" style="font-size:7.5px;letter-spacing:0;font-weight:700;">Human-first</span><span class="ss-lbl">officer makes every call</span></div>
+      </div>
     </div>
-    <div class="stats-grid">
-      <div class="sc"><span class="sc-n">&lt;1 min</span><div class="sc-l">per tender draft</div></div>
-      <div class="sc"><span class="sc-n">3 min</span><div class="sc-l">for complex tenders</div></div>
-      <div class="sc"><span class="sc-n">30 min</span><div class="sc-l">200+ pre-bid queries</div></div>
-      <div class="sc"><span class="sc-n">1,000+</span><div class="sc-l">tenders in corpus</div></div>
+
+    <!-- RIGHT: 6 capabilities, floating on gradient, no card borders -->
+    <div class="cap-grid">
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><rect x="3" y="1" width="10" height="14" rx="1.5" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/><path d="M5 5h6M5 8h6M5 11h4" stroke="rgba(255,255,255,.6)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <div class="cap-name">Fine-tuned on your tenders</div>
+        <div class="cap-desc">Trained on 1,000+ of your actual tenders; drafts in your organisation's voice and clauses.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M2 4a1.5 1.5 0 0 1 1.5-1.5h9A1.5 1.5 0 0 1 14 4v5a1.5 1.5 0 0 1-1.5 1.5H9L6 13v-2.5H3.5A1.5 1.5 0 0 1 2 9V4Z" stroke="rgba(255,255,255,.8)" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+        <div class="cap-name">Pre-bid query intelligence</div>
+        <div class="cap-desc">Clusters 200+ queries by theme, drafts officer-approved responses in 30 min.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/><path d="M5.5 8.5l2 2 3-4" stroke="rgba(255,255,255,.8)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cap-name">Verifies every claim</div>
+        <div class="cap-desc">Re-extracts each bidder claim from supporting docs into one auditable verdict.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5Z" stroke="rgba(255,255,255,.8)" stroke-width="1.4"/><circle cx="8" cy="8" r="2" stroke="rgba(255,255,255,.65)" stroke-width="1.2"/></svg></div>
+        <div class="cap-name">Transparent at every step</div>
+        <div class="cap-desc">Source citation + confidence on every output; inferred vs. verified always labelled.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="8.5" width="5" height="5" rx="1.2" stroke="rgba(255,255,255,.8)" stroke-width="1.3"/><rect x="9.5" y="2.5" width="5" height="5" rx="1.2" stroke="rgba(255,255,255,.8)" stroke-width="1.3"/><path d="M6 10.5l1.5 1L10 5" stroke="rgba(255,255,255,.55)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <div class="cap-name">Integrates with anything</div>
+        <div class="cap-desc">ERP, e-procurement portals, e-challan, SSO. REST-first with file-based fallback.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ico"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L2 4v5c0 3 2.5 5.5 6 6.5 3.5-1 6-3.5 6-6.5V4L8 1.5Z" stroke="rgba(255,255,255,.8)" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 8.5l2 2 3-3" stroke="rgba(255,255,255,.7)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cap-name">Sovereign by design</div>
+        <div class="cap-desc">Self-hosted LLM on MeitY cloud. DPDP + IT Act compliant — no third-party AI API.</div>
+      </div>
     </div>
+
   </div>
   <div class="trust">
     <div class="ti"><div class="tick"><svg width="6" height="6" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Out of the box &amp; production-ready</div>
@@ -129,97 +189,66 @@ body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antia
   </div>
 </header>
 
-<!-- ── LIFECYCLE STAIRCASE ── -->
-<section class="lc" aria-label="Procurement lifecycle">
-  <div class="lc-cap">
-    <div class="lc-eyebrow">The Procurement Lifecycle — End to End</div>
-    <div class="lc-title">Three flagship capabilities, one platform.</div>
+<!-- ── PROOF SHOWCASE ── -->
+<section class="showcase" aria-label="Platform proof points">
+  <div class="sc-head">
+    <div class="sc-eyebrow">Measurable outcomes — across every stage of procurement</div>
   </div>
-  <div class="stairs">
+  <div class="sc-pillars">
 
-    <!-- Ascent line: runs through tops of the three hero treads -->
-    <svg width="746" height="160" viewBox="0 0 746 160" style="position:absolute;top:0;left:0;pointer-events:none;" aria-hidden="true">
-      <defs>
-        <marker id="arrw" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-          <path d="M0 1.5 L6 4 L0 6.5" stroke="rgba(255,255,255,0.8)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <!-- Points: top-centres of hero h1(x≈146,y≈70), h2(x≈302,y≈42), h3(x≈458,y≈8) -->
-      <polyline points="146,70 302,42 458,8"
-        stroke="rgba(255,255,255,0.5)"
-        stroke-width="1.5"
-        fill="none"
-        stroke-dasharray="4 3"
-        marker-end="url(#arrw)"/>
-    </svg>
-
-    <!-- 1. DPR (muted) -->
-    <div class="sm">
-      <div class="sm-name">DPR</div>
-      <div class="sm-num">Stage 1</div>
-    </div>
-
-    <!-- 2. Tender Creation — HERO TREAD 1 -->
-    <div class="sh sh-h1">
-      <div class="sh-num">02</div>
-      <div class="sh-icon">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-          <rect x="4" y="2" width="12" height="16" rx="2" stroke="#fff" stroke-width="1.6" opacity=".9"/>
-          <path d="M7 7h6M7 10h6M7 13h4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
-          <path d="M12 2v4h4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
-        </svg>
+    <!-- Pillar 1: Tender Creation -->
+    <div class="pillar">
+      <div class="p-tag">
+        <div class="p-ico">
+          <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><rect x="4" y="2" width="12" height="16" rx="2" stroke="#0F5EE8" stroke-width="1.6"/><path d="M7 7h6M7 10h6M7 13h4" stroke="#0F5EE8" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="p-tag-name">Tender Creation</span>
       </div>
-      <div class="sh-name">Tender Creation</div>
-      <div class="sh-stat">&lt; 1 min / draft</div>
+      <div class="p-metric">&lt; 1 min</div>
+      <div class="p-before">↓ from weeks of manual drafting</div>
+      <div class="p-desc">Self-hosted LLM trained on 1,000+ of your actual tenders. Drafts in your organisation's voice and standard clauses — CVC-compliant, bilingual PDF &amp; DOCX, ready for officer review.</div>
     </div>
 
-    <!-- 3. Pre-Bid Query — HERO TREAD 2 -->
-    <div class="sh sh-h2">
-      <div class="sh-num">03</div>
-      <div class="sh-icon">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-          <path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H11l-4 3v-3H5a2 2 0 0 1-2-2V5Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" opacity=".9"/>
-          <path d="M7 8h6M7 11h4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
-        </svg>
+    <!-- Pillar 2: Pre-Bid Queries -->
+    <div class="pillar">
+      <div class="p-tag">
+        <div class="p-ico">
+          <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H11l-4 3v-3H5a2 2 0 0 1-2-2V5Z" stroke="#0F5EE8" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="p-tag-name">Pre-Bid Queries</span>
       </div>
-      <div class="sh-name">Pre-Bid Query</div>
-      <div class="sh-stat">3–4 days → 30 min</div>
+      <div class="p-metric">30 min</div>
+      <div class="p-before">↓ from 3–4 days of manual processing</div>
+      <div class="p-desc">AI clusters 200+ vendor queries by theme, frequency-ranks issues, and drafts consistent officer-approved responses — zero contradictions across all bidders, done before lunch.</div>
     </div>
 
-    <!-- 4. Bid Evaluation — HERO TREAD 3 (tallest) -->
-    <div class="sh sh-h3">
-      <div class="sh-num">04</div>
-      <div class="sh-icon">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-          <path d="M10 2v2M5 4l1.5 1.5M15 4l-1.5 1.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
-          <path d="M4 8h4l-2 4h4l-2-4h4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-          <path d="M3 12c0 1.5 1.5 2.5 3 2.5M17 12c0 1.5-1.5 2.5-3 2.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
-          <path d="M5 17h10" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
-          <path d="M10 14.5V17" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
-        </svg>
+    <!-- Pillar 3: Bid Evaluation -->
+    <div class="pillar">
+      <div class="p-tag">
+        <div class="p-ico">
+          <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="11" r="6" stroke="#0F5EE8" stroke-width="1.5"/><path d="M7.5 11l2 2 3.5-3.5" stroke="#0F5EE8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="p-tag-name">Bid Evaluation</span>
       </div>
-      <div class="sh-name">Bid Evaluation</div>
-      <div class="sh-stat">Claim → evidence, verified</div>
+      <div class="p-metric">12 ×</div>
+      <div class="p-before">parallel LLM threads, simultaneously</div>
+      <div class="p-desc">Re-extracts every bidder claim from supporting documents and reconciles against evidence with source citation and confidence score. Per-slab scoring; committee confirms or overrides — every action immutably logged.</div>
     </div>
 
-    <!-- 5. Bid Comparison (muted) -->
-    <div class="sm">
-      <div class="sm-name">Bid Comparison</div>
-      <div class="sm-num">Stage 5</div>
+  </div>
+  <div class="sc-foot">
+    <div class="sf-item">
+      <div class="sf-dot" style="background:var(--primary);"></div>
+      <span><strong>Transparent</strong> — source citation + confidence on every AI output</span>
     </div>
-
-    <!-- 6. Award (muted) -->
-    <div class="sm">
-      <div class="sm-name">Award</div>
-      <div class="sm-num">Stage 6</div>
+    <div class="sf-item">
+      <div class="sf-dot" style="background:var(--green);"></div>
+      <span><strong>Integrates</strong> — ERP, e-procurement portals, e-challan, SSO adapters</span>
     </div>
-
-    <!-- 7. Analytics (muted) -->
-    <div class="sm">
-      <div class="sm-name">Analytics</div>
-      <div class="sm-num">Stage 7</div>
+    <div class="sf-item">
+      <div class="sf-dot" style="background:var(--teal);"></div>
+      <span><strong>Sovereign</strong> — self-hosted LLM on MeitY cloud, DPDP &amp; IT Act compliant</span>
     </div>
-
   </div>
 </section>
 
@@ -326,16 +355,79 @@ body{font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antia
 
 <!-- ── FOOTER ── -->
 <footer class="footer">
-  <div class="fb">
-    <div class="fl">T</div>
-    <div>
-      <div class="fn">TenderAI</div>
-      <div class="fs">AI-Based Tender Creation &amp; Evaluation Tool</div>
+
+  <!-- Col 1: Brand + meta -->
+  <div class="f-brand">
+    <div class="fb">
+      <div class="fl">T</div>
+      <div>
+        <div class="fn">TenderAI</div>
+        <div class="fs">AI-Based Tender Creation &amp; Evaluation Tool</div>
+      </div>
+    </div>
+    <div class="fm">Adapters for ERP · e-procurement portals · e-challan · SSO · REST-first with file-based fallback · Bilingual UI (English + Gujarati)</div>
+    <a class="fcta" href="#">Get in touch →</a>
+  </div>
+
+  <!-- Col 2: AI Design Principles -->
+  <div class="f-principles">
+    <div class="f-sec-lbl">AI Design Principles · Human-first · Deterministic · Sovereign</div>
+    <div class="principle">
+      <span class="p-num">1</span>
+      <div>
+        <div class="p-pname">Human-first, always</div>
+        <div class="p-pbullet">Platform surfaces intelligence — officer makes every call · Every consequential decision needs explicit human approval · AI confidence never auto-proceeds</div>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="p-num">2</span>
+      <div>
+        <div class="p-pname">Deterministic where it matters</div>
+        <div class="p-pbullet">Compliance &amp; eligibility checks are rule-based, not LLM · Rules configured, versioned, auditable · No probabilistic reasoning where answers must be definitive</div>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="p-num">3</span>
+      <div>
+        <div class="p-pname">Transparent by design</div>
+        <div class="p-pbullet">Every AI output: source citation + confidence + evidence · Officers see how, not just what · Model logic &amp; weightages disclosed on request</div>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="p-num">4</span>
+      <div>
+        <div class="p-pname">Built to improve</div>
+        <div class="p-pbullet">Every override + correction logged and fed into monitoring · Retraining in scope, on a defined cadence · AI gets measurably better over time</div>
+      </div>
     </div>
   </div>
-  <div class="vsep"></div>
-  <div class="fm">Adapters for ERP · e-procurement portals · e-challan · SSO · REST-first with file-based fallback · Bilingual UI (English + Gujarati)</div>
-  <a class="fcta" href="#">Get in touch →</a>
+
+  <!-- Col 3: Security & Sovereignty -->
+  <div class="f-security">
+    <div class="f-sec-lbl">Security &amp; Sovereignty</div>
+    <div class="f-tagline">All data within India.</div>
+    <div class="sec-item">
+      <div class="si-name">Self-hosted LLM</div>
+      <div class="si-desc">Tender data never leaves your infra. No third-party AI API.</div>
+    </div>
+    <div class="sec-item">
+      <div class="si-name">Time-locked bid encryption</div>
+      <div class="si-desc">Commercial envelopes can't be opened before official time.</div>
+    </div>
+    <div class="sec-item">
+      <div class="si-name">Immutable audit logs</div>
+      <div class="si-desc">Every action logged at DB level. No deletions, only appends.</div>
+    </div>
+    <div class="sec-item">
+      <div class="si-name">DPDP Act compliance</div>
+      <div class="si-desc">Designed in line with India's Digital Personal Data Protection Act.</div>
+    </div>
+    <div class="sec-item">
+      <div class="si-name">MeitY-empanelled cloud</div>
+      <div class="si-desc">All data within India. CERT-In / MeitY / NIC standards.</div>
+    </div>
+  </div>
+
 </footer>
 
 </div>
