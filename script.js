@@ -74,63 +74,93 @@
   }
 })();
 
-/* ── DTA Scan Animation ─────────────────────────────────────────────────── */
-/* Sine-wave easing for smooth, stutter-free back-and-forth scanning.
-   Cycle (8 s): sweep paper→digital · hold · sweep digital→paper · hold */
+/* ── Hero Scene: paper pile → Scribe → audit-ready tender ───────────────── */
+/* Three-act story loop driven by data-act on #heroScene plus per-element
+   classes. setTimeout-based so the story keeps time even when the tab is
+   backgrounded and requestAnimationFrame is throttled. */
 (function () {
-  var doc   = document.getElementById('dtaDoc');
-  var toast = document.getElementById('dtaToast');
-  if (!doc) return;
+  var scene = document.getElementById('heroScene');
+  if (!scene) return;
+
+  var papers  = [].slice.call(scene.querySelectorAll('.hs-paper'));
+  var rows    = [].slice.call(scene.querySelectorAll('.hs__row'));
+  var pen     = scene.querySelector('.hs__pen');
+  var caption = document.getElementById('hsCaption');
+
+  var CAPS = {
+    pile:   'The old way — paper files, weeks of drafting, objections',
+    ingest: 'Scribe takes in your project inputs',
+    draft:  'Drafts every clause. Runs every check.',
+    ready:  'Audit-ready in hours, not months'
+  };
+
+  function setAct(act) { scene.setAttribute('data-act', act); }
+
+  function say(text) {
+    if (!caption || caption.textContent === text) return;
+    caption.classList.add('is-swap');
+    setTimeout(function () {
+      caption.textContent = text;
+      caption.classList.remove('is-swap');
+    }, 240);
+  }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) {
-    doc.style.setProperty('--scan-x', '50%');
-    if (toast) toast.style.opacity = '1';
+    /* Static final frame: drafted tender, checks passed */
+    setAct('ready');
+    papers.forEach(function (p) { p.classList.add('is-in'); });
+    rows.forEach(function (r) { r.classList.add('is-on'); });
+    if (caption) caption.textContent = CAPS.ready;
     return;
   }
 
-  var PAPER   = 8;    /* paper shows on right — scan-x small = tiny digital strip */
-  var DIGITAL = 92;   /* digital fills left  — scan-x large = full digital reveal */
-  var CYCLE   = 8000; /* ms per full loop */
+  var timers = [];
+  function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
 
-  /* Sinusoidal ease — smoother endpoints than cubic polynomial */
-  function sinEase(t) { return (1 - Math.cos(Math.PI * t)) / 2; }
-
-  /*
-   * Normalised phase within the 8 s cycle:
-   *  0.00 – 0.50  sweep forward  (paper → digital)   4 s
-   *  0.50 – 0.65  hold digital                        1.2 s
-   *  0.65 – 0.90  sweep back     (digital → paper)    2 s
-   *  0.90 – 1.00  hold paper                          0.8 s
-   */
-  var t0 = null;
-
-  function tick(now) {
-    if (t0 === null) t0 = now;
-    var phase = ((now - t0) % CYCLE) / CYCLE;
-    var x, toastOpacity;
-
-    if (phase < 0.50) {
-      x            = PAPER + (DIGITAL - PAPER) * sinEase(phase / 0.50);
-      toastOpacity = 0;
-    } else if (phase < 0.65) {
-      x            = DIGITAL;
-      var h        = (phase - 0.50) / 0.15;
-      toastOpacity = h > 0.2 ? Math.min(1, (h - 0.2) / 0.3) : 0;
-    } else if (phase < 0.90) {
-      x            = DIGITAL + (PAPER - DIGITAL) * sinEase((phase - 0.65) / 0.25);
-      toastOpacity = 0;
-    } else {
-      x            = PAPER;
-      toastOpacity = 0;
-    }
-
-    doc.style.setProperty('--scan-x', x + '%');
-    if (toast) toast.style.opacity = toastOpacity.toString();
-    requestAnimationFrame(tick);
+  function movePen(row) {
+    if (!pen || !row) return;
+    pen.style.top = (row.offsetTop + row.offsetHeight - 2) + 'px';
   }
 
-  requestAnimationFrame(tick);
+  /* Papers leave the pile top-first (front sheet is last in DOM order) */
+  var ingestOrder = papers.slice().reverse();
+
+  function cycle() {
+    timers.forEach(clearTimeout);
+    timers = [];
+
+    /* ACT 1 · the pile */
+    setAct('pile');
+    say(CAPS.pile);
+    papers.forEach(function (p) { p.classList.remove('is-in'); });
+    rows.forEach(function (r) { r.classList.remove('is-on'); });
+    if (pen) pen.style.top = '54px';
+
+    /* ACT 2 · Scribe takes the file in */
+    at(2300, function () { setAct('ingest'); say(CAPS.ingest); });
+    ingestOrder.forEach(function (p, i) {
+      at(2500 + i * 240, function () { p.classList.add('is-in'); });
+    });
+
+    /* ACT 3 · the tender drafts itself, clause by clause */
+    at(4150, function () { setAct('draft'); say(CAPS.draft); });
+    rows.forEach(function (r, i) {
+      at(4650 + i * 680, function () {
+        r.classList.add('is-on');
+        movePen(r);
+      });
+    });
+
+    /* Payoff — checks pass, chips float in, time badge lands. Held long. */
+    at(7550, function () { setAct('ready'); say(CAPS.ready); });
+
+    /* Dissolve and tell it again */
+    at(13000, function () { setAct('reset'); });
+    at(13750, cycle);
+  }
+
+  cycle();
 })();
 
 /* ── Journey Stage Auto-Switcher (tracking stepper) ─────────────────────── */
