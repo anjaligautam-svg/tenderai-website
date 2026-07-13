@@ -135,7 +135,7 @@
     say(CAPS.pile);
     papers.forEach(function (p) { p.classList.remove('is-in'); });
     rows.forEach(function (r) { r.classList.remove('is-on'); });
-    if (pen) pen.style.top = '54px';
+    if (pen) pen.style.top = '58px';
 
     /* ACT 2 · Scribe takes the file in */
     at(2300, function () { setAct('ingest'); say(CAPS.ingest); });
