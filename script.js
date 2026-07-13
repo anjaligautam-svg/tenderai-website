@@ -163,21 +163,23 @@
   cycle();
 })();
 
-/* ── Journey Stage Auto-Switcher (tracking stepper) ─────────────────────── */
-/* Steps tick off left to right; the connector after the active step fills
-   over the stage duration, then the next stage begins. Hover/focus pauses. */
+/* ── Journey Stage Auto-Switcher (pill tracker with traveling ball) ─────── */
+/* Each stage holds, then a lit ball rides the connector to the next pill
+   and ignites it (SquareBoat crewmate pattern). Click jumps directly;
+   hover/focus pauses the hold. Ball + fill animate transforms only. */
 (function () {
   var steps  = document.querySelectorAll('.journey-step');
   var panels = document.querySelectorAll('.journey-panel');
-  var segs   = document.querySelectorAll('.journey-track__seg i');
+  var segs   = document.querySelectorAll('.journey-track__seg');
   if (!steps.length || !panels.length) return;
 
-  var current  = 0;
-  var DURATION = 4000;
-  var rafId    = null;
-  var startTs  = null;
-  var paused   = false;
-  var pausedAt = 0; /* fraction 0-1 of the current stage elapsed */
+  var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var HOLD    = 4000; /* ms a stage stays before the ball departs */
+  var TRAVEL  = 650;  /* ms the ball rides the connector — matches the CSS */
+  var current = 0;
+  var holdTimer = null, travelTimer = null;
+  var holdStart = 0, holdLeft = HOLD;
+  var paused = false, traveling = false;
 
   function paint() {
     steps.forEach(function (s, i) {
@@ -186,50 +188,63 @@
       s.setAttribute('aria-selected', i === current ? 'true' : 'false');
     });
     panels.forEach(function (p, i) { p.classList.toggle('active', i === current); });
-    segs.forEach(function (f, i) { f.style.width = i < current ? '100%' : '0%'; });
+    segs.forEach(function (seg, i) {
+      seg.classList.remove('travel');
+      seg.querySelector('i').style.transform = i < current ? 'scaleX(1)' : 'scaleX(0)';
+    });
+  }
+
+  function schedule(ms) {
+    clearTimeout(holdTimer);
+    holdLeft  = ms;
+    holdStart = Date.now();
+    holdTimer = setTimeout(depart, ms);
+  }
+
+  function depart() {
+    if (paused) return;
+    var next = (current + 1) % steps.length;
+    var seg  = segs[current];
+    if (reduce || next === 0 || !seg) {
+      /* wrap-around or reduced motion: no travel, just start over */
+      goTo(next);
+      return;
+    }
+    traveling = true;
+    seg.style.setProperty('--segw', seg.offsetWidth + 'px');
+    seg.querySelector('i').style.transform = ''; /* let .travel take over */
+    seg.classList.add('travel');
+    travelTimer = setTimeout(function () {
+      traveling = false;
+      current = next;
+      paint(); /* the pill ignites as the ball lands */
+      if (paused) { holdLeft = HOLD; holdStart = Date.now(); }
+      else { schedule(HOLD); }
+    }, TRAVEL);
   }
 
   function goTo(idx) {
+    clearTimeout(holdTimer);
+    clearTimeout(travelTimer);
+    traveling = false;
     current = idx;
     paint();
-    startFill(0);
-  }
-
-  /* Sine ease-in-out — the fill leaves a node gently and lands gently */
-  function ease(t) { return (1 - Math.cos(Math.PI * t)) / 2; }
-
-  function startFill(from) {
-    if (rafId) cancelAnimationFrame(rafId);
-    var seg = segs[current] || null; /* connector after the active node; none on the last stage */
-    if (seg) seg.style.width = (ease(from) * 100) + '%';
-    startTs = null;
-    var elapsed0 = from * DURATION;
-
-    function tick(now) {
-      if (paused) return;
-      if (!startTs) startTs = now - elapsed0;
-      var pct = Math.min(1, (now - startTs) / DURATION);
-      pausedAt = pct;
-      if (seg) seg.style.width = (ease(pct) * 100) + '%';
-      if (pct < 1) {
-        rafId = requestAnimationFrame(tick);
-      } else {
-        goTo((current + 1) % steps.length);
-      }
-    }
-    rafId = requestAnimationFrame(tick);
+    schedule(HOLD);
   }
 
   function pause() {
     if (paused) return;
     paused = true;
-    if (rafId) cancelAnimationFrame(rafId);
+    if (!traveling) {
+      clearTimeout(holdTimer);
+      holdLeft = Math.max(0, holdLeft - (Date.now() - holdStart));
+    }
   }
 
   function resume() {
     if (!paused) return;
     paused = false;
-    startFill(pausedAt);
+    if (!traveling) schedule(holdLeft > 200 ? holdLeft : HOLD);
   }
 
   steps.forEach(function (step, i) {
@@ -247,7 +262,7 @@
   }
 
   paint();
-  startFill(0);
+  schedule(HOLD);
 })();
 
 /* ── Container-Scroll tilt (Meet Scribe bento shell) ────────────────────── */

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=38" />
+  <link rel="stylesheet" href="styles.css?v=39" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -609,35 +609,34 @@
           <h2 id="journey-title">Five stages. One system.</h2>
         </div>
 
-        <!-- Stage tracker : nodes tick off as stages complete -->
+        <!-- Stage tracker : a lit ball hops pill to pill as stages advance -->
         <div class="journey-track" role="tablist" aria-label="Procurement stages">
           <button class="journey-step active" role="tab" aria-selected="true" aria-controls="jp-0" data-stage="0">
-            <span class="journey-step__node"><span class="journey-step__num">01</span><svg class="journey-step__check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="journey-step__idx">01</span>
             <span class="journey-step__label">Plan</span>
           </button>
-          <span class="journey-track__seg" aria-hidden="true"><i></i></span>
+          <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-1" data-stage="1">
-            <span class="journey-step__node"><span class="journey-step__num">02</span><svg class="journey-step__check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="journey-step__idx">02</span>
             <span class="journey-step__label">Tender</span>
           </button>
-          <span class="journey-track__seg" aria-hidden="true"><i></i></span>
+          <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-2" data-stage="2">
-            <span class="journey-step__node"><span class="journey-step__num">03</span><svg class="journey-step__check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="journey-step__idx">03</span>
             <span class="journey-step__label">Pre-bid</span>
           </button>
-          <span class="journey-track__seg" aria-hidden="true"><i></i></span>
+          <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-3" data-stage="3">
-            <span class="journey-step__node"><span class="journey-step__num">04</span><svg class="journey-step__check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="journey-step__idx">04</span>
             <span class="journey-step__label">Evaluate</span>
           </button>
-          <span class="journey-track__seg" aria-hidden="true"><i></i></span>
+          <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-4" data-stage="4">
-            <span class="journey-step__node"><span class="journey-step__num">05</span><svg class="journey-step__check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="journey-step__idx">05</span>
             <span class="journey-step__label">Award</span>
           </button>
         </div>
 
-        <!-- Stage panels : centered glimpses from the actual product -->
         <div class="journey-panels">
 
           <!-- 01: Plan -->
@@ -1076,6 +1075,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>
