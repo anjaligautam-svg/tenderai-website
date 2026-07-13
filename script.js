@@ -86,12 +86,16 @@
   var rows    = [].slice.call(scene.querySelectorAll('.hs__row'));
   var pen     = scene.querySelector('.hs__pen');
   var caption = document.getElementById('hsCaption');
+  var bids    = [].slice.call(scene.querySelectorAll('.hs-bid'));
 
   var CAPS = {
     pile:   'The old way — paper files, weeks of drafting, objections',
     ingest: 'Scribe takes in your project inputs',
     draft:  'Drafts every clause. Runs every check.',
-    ready:  'Audit-ready in hours, not months'
+    ready:  'Audit-ready in hours, not months',
+    scan:   'Published — the portal opens for bids',
+    bids:   'Sealed bids arrive, time-stamped',
+    eval:   'Evaluated in minutes — L1 ranked, every score logged'
   };
 
   function setAct(act) { scene.setAttribute('data-act', act); }
@@ -135,6 +139,7 @@
     say(CAPS.pile);
     papers.forEach(function (p) { p.classList.remove('is-in'); });
     rows.forEach(function (r) { r.classList.remove('is-on'); });
+    bids.forEach(function (b) { b.classList.remove('is-up'); });
     if (pen) pen.style.top = '58px';
 
     /* ACT 2 · Scribe takes the file in */
@@ -155,9 +160,21 @@
     /* Payoff — checks pass, chips float in, time badge lands. Held long. */
     at(7550, function () { setAct('ready'); say(CAPS.ready); });
 
+    /* ACT 4 · publish — a scan beam seals the drafted tender */
+    at(13000, function () { setAct('scan'); say(CAPS.scan); });
+
+    /* ACT 5 · sealed bids upload against it */
+    at(15000, function () { setAct('bids'); say(CAPS.bids); });
+    bids.forEach(function (b, i) {
+      at(15250 + i * 700, function () { b.classList.add('is-up'); });
+    });
+
+    /* ACT 6 · evaluation — reorder to rank, scores fill, L1 crowned */
+    at(18600, function () { setAct('eval'); say(CAPS.eval); });
+
     /* Dissolve and tell it again */
-    at(13000, function () { setAct('reset'); });
-    at(13750, cycle);
+    at(24000, function () { setAct('reset'); });
+    at(24800, cycle);
   }
 
   cycle();

@@ -679,7 +679,181 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   transition: opacity .3s ease;
 }
 
-/* Caption that narrates the three acts */
+/* ═ ACT 4 · publish — a scan beam seals the drafted tender ═══════════════ */
+.hs__beam {
+  position: absolute;
+  left: 0; right: 0; top: -60px;
+  height: 52px;
+  background: linear-gradient(180deg, transparent 0%, rgba(47,123,255,.10) 55%, rgba(47,123,255,.22) 92%, transparent 100%);
+  border-bottom: 2px solid rgba(96,165,250,.95);
+  box-shadow: 0 6px 18px rgba(47,123,255,.45);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.hs[data-act="scan"] .hs__tender { transform: translate(-50%,-50%); opacity: 1; }
+.hs[data-act="scan"] .hs__beam {
+  opacity: 1;
+  transform: translateY(460px);
+  transition: transform 1.6s cubic-bezier(.45,.05,.4,1), opacity .25s ease;
+}
+.hs[data-act="scan"] .hs-chip,
+.hs[data-act="scan"] .hs__time {
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+/* ═ ACT 5 · sealed bids upload — the tender docks small, top-left ════════ */
+.hs[data-act="bids"] .hs__tender,
+.hs[data-act="eval"] .hs__tender {
+  transform: translate(-50%,-50%) translate(-158px,-138px) scale(.48);
+  opacity: .85;
+}
+.hs[data-act="eval"] .hs__tender { opacity: .4; }
+
+.hs__bids { position: absolute; inset: 0; pointer-events: none; }
+.hs-bid {
+  position: absolute;
+  right: 5%;
+  width: 220px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: 0 14px 34px -10px rgba(11,18,32,.25);
+  padding: .6rem .75rem .6rem;
+  opacity: 0;
+  transform: translateX(70px);
+  z-index: 7;
+}
+.hs-bid--1 { top: 15%; }
+.hs-bid--2 { top: 41%; }
+.hs-bid--3 { top: 67%; }
+.hs-bid.is-up {
+  opacity: 1;
+  transform: none;
+  transition: opacity .5s ease, transform .6s cubic-bezier(.16,1,.3,1);
+}
+
+.hs-bid__hd {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+}
+.hs-bid__name { font-size: 10.5px; font-weight: 700; color: var(--ink-900); }
+.hs-bid__row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 2px;
+}
+.hs-bid__amt { font-size: 12px; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+.hs-bid__done {
+  width: 13px; height: 13px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--success); color: #fff;
+  opacity: 0; transform: scale(0);
+}
+.hs-bid.is-up .hs-bid__done {
+  opacity: 1; transform: scale(1);
+  transition: opacity .25s ease 1.15s, transform .3s cubic-bezier(.16,1,.3,1) 1.15s;
+}
+.hs-bid__up {
+  margin-top: .5rem;
+  height: 3px; border-radius: 2px;
+  background: rgba(11,18,32,.08);
+  overflow: hidden;
+}
+.hs-bid__up i {
+  display: block; height: 100%; width: 100%;
+  background: linear-gradient(90deg, #60A5FA, var(--primary));
+  transform: scaleX(0); transform-origin: left center;
+}
+.hs-bid.is-up .hs-bid__up i {
+  transform: scaleX(1);
+  transition: transform .8s cubic-bezier(.4,0,.2,1) .35s;
+}
+
+/* ═ ACT 6 · evaluation — reorder to rank, scores fill, L1 crowned ════════ */
+.hs-bid__score {
+  display: flex; align-items: center; gap: .4rem;
+  margin-top: .5rem;
+  opacity: 0;
+}
+.hs-bid__score i {
+  flex: 1; height: 4px; border-radius: 2px;
+  background: linear-gradient(90deg, rgba(96,165,250,.8), var(--primary));
+  transform: scaleX(0); transform-origin: left center;
+}
+.hs-bid__score b { font-size: 9.5px; font-weight: 800; color: var(--ink-600); font-variant-numeric: tabular-nums; }
+.hs[data-act="eval"] .hs-bid__score { opacity: 1; transition: opacity .3s ease .5s; }
+.hs[data-act="eval"] .hs-bid__score i {
+  transform: scaleX(var(--sc, .8));
+  transition: transform .9s cubic-bezier(.4,0,.2,1) .6s;
+}
+
+.hs-bid__rank {
+  position: absolute;
+  left: -10px; top: 50%;
+  transform: translate(-100%,-50%) scale(.7);
+  font-size: 10px; font-weight: 800; letter-spacing: .04em;
+  color: var(--ink-600);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .22rem .5rem;
+  box-shadow: var(--shadow-lift);
+  opacity: 0;
+}
+.hs-bid__rank--l1 {
+  color: #fff;
+  background: linear-gradient(135deg, #10B981, #0B7A55);
+  border-color: rgba(16,185,129,.6);
+}
+.hs[data-act="eval"] .hs-bid__rank {
+  opacity: 1;
+  transform: translate(-100%,-50%) scale(1);
+  transition: opacity .3s ease 1.5s, transform .35s cubic-bezier(.16,1,.3,1) 1.5s;
+}
+
+.hs[data-act="eval"] .hs-bid {
+  right: 11%;
+  width: 236px;
+  transition: top .65s cubic-bezier(.22,1,.36,1), right .65s cubic-bezier(.22,1,.36,1),
+              width .65s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.16,1,.3,1),
+              opacity .5s ease, border-color .4s ease 1.5s, box-shadow .4s ease 1.5s;
+}
+.hs[data-act="eval"] .hs-bid--2 {
+  top: 16%;
+  border-color: rgba(16,185,129,.55);
+  box-shadow: 0 0 0 3px rgba(16,185,129,.14), 0 18px 40px -10px rgba(16,185,129,.3);
+}
+.hs[data-act="eval"] .hs-bid--1 { top: 42%; opacity: .82; }
+.hs[data-act="eval"] .hs-bid--3 { top: 68%; opacity: .82; }
+.hs[data-act="eval"] .hs__halo { opacity: .7; }
+
+/* CST tag over the ranked bids */
+.hs__eval-tag {
+  position: absolute;
+  left: 50%; top: 5%;
+  transform: translate(-50%, 8px);
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: #fff;
+  border: 1px solid rgba(15,94,232,.22);
+  color: var(--primary);
+  font-size: 11.5px; font-weight: 700; letter-spacing: .02em;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-lift);
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 8;
+}
+.hs[data-act="eval"] .hs__eval-tag {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: opacity .45s ease .4s, transform .45s ease .4s;
+}
+
+/* the new cast dissolves with everything else */
+.hs[data-act="reset"] .hs-bid { opacity: 0; transition: opacity .4s ease; }
+.hs[data-act="reset"] .hs__eval-tag { opacity: 0; transition: opacity .3s ease; }
+
+/* Caption that narrates the story */
 .hs__caption {
   margin-top: .55rem;
   text-align: center;
@@ -698,6 +872,11 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .hs-paper--mid   { width: 222px; }
   .hs-paper--back  { width: 212px; }
   .hs__tender { width: min(330px, 94%); }
+  .hs[data-act="bids"] .hs__tender,
+  .hs[data-act="eval"] .hs__tender { transform: translate(-50%,-50%) translate(-86px,-118px) scale(.4); }
+  .hs-bid { width: 190px; right: 2%; }
+  .hs[data-act="eval"] .hs-bid { width: 202px; right: 5%; }
+  .hs-bid__rank { left: -4px; }
   .hs-chip--lock, .hs-chip--log { display: none; }
   .hs-chip--shield { right: 0; top: 10%; }
   .hs__time { bottom: 5%; }
