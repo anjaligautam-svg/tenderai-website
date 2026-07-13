@@ -1949,6 +1949,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Floating-art variant: transparent illustrations, no frame chrome */
+.glimpse--art { width: min(576px, 100%); }
 .glimpse--art .glimpse__frame {
   background: none;
   border: 0;
@@ -1960,7 +1961,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .glimpse--art .glimpse__frame img {
   width: 100%;
   height: auto;
-  max-height: 540px;
+  max-height: 432px;
   object-fit: contain;
   object-position: center;
   display: block;
