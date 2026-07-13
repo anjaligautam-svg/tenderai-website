@@ -1948,6 +1948,25 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   50%      { opacity: .4; }
 }
 
+/* Floating-art variant: transparent illustrations, no frame chrome */
+.glimpse--art .glimpse__frame {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.glimpse--art .glimpse__frame::after { display: none; }
+.glimpse--art .glimpse__frame img {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,.45));
+}
+
 .glimpse__chip {
   position: absolute; z-index: 2;
   display: inline-flex; align-items: center; gap: .4rem;
