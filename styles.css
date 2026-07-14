@@ -2423,3 +2423,70 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @media (max-width: 720px) {
   .ver-switch { top: auto; bottom: 12px; }
 }
+
+/* ── Video walkthrough section : media left, proof points right ─────────── */
+.vidsec__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 1fr);
+  gap: clamp(2rem, 4.5vw, 4.5rem);
+  align-items: center;
+}
+.vidsec__media { position: relative; }
+.vidsec__media::before {
+  content: "";
+  position: absolute;
+  inset: -8% -6%;
+  background: radial-gradient(55% 55% at 50% 50%, rgba(15,94,232,.14), transparent 72%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.vidsec__frame {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0B1425;
+  box-shadow: 0 1px 2px rgba(11,18,32,.06), 0 30px 70px -18px rgba(11,30,64,.35);
+}
+.vidsec__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.vidsec__copy h2 { max-width: 480px; }
+.vidsec__lead {
+  margin-top: 1rem;
+  color: var(--ink-600);
+  line-height: 1.7;
+  max-width: 44ch;
+}
+.vidsec__list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: 1.6rem;
+}
+.vidsec__item {
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: .9rem 1rem;
+  box-shadow: 0 1px 2px rgba(11,18,32,.04);
+}
+.vidsec__item svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.vidsec__item strong { display: block; font-size: 15px; color: var(--ink-900); }
+.vidsec__item span { display: block; font-size: 13.5px; color: var(--ink-500); margin-top: 2px; }
+.vidsec__item.reveal:nth-child(2) { transition-delay: .08s; }
+.vidsec__item.reveal:nth-child(3) { transition-delay: .16s; }
+.vidsec__note {
+  margin-top: 1.4rem;
+  font-size: 14px;
+  color: var(--ink-500);
+}
+@media (max-width: 900px) {
+  .vidsec__grid { grid-template-columns: 1fr; }
+  .vidsec__copy h2, .vidsec__lead { max-width: none; }
+}

@@ -451,3 +451,14 @@
   render();
   startAuto();
 })();
+
+/* ── Walkthrough video: respect reduced motion ──────────────────────────── */
+(function () {
+  var v = document.querySelector('.vidsec__frame video');
+  if (!v) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.controls = true;
+  }
+})();

@@ -19,7 +19,7 @@
   <!-- og:image needs an absolute URL once the domain is live -->
   <meta property="og:image" content="assets/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles2.css?v=1" />
+  <link rel="stylesheet" href="styles2.css?v=2" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -762,58 +762,47 @@
          This is a placeholder : replace with actual screen recording GIF.
     ================================================================ -->
     <section class="section section--tint" aria-labelledby="product-title">
-      <div class="container">
-        <div class="section-head center">
+      <div class="container vidsec__grid">
+
+        <!-- LEFT: ambient product animation -->
+        <div class="vidsec__media reveal">
+          <div class="vidsec__frame">
+            <video src="assets/site-asset.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Scribe walkthrough animation: a tender file assembling itself from a plain-language brief"></video>
+          </div>
+        </div>
+
+        <!-- RIGHT: copy + proof points -->
+        <div class="vidsec__copy">
           <h2 id="product-title">A guided wizard, not a blank form.</h2>
-          <p>Officers fill in what they know. Scribe fills in the rest: precedents, AI drafts, and compliance checks at every step.</p>
+          <p class="vidsec__lead">Officers fill in what they know. Scribe fills in the rest: precedents, AI drafts, and compliance checks at every step.</p>
+
+          <div class="vidsec__list">
+            <div class="vidsec__item reveal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
+              <div>
+                <strong>AI drafts, officer decides</strong>
+                <span>Every suggestion is advisory. You stay in control.</span>
+              </div>
+            </div>
+            <div class="vidsec__item reveal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <strong>CVC pre-check on every tender</strong>
+                <span>Predicts what a reviewer will flag, before you publish.</span>
+              </div>
+            </div>
+            <div class="vidsec__item reveal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <div>
+                <strong>English, Hindi, or Marathi</strong>
+                <span>Generate the tender in any language with one click.</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="vidsec__note">Fewer re-submissions, faster approvals, and a file that is always audit-ready.</p>
         </div>
 
-        <div class="product-gif">
-          <div class="product-gif__chrome">
-            <div class="product-gif__bar" aria-hidden="true">
-              <span class="product-gif__dots"><i></i><i></i><i></i></span>
-              <span class="product-gif__url">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                portal.scribe.gov · Tender Creation Wizard
-              </span>
-            </div>
-            <div class="product-gif__screen">
-              <img src="assets/scribe-walkthrough.gif" alt="Scribe walkthrough: officer describes the work in plain language while the form fills itself, the tender generates section by section, the AI edit assistant suggests refinements, and the CVC risk check flags issues with one-click fixes." class="product-gif__img" width="1100" height="660" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- Mini feature callouts below the GIF -->
-        <div class="product-callouts">
-          <div class="pc reveal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"/></svg>
-            <div>
-              <strong>AI drafts, officer decides</strong>
-              <span>Every suggestion is advisory. You stay in control.</span>
-            </div>
-          </div>
-          <div class="pc reveal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-            <div>
-              <strong>English, Hindi, or Marathi</strong>
-              <span>Generate your tender in any language with one click.</span>
-            </div>
-          </div>
-          <div class="pc reveal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-            <div>
-              <strong>CVC pre-check on every tender</strong>
-              <span>Predicts what a reviewer will flag, before you publish.</span>
-            </div>
-          </div>
-          <div class="pc reveal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
-            <div>
-              <strong>Full version history</strong>
-              <span>Every revision tracked. Every override logged.</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1101,6 +1090,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script2.js?v=2"></script>
+  <script src="script2.js?v=3"></script>
 </body>
 </html>
