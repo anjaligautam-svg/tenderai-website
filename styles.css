@@ -2041,7 +2041,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .journey-panel { display: none; }
 .journey-panel.active {
   display: grid;
-  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(280px, 460px) minmax(0, 1fr);
   gap: clamp(1.5rem, 3.5vw, 3rem);
   align-items: center;
   animation: journey-in .35s ease;
@@ -2115,7 +2115,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Floating-art variant: transparent illustrations, no frame chrome */
-.glimpse--art { width: min(480px, 100%); }
+.glimpse--art { width: min(480px, 100%); justify-self: center; }
 .glimpse--art .glimpse__frame {
   background: none;
   border: 0;
