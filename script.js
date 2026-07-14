@@ -74,28 +74,29 @@
   }
 })();
 
-/* ── Hero Scene: paper pile → Scribe → audit-ready tender ───────────────── */
-/* Three-act story loop driven by data-act on #heroScene plus per-element
-   classes. setTimeout-based so the story keeps time even when the tab is
+/* ── Hero Scene: chat → tender → bids → evaluation → award ──────────────── */
+/* Story loop driven by data-act on #heroScene plus per-element classes.
+   setTimeout-based so the story keeps time even when the tab is
    backgrounded and requestAnimationFrame is throttled. */
 (function () {
   var scene = document.getElementById('heroScene');
   if (!scene) return;
 
-  var papers  = [].slice.call(scene.querySelectorAll('.hs-paper'));
+  var chat     = scene.querySelector('.hs__chat');
+  var chatBits = [].slice.call(scene.querySelectorAll('.hs__chat [data-bit]'));
   var rows    = [].slice.call(scene.querySelectorAll('.hs__row'));
   var pen     = scene.querySelector('.hs__pen');
   var caption = document.getElementById('hsCaption');
   var bids    = [].slice.call(scene.querySelectorAll('.hs-bid'));
 
   var CAPS = {
-    pile:   'The old way — paper files, weeks of drafting, objections',
-    ingest: 'Scribe takes in your project inputs',
+    chat:   'Start with a chat — describe the work',
     draft:  'Drafts every clause. Runs every check.',
     ready:  'Audit-ready in hours, not months',
     scan:   'Published — the portal opens for bids',
     bids:   'Sealed bids arrive, time-stamped',
-    eval:   'Evaluated in minutes — L1 ranked, every score logged'
+    eval:   'Evaluated in minutes — L1 ranked, every score logged',
+    award:  'Awarded. The file was audit-ready all along.'
   };
 
   function setAct(act) { scene.setAttribute('data-act', act); }
@@ -113,7 +114,6 @@
   if (reduce) {
     /* Static final frame: drafted tender, checks passed */
     setAct('ready');
-    papers.forEach(function (p) { p.classList.add('is-in'); });
     rows.forEach(function (r) { r.classList.add('is-on'); });
     if (caption) caption.textContent = CAPS.ready;
     return;
@@ -127,26 +127,28 @@
     pen.style.top = (row.offsetTop + row.offsetHeight - 2) + 'px';
   }
 
-  /* Papers leave the pile top-first (front sheet is last in DOM order) */
-  var ingestOrder = papers.slice().reverse();
+  function bit(name, cls) {
+    var el = chat ? chat.querySelector('[data-bit="' + name + '"]') : null;
+    if (el) el.classList.add(cls || 'is-in');
+  }
 
   function cycle() {
     timers.forEach(clearTimeout);
     timers = [];
 
-    /* ACT 1 · the pile */
-    setAct('pile');
-    say(CAPS.pile);
-    papers.forEach(function (p) { p.classList.remove('is-in'); });
+    /* ACT 1 · chat — describe the work to Scribe */
+    setAct('chat');
+    say(CAPS.chat);
+    scene.classList.remove('is-awarded');
+    chatBits.forEach(function (el) { el.classList.remove('is-in', 'is-out'); });
     rows.forEach(function (r) { r.classList.remove('is-on'); });
     bids.forEach(function (b) { b.classList.remove('is-up'); });
     if (pen) pen.style.top = '58px';
 
-    /* ACT 2 · Scribe takes the file in */
-    at(2300, function () { setAct('ingest'); say(CAPS.ingest); });
-    ingestOrder.forEach(function (p, i) {
-      at(2500 + i * 240, function () { p.classList.add('is-in'); });
-    });
+    at(350,  function () { bit('user'); });
+    at(1150, function () { bit('typing'); });
+    at(2250, function () { bit('typing', 'is-out'); bit('ai'); });
+    at(3250, function () { bit('status'); });
 
     /* ACT 3 · the tender drafts itself, clause by clause */
     at(4150, function () { setAct('draft'); say(CAPS.draft); });
@@ -171,6 +173,9 @@
 
     /* ACT 6 · evaluation — reorder to rank, scores fill, L1 crowned */
     at(18600, function () { setAct('eval'); say(CAPS.eval); });
+
+    /* the award lands — winner sealed */
+    at(22000, function () { scene.classList.add('is-awarded'); say(CAPS.award); });
 
     /* Dissolve and tell it again */
     at(24000, function () { setAct('reset'); });
