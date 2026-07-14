@@ -2488,34 +2488,30 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .feat-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Video walkthrough section : media left, proof points right ─────────── */
+/* ── Video walkthrough section : copy left, full-bleed video right ──────── */
+.vidsec { overflow-x: clip; }
 .vidsec__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 1fr);
-  gap: clamp(2rem, 4.5vw, 4.5rem);
+  grid-template-columns: minmax(300px, .95fr) minmax(0, 1.3fr);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
-.vidsec__media { position: relative; }
-.vidsec__media::before {
-  content: "";
-  position: absolute;
-  inset: -8% -6%;
-  background: radial-gradient(55% 55% at 50% 50%, rgba(15,94,232,.14), transparent 72%);
-  filter: blur(12px);
-  pointer-events: none;
-}
+/* bleed the media to the right edge of the viewport */
+.vidsec__media { margin-right: calc(-1 * (max((100vw - var(--container)) / 2, 0px) + var(--gutter))); }
 .vidsec__frame {
   position: relative;
-  border-radius: var(--r-lg);
+  /* the footage carries baked-in pillarboxes; this crop shows only the UI */
+  aspect-ratio: 1.2 / 1;
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
   overflow: hidden;
-  border: 1px solid var(--line);
-  background: #0B1425;
-  box-shadow: 0 1px 2px rgba(11,18,32,.06), 0 30px 70px -18px rgba(11,30,64,.35);
+  box-shadow: 0 30px 70px -18px rgba(11,30,64,.30);
 }
 .vidsec__frame video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  width: 100%;
-  height: auto;
 }
 .vidsec__copy h2 { max-width: 480px; }
 .vidsec__lead {
@@ -2552,5 +2548,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 @media (max-width: 900px) {
   .vidsec__grid { grid-template-columns: 1fr; }
+  .vidsec__media { margin-right: 0; }
+  .vidsec__frame { border-radius: var(--r-lg); }
   .vidsec__copy h2, .vidsec__lead { max-width: none; }
 }

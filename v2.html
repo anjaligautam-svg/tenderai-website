@@ -19,7 +19,7 @@
   <!-- og:image needs an absolute URL once the domain is live -->
   <meta property="og:image" content="assets/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles2.css?v=2" />
+  <link rel="stylesheet" href="styles2.css?v=4" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -761,17 +761,10 @@
          Central place for a looping product walkthrough.
          This is a placeholder : replace with actual screen recording GIF.
     ================================================================ -->
-    <section class="section section--tint" aria-labelledby="product-title">
+    <section class="section section--tint vidsec" aria-labelledby="product-title">
       <div class="container vidsec__grid">
 
-        <!-- LEFT: ambient product animation -->
-        <div class="vidsec__media reveal">
-          <div class="vidsec__frame">
-            <video src="assets/site-asset.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Scribe walkthrough animation: a tender file assembling itself from a plain-language brief"></video>
-          </div>
-        </div>
-
-        <!-- RIGHT: copy + proof points -->
+        <!-- LEFT: copy + proof points -->
         <div class="vidsec__copy">
           <h2 id="product-title">A guided wizard, not a blank form.</h2>
           <p class="vidsec__lead">Officers fill in what they know. Scribe fills in the rest: precedents, AI drafts, and compliance checks at every step.</p>
@@ -802,6 +795,14 @@
 
           <p class="vidsec__note">Fewer re-submissions, faster approvals, and a file that is always audit-ready.</p>
         </div>
+
+        <!-- RIGHT: full-bleed product animation -->
+        <div class="vidsec__media reveal">
+          <div class="vidsec__frame">
+            <video src="assets/site-asset.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Scribe walkthrough animation: a tender file assembling itself from a plain-language brief"></video>
+          </div>
+        </div>
+
 
       </div>
     </section>
