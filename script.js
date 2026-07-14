@@ -143,7 +143,7 @@
     chatBits.forEach(function (el) { el.classList.remove('is-in', 'is-out'); });
     rows.forEach(function (r) { r.classList.remove('is-on'); });
     bids.forEach(function (b) { b.classList.remove('is-up'); });
-    if (pen) pen.style.top = '58px';
+    if (pen) pen.style.top = '62px';
 
     at(350,  function () { bit('user'); });
     at(1150, function () { bit('typing'); });
@@ -163,23 +163,23 @@
     at(7550, function () { setAct('ready'); say(CAPS.ready); });
 
     /* ACT 4 · publish — a scan beam seals the drafted tender */
-    at(13000, function () { setAct('scan'); say(CAPS.scan); });
+    at(10500, function () { setAct('scan'); say(CAPS.scan); });
 
     /* ACT 5 · sealed bids upload against it */
-    at(15000, function () { setAct('bids'); say(CAPS.bids); });
+    at(12500, function () { setAct('bids'); say(CAPS.bids); });
     bids.forEach(function (b, i) {
-      at(15250 + i * 700, function () { b.classList.add('is-up'); });
+      at(12750 + i * 700, function () { b.classList.add('is-up'); });
     });
 
     /* ACT 6 · evaluation — reorder to rank, scores fill, L1 crowned */
-    at(18600, function () { setAct('eval'); say(CAPS.eval); });
+    at(16100, function () { setAct('eval'); say(CAPS.eval); });
 
     /* the award lands — winner sealed */
-    at(22000, function () { scene.classList.add('is-awarded'); say(CAPS.award); });
+    at(19500, function () { scene.classList.add('is-awarded'); say(CAPS.award); });
 
     /* Dissolve and tell it again */
-    at(24000, function () { setAct('reset'); });
-    at(24800, cycle);
+    at(21500, function () { setAct('reset'); });
+    at(22300, cycle);
   }
 
   cycle();
