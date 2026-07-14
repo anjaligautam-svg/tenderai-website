@@ -2116,7 +2116,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Floating-art variant: transparent illustrations, no frame chrome */
-.glimpse--art { width: min(576px, 100%); }
+.glimpse--art { width: min(480px, 100%); }
 .glimpse--art .glimpse__frame {
   background: none;
   border: 0;
@@ -2128,11 +2128,12 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .glimpse--art .glimpse__frame img {
   width: 100%;
   height: auto;
-  max-height: 432px;
+  max-height: 356px;
   object-fit: contain;
   object-position: center;
   display: block;
-  filter: drop-shadow(0 30px 50px rgba(0,0,0,.45));
+  /* mute the render's near-max saturation toward the site's quieter blues */
+  filter: saturate(.68) brightness(1.04) contrast(.96) drop-shadow(0 26px 44px rgba(0,0,0,.4));
 }
 
 .glimpse__chip {
