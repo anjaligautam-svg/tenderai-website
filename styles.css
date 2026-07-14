@@ -1,6 +1,6 @@
 /* ==========================================================================
    Scribe — Landing page
-   Design: DM Sans (body/UI) + Fraunces (hero display) | #0F5EE8 primary
+   Design: DM Sans (body/UI) + Space Grotesk (display) | #0F5EE8 primary
    Accessibility: GIGW 3.0, UX4G, WCAG 2.1 AA
    ========================================================================== */
 
@@ -46,7 +46,7 @@
   --section-y: clamp(4rem, 7vw, 7rem);
 
   /* Typography */
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-display: 'Space Grotesk', 'DM Sans', sans-serif;
   --font-body:    'DM Sans', system-ui, -apple-system, sans-serif;
 
   --fs-display: clamp(2.4rem, 1.5rem + 3.5vw, 3.75rem);
@@ -77,11 +77,10 @@ body {
 
 h1 {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--fs-display);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
   color: var(--ink-900);
 }
 h2, h3, h4 {
@@ -1540,7 +1539,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @keyframes ai-tick { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
 
 .ai-h2 { margin-top: 1.1rem; font-size: clamp(1.8rem, 3.2vw, 2.6rem); color: #F1F5F9; line-height: 1.12; }
-.ai-h2 em { font-family: var(--font-display); font-style: italic; font-weight: 500; color: #DBEAFE; }
+.ai-h2 em { font-family: var(--font-display); font-style: normal; font-weight: 600; color: #DBEAFE; }
 .ai-desc { margin-top: 1rem; font-size: .95rem; color: #94A3B8; line-height: 1.7; max-width: 430px; }
 
 .ai-ctas { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
