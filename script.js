@@ -88,6 +88,8 @@
   var pen     = scene.querySelector('.hs__pen');
   var caption = document.getElementById('hsCaption');
   var bids    = [].slice.call(scene.querySelectorAll('.hs-bid'));
+  var evalTag  = scene.querySelector('.hs__eval-tag');
+  var evalTxt  = scene.querySelector('.hs__eval-txt');
 
   var CAPS = {
     chat:   'Start with a chat — describe the work',
@@ -132,6 +134,15 @@
     if (el) el.classList.add(cls || 'is-in');
   }
 
+  function evalSay(text) {
+    if (!evalTag || !evalTxt) return;
+    evalTag.classList.add('is-swap');
+    setTimeout(function () {
+      evalTxt.textContent = text;
+      evalTag.classList.remove('is-swap');
+    }, 220);
+  }
+
   function cycle() {
     timers.forEach(clearTimeout);
     timers = [];
@@ -143,6 +154,8 @@
     chatBits.forEach(function (el) { el.classList.remove('is-in', 'is-out'); });
     rows.forEach(function (r) { r.classList.remove('is-on'); });
     bids.forEach(function (b) { b.classList.remove('is-up'); });
+    if (evalTxt) evalTxt.textContent = 'Evaluating bids…';
+    if (evalTag) evalTag.classList.remove('is-swap');
     if (pen) pen.style.top = '62px';
 
     at(350,  function () { bit('user'); });
@@ -173,6 +186,8 @@
 
     /* ACT 6 · evaluation — reorder to rank, scores fill, L1 crowned */
     at(16100, function () { setAct('eval'); say(CAPS.eval); });
+    at(17700, function () { evalSay('Generating comparative statement…'); });
+    at(19100, function () { evalSay('Comparative statement — auto-built'); });
 
     /* the award lands — winner sealed */
     at(19500, function () { scene.classList.add('is-awarded'); say(CAPS.award); });

@@ -869,6 +869,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   transform: translate(-50%, 0);
   transition: opacity .45s ease .4s, transform .45s ease .4s;
 }
+.hs__eval-txt { transition: opacity .22s ease; }
+.hs__eval-tag.is-swap .hs__eval-txt { opacity: 0; }
 
 /* the new cast dissolves with everything else */
 .hs[data-act="reset"] .hs-bid { opacity: 0; transition: opacity .4s ease; }
