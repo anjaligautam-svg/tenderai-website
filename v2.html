@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scribe — The AI procurement co-pilot for government</title>
+  <title>Scribe | The AI procurement co-pilot for government</title>
   <meta name="description" content="Scribe helps government procurement officers draft, evaluate and execute tenders in hours, not months, audit-ready, CVC-aligned, built for India." />
   <meta name="theme-color" content="#0F5EE8" />
-  <meta property="og:title" content="Scribe — AI procurement for Indian government" />
+  <meta property="og:title" content="Scribe | AI procurement for Indian government" />
   <meta property="og:description" content="From paper file to audit-ready tender in under an hour. Built for municipal corporations and government departments across India." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=51" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" href="assets/favicon.ico" sizes="48x48" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <!-- og:image needs an absolute URL once the domain is live -->
+  <meta property="og:image" content="assets/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles2.css?v=1" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -21,8 +27,8 @@
 
   <div class="ver-switch" role="navigation" aria-label="Design review versions">
     <span>Design review</span>
-    <a href="index.html" class="on" aria-current="page">V1</a>
-    <a href="v2.html">V2</a>
+    <a href="index.html">V1</a>
+    <a href="v2.html" class="on" aria-current="page">V2</a>
   </div>
 
 
@@ -126,13 +132,13 @@
           </div>
         </div>
 
-        <!-- RIGHT: Hero scene — chat → tender → bids → evaluation → award -->
+        <!-- RIGHT: Hero scene, chat → tender → bids → evaluation → award -->
         <div class="hero__visual">
           <div class="hs" id="heroScene" data-act="pile" role="img" aria-label="Animation: an officer chats with Scribe describing road work; Scribe drafts a structured tender clause by clause, runs the CVC pre-check, and marks it audit-ready; sealed bids upload against it, Scribe ranks them in a comparative statement, and L1 is awarded.">
 
             <div class="hs__halo" aria-hidden="true"></div>
 
-            <!-- ACT 1 · chat — describe the work to Scribe -->
+            <!-- ACT 1 · chat, describe the work to Scribe -->
             <div class="hs__chat" aria-hidden="true">
               <div class="hs__c-hd">
                 <span class="hs__c-avatar">
@@ -142,7 +148,7 @@
                 <span class="hs__c-live"><i></i>Online</span>
               </div>
               <div class="hs__c-body">
-                <div class="hs__c-msg hs__c-msg--user" data-bit="user">Road resurfacing, Ward H. Budget ₹2.4 Cr — draft the tender.</div>
+                <div class="hs__c-msg hs__c-msg--user" data-bit="user">Road resurfacing, Ward H. Budget ₹2.4 Cr, draft the tender.</div>
                 <div class="hs__c-typing" data-bit="typing"><i></i><i></i><i></i></div>
                 <div class="hs__c-msg hs__c-msg--ai" data-bit="ai">On it. BOQ from DSR 2024, EMD auto-set at 2%, CVC pre-check included.</div>
               </div>
@@ -195,7 +201,7 @@
                   <span class="hs__row-num">§ 4</span>
                   <span class="hs__row-main">
                     <span class="hs__row-title">EMD &amp; Financial Terms</span>
-                    <span class="hs__row-text">EMD ₹18,500 — auto-computed at 2%</span>
+                    <span class="hs__row-text">EMD ₹18,500, auto-computed at 2%</span>
                   </span>
                   <span class="hs__tick"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                 </div>
@@ -289,7 +295,7 @@
             </span>
 
           </div>
-          <p class="hs__caption" id="hsCaption" aria-hidden="true">The old way — paper files, weeks of drafting, objections</p>
+          <p class="hs__caption" id="hsCaption" aria-hidden="true">The old way, paper files, weeks of drafting, objections</p>
         </div>
         <!-- /hero__visual -->
 
@@ -338,12 +344,11 @@
 
     <!-- ================================================================
          PAIN SECTION : "The reality today"
-         Dark banded cards — stat-first, visual-led, minimal text.
+         Dark banded cards, stat-first, visual-led, minimal text.
     ================================================================ -->
     <section class="section pain-section pain-section--dark" id="pain" aria-labelledby="pain-title">
       <div class="container">
         <div class="section-head pain-head">
-          <span class="eyebrow pain-eyebrow">The reality today</span>
           <h2 id="pain-title" class="pain-h2">Government procurement is built on paper. And paper breaks.</h2>
         </div>
 
@@ -363,7 +368,7 @@
             <div class="pain-body">
               <div class="pain-stat">2–3<em>mo</em></div>
               <h3 class="pain-title">Tender creation takes months</h3>
-              <p class="pain-desc">12+ departments, counter-signatures, re-submissions — weeks lost before one clause is approved.</p>
+              <p class="pain-desc">12+ departments, counter-signatures, re-submissions, weeks lost before one clause is approved.</p>
             </div>
           </div>
 
@@ -382,7 +387,7 @@
             <div class="pain-body">
               <div class="pain-stat">200+<em>queries</em></div>
               <h3 class="pain-title">No record of what was answered</h3>
-              <p class="pain-desc">The same question, a hundred phrasings — with no log of prior answers, one inconsistent reply can void the process.</p>
+              <p class="pain-desc">The same question, a hundred phrasings, with no log of prior answers, one inconsistent reply can void the process.</p>
             </div>
           </div>
 
@@ -402,7 +407,7 @@
             <div class="pain-body">
               <div class="pain-stat">ZERO<em>audit trail</em></div>
               <h3 class="pain-title">Evaluation has no confidentiality guard</h3>
-              <p class="pain-desc">Physical boxes, handwritten scores, no access log — one allegation of bias stalls the project and ends careers.</p>
+              <p class="pain-desc">Physical boxes, handwritten scores, no access log, one allegation of bias stalls the project and ends careers.</p>
             </div>
           </div>
 
@@ -421,7 +426,7 @@
             <div class="pain-body">
               <div class="pain-stat">50+<em>clauses</em></div>
               <h3 class="pain-title">Bids matched to tender by hand</h3>
-              <p class="pain-desc">Miss one clause and the evaluation fails — or worse, succeeds only to be legally challenged months later.</p>
+              <p class="pain-desc">Miss one clause and the evaluation fails, or worse, succeeds only to be legally challenged months later.</p>
             </div>
           </div>
 
@@ -440,7 +445,7 @@
             <div class="pain-body">
               <div class="pain-stat">L1<em>on a spreadsheet</em></div>
               <h3 class="pain-title">Bid evaluation with no standard</h3>
-              <p class="pain-desc">Four vendors, four formats — comparison is ad-hoc, scoring undocumented, and no trail of who decided what.</p>
+              <p class="pain-desc">Four vendors, four formats, comparison is ad-hoc, scoring undocumented, and no trail of who decided what.</p>
             </div>
           </div>
 
@@ -458,7 +463,7 @@
             <div class="pain-body">
               <div class="pain-stat">LOST<em>every transfer</em></div>
               <h3 class="pain-title">Institutional knowledge has no home</h3>
-              <p class="pain-desc">Reference docs buried in drawers or officers' heads — when someone transfers, that knowledge leaves too.</p>
+              <p class="pain-desc">Reference docs buried in drawers or officers' heads, when someone transfers, that knowledge leaves too.</p>
             </div>
           </div>
 
@@ -497,7 +502,7 @@
         <div class="section-head center cs-head" id="csHead">
           <span class="eyebrow">Meet Scribe</span>
           <h2 id="bento-title">One platform. The complete procurement lifecycle.</h2>
-          <p>From tender drafting to Letter of Acceptance — every step AI-assisted, officer-approved, audit-ready.</p>
+          <p>From tender drafting to Letter of Acceptance, every step AI-assisted, officer-approved, audit-ready.</p>
         </div>
 
         <div class="cs-perspective">
@@ -543,11 +548,11 @@
             </header>
             <div class="feat-card__art feat-art--mint" aria-hidden="true">
               <div class="fa-panel fa-checks">
-                <div class="fa-checks__row"><span class="fa-tick"></span><span>EMD @ 2% — Rule 170, GFR 2017</span></div>
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>EMD @ 2%, Rule 170, GFR 2017</span></div>
                 <div class="fa-checks__row"><span class="fa-tick"></span><span>MSE &amp; DPIIT-startup exemption clause</span></div>
                 <div class="fa-checks__row"><span class="fa-tick"></span><span>Similar works: 3×40% / 2×60% / 1×80%</span></div>
-                <div class="fa-checks__row"><span class="fa-tick"></span><span>Bid validity — 90 days</span></div>
-                <div class="fa-checks__row fa-checks__row--scan"><span class="fa-tick fa-tick--scan"></span><span>Arbitration clause — checking…</span></div>
+                <div class="fa-checks__row"><span class="fa-tick"></span><span>Bid validity, 90 days</span></div>
+                <div class="fa-checks__row fa-checks__row--scan"><span class="fa-tick fa-tick--scan"></span><span>Arbitration clause, checking…</span></div>
               </div>
             </div>
           </article>
@@ -564,7 +569,7 @@
                 <div class="fa-qrow"><span>EMD &amp; exemptions</span><b>46</b><i style="--w:100%"></i></div>
                 <div class="fa-qrow"><span>Similar work definition</span><b>38</b><i style="--w:82%"></i></div>
                 <div class="fa-qrow"><span>JV eligibility</span><b>31</b><i style="--w:67%"></i></div>
-                <div class="fa-qrow"><span>BOQ item 14 — rate query</span><b>22</b><i style="--w:48%"></i></div>
+                <div class="fa-qrow"><span>BOQ item 14, rate query</span><b>22</b><i style="--w:48%"></i></div>
                 <div class="fa-chip">Corrigendum No. 01 → EE approval</div>
               </div>
             </div>
@@ -578,12 +583,12 @@
             </header>
             <div class="feat-card__art feat-art--sky" aria-hidden="true">
               <div class="fa-panel fa-score">
-                <div class="fa-score__head">Technical Evaluation — QCBS 70:30</div>
+                <div class="fa-score__head">Technical Evaluation, QCBS 70:30</div>
                 <div class="fa-srow"><span>Similar works experience</span><b>27/30</b><em>Vol-II p.47</em></div>
                 <div class="fa-srow"><span>Avg. annual turnover</span><b>18/20</b><em>CA cert.</em></div>
                 <div class="fa-srow"><span>Key personnel</span><b>13/15</b><em>Annex-E</em></div>
                 <div class="fa-srow"><span>Plant &amp; machinery</span><b>12/15</b><em>Sch-F</em></div>
-                <div class="fa-score__total"><span>Technical score</span><b>84/100 — Qualified</b></div>
+                <div class="fa-score__total"><span>Technical score</span><b>84/100, Qualified</b></div>
               </div>
             </div>
           </article>
@@ -667,12 +672,12 @@
             <div class="journey-panel__copy">
               <span class="journey-panel__eyebrow">01 · DPR Creation</span>
               <h3 class="journey-panel__title">The BOQ builds itself.</h3>
-              <p class="journey-panel__desc">AI-suggested items with a defensible, market-rate cost basis — mismatches flagged before you submit.</p>
+              <p class="journey-panel__desc">AI-suggested items with a defensible, market-rate cost basis, mismatches flagged before you submit.</p>
             </div>
             <div class="glimpse glimpse--art" style="--jg: rgba(96,165,250,.3); --jc: #60A5FA;">
               <div class="glimpse__glow" aria-hidden="true"></div>
               <div class="glimpse__frame">
-                <img src="assets/glimpse/art-plan.png" alt="Isometric illustration of a DPR form assembling: numbered steps 01 to 04 beside a structured document with a pen" width="1440" height="1439">
+                <img src="assets/glimpse/art-plan.webp" alt="Isometric illustration of a DPR form assembling: numbered steps 01 to 04 beside a structured document with a pen" width="1440" height="1439">
               </div>
               <span class="glimpse__chip glimpse__chip--tl">AI-suggested BOQ items</span>
               <span class="glimpse__chip glimpse__chip--br">Flags cost mismatches</span>
@@ -684,12 +689,12 @@
             <div class="journey-panel__copy">
               <span class="journey-panel__eyebrow">02 · Tender Creation</span>
               <h3 class="journey-panel__title">The tender writes itself, section by section.</h3>
-              <p class="journey-panel__desc">Describe the work once. Scribe drafts the full document live — you watch it happen.</p>
+              <p class="journey-panel__desc">Describe the work once. Scribe drafts the full document live, you watch it happen.</p>
             </div>
             <div class="glimpse glimpse--art" style="--jg: rgba(129,140,248,.32); --jc: #818CF8;">
               <div class="glimpse__glow" aria-hidden="true"></div>
               <div class="glimpse__frame">
-                <img src="assets/glimpse/art-tender.png" alt="Isometric illustration of a tender document with checklist items, an AI chip, and a rupee symbol" width="1440" height="1378">
+                <img src="assets/glimpse/art-tender.webp" alt="Isometric illustration of a tender document with checklist items, an AI chip, and a rupee symbol" width="1440" height="1378">
               </div>
               <span class="glimpse__chip glimpse__chip--tl">Live, section by section</span>
               <span class="glimpse__chip glimpse__chip--br">CVC pre-check built in</span>
@@ -701,12 +706,12 @@
             <div class="journey-panel__copy">
               <span class="journey-panel__eyebrow">03 · Pre-bid Queries</span>
               <h3 class="journey-panel__title">Hundreds of queries. Grouped by AI.</h3>
-              <p class="journey-panel__desc">Similar questions cluster into themes — one consistent, officer-approved answer per group.</p>
+              <p class="journey-panel__desc">Similar questions cluster into themes, one consistent, officer-approved answer per group.</p>
             </div>
             <div class="glimpse glimpse--art" style="--jg: rgba(167,139,250,.32); --jc: #A78BFA;">
               <div class="glimpse__glow" aria-hidden="true"></div>
               <div class="glimpse__frame">
-                <img src="assets/glimpse/art-prebid.png" alt="Isometric illustration of vendor query bubbles around a bidder group, with an AI chip answering" width="1440" height="1338">
+                <img src="assets/glimpse/art-prebid.webp" alt="Isometric illustration of vendor query bubbles around a bidder group, with an AI chip answering" width="1440" height="1338">
               </div>
               <span class="glimpse__chip glimpse__chip--tl">Auto-grouped by theme</span>
               <span class="glimpse__chip glimpse__chip--br">One draft per group</span>
@@ -718,12 +723,12 @@
             <div class="journey-panel__copy">
               <span class="journey-panel__eyebrow">04 · Bid Evaluation</span>
               <h3 class="journey-panel__title">Every score, backed by evidence.</h3>
-              <p class="journey-panel__desc">PQ and TQ criteria checked against submitted documents — with AI confidence on every verdict.</p>
+              <p class="journey-panel__desc">PQ and TQ criteria checked against submitted documents, with AI confidence on every verdict.</p>
             </div>
             <div class="glimpse glimpse--art" style="--jg: rgba(56,189,248,.3); --jc: #38BDF8;">
               <div class="glimpse__glow" aria-hidden="true"></div>
               <div class="glimpse__frame">
-                <img src="assets/glimpse/art-eval.png" alt="Isometric illustration of a shield with a green tick beside an evaluation scorecard and rising bar chart" width="1440" height="1013">
+                <img src="assets/glimpse/art-eval.webp" alt="Isometric illustration of a shield with a green tick beside an evaluation scorecard and rising bar chart" width="1440" height="1013">
               </div>
               <span class="glimpse__chip glimpse__chip--tl">Evidence on every criterion</span>
               <span class="glimpse__chip glimpse__chip--br">AI confidence per verdict</span>
@@ -735,15 +740,15 @@
             <div class="journey-panel__copy">
               <span class="journey-panel__eyebrow">05 · Award</span>
               <h3 class="journey-panel__title">Masked till reveal. Justified on award.</h3>
-              <p class="journey-panel__desc">Quotes stay hidden until the formal reveal — then L1 comes with the reasons written down.</p>
+              <p class="journey-panel__desc">Quotes stay hidden until the formal reveal, then L1 comes with the reasons written down.</p>
             </div>
             <div class="glimpse glimpse--art" style="--jg: rgba(52,211,153,.3); --jc: #34D399;">
               <div class="glimpse__glow" aria-hidden="true"></div>
               <div class="glimpse__frame">
-                <img src="assets/glimpse/art-award.png" alt="Isometric illustration of a winner card showing 26.4 lakh rupees with a gold trophy, masked bids ticked below" width="1440" height="1031">
+                <img src="assets/glimpse/art-award.webp" alt="Isometric illustration of a winner card showing 26.4 lakh rupees with a gold trophy, masked bids ticked below" width="1440" height="1031">
               </div>
               <span class="glimpse__chip glimpse__chip--tl">Quotes masked till reveal</span>
-              <span class="glimpse__chip glimpse__chip--br">“Why this vendor won” — logged</span>
+              <span class="glimpse__chip glimpse__chip--br">“Why this vendor won”, logged</span>
             </div>
           </div>
 
@@ -759,7 +764,6 @@
     <section class="section section--tint" aria-labelledby="product-title">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow">See it in action</span>
           <h2 id="product-title">A guided wizard, not a blank form.</h2>
           <p>Officers fill in what they know. Scribe fills in the rest: precedents, AI drafts, and compliance checks at every step.</p>
         </div>
@@ -774,7 +778,16 @@
               </span>
             </div>
             <div class="product-gif__screen">
-              <img src="assets/scribe-walkthrough.gif" alt="Scribe walkthrough: officer describes the work in plain language while the form fills itself, the tender generates section by section, the AI edit assistant suggests refinements, and the CVC risk check flags issues with one-click fixes." class="product-gif__img" width="1100" height="660" loading="lazy">
+              <div class="pg-slides" id="pgSlides" role="img" aria-label="Scribe product walkthrough: describing work to AI, the tender generating itself, timelines, pre-bid query responses, QCBS evaluation, and the winner reveal.">
+                <img src="assets/screens/slide-1.webp" alt="" class="is-on" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-2.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-3.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-4.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-5.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-6.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <img src="assets/screens/slide-7.webp" alt="" width="1400" height="1003" loading="lazy" decoding="async">
+                <span class="pg-slides__dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              </div>
             </div>
           </div>
         </div>
@@ -836,7 +849,7 @@
               <span>AI at every step</span>
             </div>
             <h2 id="ai-title" class="ai-h2">Assistance that <em>guides</em>.<br>Authority that stays.</h2>
-            <p class="ai-desc">No AI output hard-blocks a procurement action. Every suggestion is advisory, every flag deep-links to the field to fix — and the decision, the signature, and the accountability stay with the officer and the competent authority.</p>
+            <p class="ai-desc">No AI output hard-blocks a procurement action. Every suggestion is advisory, every flag deep-links to the field to fix, and the decision, the signature, and the accountability stay with the officer and the competent authority.</p>
             <div class="ai-ctas">
               <a class="btn btn-primary" href="#request">Request a demo</a>
               <a class="btn ai-btn-ghost" href="#how-it-works">See how it works</a>
@@ -855,19 +868,19 @@
               <div class="ai-ghost ai-ghost--2" aria-hidden="true"></div>
 
               <article class="ai-card ai-card--art" data-card="0">
-                <img src="assets/ai/card-describe.png" alt="Describe to AI, DPR creation: 'Repair 12 km of roads in Bandra West, Zone 4' becomes a structured Detailed Project Report in about 2 minutes, not 25" loading="lazy" width="840" height="1089">
+                <img src="assets/ai/card-describe.webp" alt="Describe to AI, DPR creation: 'Repair 12 km of roads in Bandra West, Zone 4' becomes a structured Detailed Project Report in about 2 minutes, not 25" loading="lazy" width="840" height="1089">
               </article>
 
               <article class="ai-card ai-card--art" data-card="1">
-                <img src="assets/ai/card-criteria.png" alt="AI-suggested criteria, tender creation: minimum annual turnover pre-filled from the AI suggestion, standard PWD criteria for your sector and value, under a minute to the first draft" loading="lazy" width="840" height="1066">
+                <img src="assets/ai/card-criteria.webp" alt="AI-suggested criteria, tender creation: minimum annual turnover pre-filled from the AI suggestion, standard PWD criteria for your sector and value, under a minute to the first draft" loading="lazy" width="840" height="1066">
               </article>
 
               <article class="ai-card ai-card--art" data-card="2">
-                <img src="assets/ai/card-prescreen.png" alt="AI Pre-screen, bid evaluation: a vendor's criteria auto-verified with pass and review flags, qualified verdict stays with the officer" loading="lazy" width="840" height="1051">
+                <img src="assets/ai/card-prescreen.webp" alt="AI Pre-screen, bid evaluation: a vendor's criteria auto-verified with pass and review flags, qualified verdict stays with the officer" loading="lazy" width="840" height="1051">
               </article>
 
               <article class="ai-card ai-card--art" data-card="3">
-                <img src="assets/ai/card-amendment.png" alt="AI Amendment Summary, corrigendum: 25 responses distilled into 4 amendment points, drafted for EE approval" loading="lazy" width="840" height="1042">
+                <img src="assets/ai/card-amendment.webp" alt="AI Amendment Summary, corrigendum: 25 responses distilled into 4 amendment points, drafted for EE approval" loading="lazy" width="840" height="1042">
               </article>
             </div>
 
@@ -891,9 +904,8 @@
         <div class="faq-grid">
 
           <div class="faq-intro">
-            <span class="faq-badge">FAQ</span>
             <h2 id="faq-title">The questions every procurement office asks first.</h2>
-            <p>Scribe touches confidential bids, public money, and career-defining audits — so the questions are rightly sharp. Here are the ones we hear most, answered plainly. For anything deeper, walk through it with our team on a live file.</p>
+            <p>Scribe touches confidential bids, public money, and career-defining audits, so the questions are rightly sharp. Here are the ones we hear most, answered plainly. For anything deeper, walk through it with our team on a live file.</p>
             <a class="btn faq-btn" href="#request">
               Any questions? Reach out
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1098,6 +1110,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=16"></script>
+  <script src="script2.js?v=2"></script>
 </body>
 </html>
