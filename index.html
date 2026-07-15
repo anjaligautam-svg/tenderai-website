@@ -19,7 +19,7 @@
   <!-- og:image needs an absolute URL once the domain is live -->
   <meta property="og:image" content="assets/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=61" />
+  <link rel="stylesheet" href="styles.css?v=62" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -600,7 +600,7 @@
           <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-1" data-stage="1">
             <span class="journey-step__idx">02</span>
-            <span class="journey-step__label">Tender</span>
+            <span class="journey-step__label">Draft</span>
           </button>
           <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-2" data-stage="2">
@@ -616,6 +616,11 @@
           <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-4" data-stage="4">
             <span class="journey-step__idx">05</span>
             <span class="journey-step__label">Award</span>
+          </button>
+          <span class="journey-track__seg" aria-hidden="true"><i></i><b class="journey-track__ball"></b></span>
+          <button class="journey-step" role="tab" aria-selected="false" aria-controls="jp-5" data-stage="5">
+            <span class="journey-step__idx">06</span>
+            <span class="journey-step__label">Execution</span>
           </button>
         </div>
 
@@ -703,6 +708,23 @@
               </div>
               <span class="glimpse__chip glimpse__chip--tl">Quotes masked till reveal</span>
               <span class="glimpse__chip glimpse__chip--br">“Why this vendor won”, logged</span>
+            </div>
+          </div>
+
+          <!-- 06: Execution -->
+          <div class="journey-panel" id="jp-5" role="tabpanel">
+            <div class="journey-panel__copy">
+              <span class="journey-panel__eyebrow">06 · Execution</span>
+              <h3 class="journey-panel__title">From award to a signed, closed file.</h3>
+              <p class="journey-panel__desc">Milestones, running-account bills, and validations track themselves through delivery, until the work is completed and the record is closed.</p>
+            </div>
+            <div class="glimpse glimpse--art" style="--jg: rgba(59,130,246,.3); --jc: #3B82F6;">
+              <div class="glimpse__glow" aria-hidden="true"></div>
+              <div class="glimpse__frame">
+                <img src="assets/glimpse/art-execution.webp" alt="Isometric illustration of a tender moving through an execution panel with processing, validating and finalizing steps, ending in a completed signed document" width="1100" height="880" loading="lazy">
+              </div>
+              <span class="glimpse__chip glimpse__chip--tl">Milestones auto-tracked</span>
+              <span class="glimpse__chip glimpse__chip--br">Closed, audit-ready</span>
             </div>
           </div>
 
@@ -1045,6 +1067,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 </body>
 </html>

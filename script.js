@@ -290,12 +290,12 @@
     });
   });
 
+  /* Auto-advances continuously (no hover pause). Keyboard focus still
+     pauses so a tabbing user can read a panel without it switching away. */
   var section = document.querySelector('.journey-section');
   if (section) {
-    section.addEventListener('mouseenter', pause);
-    section.addEventListener('mouseleave', resume);
-    section.addEventListener('focusin',    pause);
-    section.addEventListener('focusout',   resume);
+    section.addEventListener('focusin',  pause);
+    section.addEventListener('focusout', resume);
   }
 
   paint();
