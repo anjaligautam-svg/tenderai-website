@@ -183,7 +183,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .btn-secondary { background: #fff; color: var(--ink-900); border-color: var(--line-strong); }
 .btn-secondary:hover { border-color: var(--primary); color: var(--primary-700); background: var(--primary-light); }
 .btn-ghost { color: var(--ink-700); border-color: transparent; background: transparent; }
-.btn-ghost:hover { color: var(--primary-700); background: var(--primary-light); border-color: var(--primary-border); }
+.btn-ghost:hover { color: var(--primary-700); background: var(--primary-light); border-color: transparent; }
 .btn-lg { min-height: 50px; padding: .85rem 1.6rem; font-size: 1rem; }
 .btn-block { width: 100%; }
 
