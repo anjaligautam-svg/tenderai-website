@@ -43,7 +43,7 @@
 
   --container: 1200px;
   --gutter: clamp(1rem, 4vw, 2rem);
-  --section-y: clamp(4rem, 7vw, 7rem);
+  --section-y: clamp(3.25rem, 4.5vw, 3.75rem);
 
   /* Typography */
   --font-display: 'Helvetica Now Display', 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -279,7 +279,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(3.5rem, 7vw, 6rem);
+  padding-block: var(--section-y);
 }
 .hero::before {
   content: "";
@@ -910,8 +910,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   background: #070E1C;
   background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
   background-size: 28px 28px;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 /* Header overrides for dark bg */
@@ -1270,7 +1268,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 /* ── Stats section ──────────────────────────────────────────────────────── */
 .stats-section {
   background: var(--ink-900);
-  padding-block: clamp(3rem, 5vw, 5rem);
+  padding-block: var(--section-y);
 }
 .stats-grid {
   display: grid;
