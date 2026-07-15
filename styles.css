@@ -2419,8 +2419,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* ── Video walkthrough section : copy left, video on a dark grid stage ──── */
-/* Tighter top so the join under 'How it works' closes ~60px */
-.vidsec { padding-top: calc(var(--section-y) - 60px); }
 .vidsec__grid {
   display: grid;
   grid-template-columns: minmax(280px, .78fr) minmax(0, 1.42fr);
