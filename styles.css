@@ -2424,23 +2424,51 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .ver-switch { top: auto; bottom: 12px; }
 }
 
-/* ── Video walkthrough section : copy left, full-bleed video right ──────── */
-.vidsec { overflow-x: clip; }
+/* ── Video walkthrough section : copy left, video on a dark grid stage ──── */
 .vidsec__grid {
   display: grid;
-  grid-template-columns: minmax(300px, .95fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(300px, .92fr) minmax(0, 1.2fr);
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
-/* bleed the media to the right edge of the viewport */
-.vidsec__media { margin-right: calc(-1 * (max((100vw - var(--container)) / 2, 0px) + var(--gutter))); }
+.vidsec__media { position: relative; }
+
+/* Dark navy grid pedestal (same family as the How-it-works / AI sections) */
+.vidsec__stage {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.1rem, 2.6vw, 2.2rem);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: linear-gradient(180deg, #0B1425 0%, #0D1730 55%, #0A1120 100%);
+  border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 1px 2px rgba(11,18,32,.06), 0 34px 74px -20px rgba(9,22,52,.5);
+}
+.vidsec__stage-grid {
+  position: absolute; inset: 0; z-index: -2;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  /* fade the grid toward the edges so the panel doesn't read as a hard box */
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 42%, #000 42%, transparent 88%);
+          mask-image: radial-gradient(120% 120% at 50% 42%, #000 42%, transparent 88%);
+}
+.vidsec__stage-glow {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(58% 52% at 50% 40%, rgba(15,94,232,.28), transparent 72%),
+    radial-gradient(46% 40% at 14% 108%, rgba(96,165,250,.14), transparent 70%);
+}
+
+/* the footage carries baked-in pillarboxes; this crop shows only the UI */
 .vidsec__frame {
   position: relative;
-  /* the footage carries baked-in pillarboxes; this crop shows only the UI */
   aspect-ratio: 1.2 / 1;
-  border-radius: var(--r-lg) 0 0 var(--r-lg);
+  border-radius: var(--r-md);
   overflow: hidden;
-  box-shadow: 0 30px 70px -18px rgba(11,30,64,.30);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 18px 44px -12px rgba(0,0,0,.5);
 }
 .vidsec__frame video {
   position: absolute; inset: 0;
@@ -2449,6 +2477,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   object-position: center;
   display: block;
 }
+
 .vidsec__copy h2 { max-width: 480px; }
 .vidsec__lead {
   margin-top: 1rem;
@@ -2484,7 +2513,5 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 @media (max-width: 900px) {
   .vidsec__grid { grid-template-columns: 1fr; }
-  .vidsec__media { margin-right: 0; }
-  .vidsec__frame { border-radius: var(--r-lg); }
   .vidsec__copy h2, .vidsec__lead { max-width: none; }
 }
