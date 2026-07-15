@@ -1,6 +1,6 @@
 /* ==========================================================================
    Scribe — Landing page
-   Design: DM Sans (body/UI) + Space Grotesk (display) | #0F5EE8 primary
+   Design: DM Sans (body/UI) + Helvetica Now (headers) | #0F5EE8 primary
    Accessibility: GIGW 3.0, UX4G, WCAG 2.1 AA
    ========================================================================== */
 
@@ -46,7 +46,7 @@
   --section-y: clamp(4rem, 7vw, 7rem);
 
   /* Typography */
-  --font-display: 'Space Grotesk', 'DM Sans', sans-serif;
+  --font-display: 'Helvetica Now Display', 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body:    'DM Sans', system-ui, -apple-system, sans-serif;
 
   --fs-display: clamp(2.4rem, 1.5rem + 3.5vw, 3.75rem);
@@ -84,7 +84,7 @@ h1 {
   color: var(--ink-900);
 }
 h2, h3, h4 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.02em;
