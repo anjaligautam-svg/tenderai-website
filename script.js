@@ -452,6 +452,60 @@
   startAuto();
 })();
 
+/* ── V2: Walkthrough slideshow (WebP cross-fade, replaces the GIF) ──────── */
+(function () {
+  var box = document.getElementById('pgSlides');
+  if (!box) return;
+  var slides = box.querySelectorAll('img');
+  var dots = box.querySelectorAll('.pg-slides__dots i');
+  if (slides.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var i = 0, timer = null;
+  function show(n) {
+    slides[i].classList.remove('is-on');
+    if (dots[i]) dots[i].classList.remove('is-on');
+    i = n % slides.length;
+    slides[i].classList.add('is-on');
+    if (dots[i]) dots[i].classList.add('is-on');
+  }
+  function start() { stop(); timer = setInterval(function () { show(i + 1); }, 3400); }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', start);
+  start();
+})();
+
+/* ── V2: Count-up numerals when stats scroll into view ──────────────────── */
+(function () {
+  var els = document.querySelectorAll('.stat-item__num, .pain-stat');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animate(el) {
+    var t = el.firstChild;
+    if (!t || t.nodeType !== 3) return;
+    var m = t.textContent.trim().match(/^(\d+)(\+?)$/);
+    if (!m) return;
+    var target = parseInt(m[1], 10), suffix = m[2];
+    if (reduce) { t.textContent = target + suffix; return; }
+    var t0 = Date.now(), DUR = 900;
+    var iv = setInterval(function () {
+      var p = Math.min(1, (Date.now() - t0) / DUR);
+      var eased = 1 - Math.pow(1 - p, 3);
+      t.textContent = Math.round(target * eased) + suffix;
+      if (p >= 1) clearInterval(iv);
+    }, 30);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
 /* ── Walkthrough video: respect reduced motion ──────────────────────────── */
 (function () {
   var v = document.querySelector('.vidsec__frame video');
