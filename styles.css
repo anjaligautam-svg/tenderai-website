@@ -1995,7 +1995,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Panels — copy left, glimpse right */
-.journey-panels { margin-top: 3rem; position: relative; min-height: 580px; }
+.journey-panels { margin-top: 3rem; position: relative; min-height: 520px; }
 .journey-panel { display: none; }
 .journey-panel.active {
   display: grid;
