@@ -279,7 +279,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: var(--section-y);
+  padding-top: calc(var(--section-y) - 40px);
+  padding-bottom: calc(var(--section-y) + 20px);
 }
 .hero::before {
   content: "";
