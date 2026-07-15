@@ -434,8 +434,7 @@
     });
   });
 
-  stage.addEventListener('mouseenter', stopAuto);
-  stage.addEventListener('mouseleave', startAuto);
+  /* No hover pause: the stack cycles continuously. Drag still pauses briefly. */
 
   /* pointer-drag to swipe */
   var startX = null;

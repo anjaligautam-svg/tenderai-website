@@ -1602,7 +1602,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 /* Selector pills */
-.ai-dots { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.4rem; }
+.ai-dots { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; width: min(420px, 100%); margin-top: 1.6rem; }
 .ai-dot {
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.03);
