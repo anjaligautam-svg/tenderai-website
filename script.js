@@ -516,3 +516,26 @@
     v.controls = true;
   }
 })();
+
+
+/* ── FAQ heading: rotating last word (spring-reveal, ported from the
+   framer-motion animated hero) ──────────────────────────────────────────── */
+(function () {
+  var rot = document.querySelector('.faq-rotate');
+  if (!rot) return;
+  var words = rot.querySelectorAll('.faq-rotate__w');
+  if (words.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var i = 0;
+  setInterval(function () {
+    var prev = i;
+    words[prev].classList.remove('is-on');
+    words[prev].classList.add('is-out');       /* current word slides up and out */
+    i = (i + 1) % words.length;
+    words[i].classList.remove('is-out');
+    words[i].classList.add('is-on');           /* next word springs up from below */
+    /* once the outgoing word is off-screen, drop it back below (invisibly) */
+    setTimeout(function () { words[prev].classList.remove('is-out'); }, 600);
+  }, 2000);
+})();

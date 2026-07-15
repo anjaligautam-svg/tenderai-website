@@ -1646,13 +1646,38 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .faq-intro p { margin-top: .9rem; color: var(--ink-600); font-size: var(--fs-lead); line-height: 1.7; max-width: 420px; }
 .faq-btn {
   margin-top: 1.4rem;
-  display: inline-flex; align-items: center; gap: .6rem;
-  border: 1px solid var(--line-strong);
-  background: #fff;
-  color: var(--ink-900);
+  display: inline-flex; align-items: center; gap: .5rem;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
   font-weight: 600;
 }
-.faq-btn:hover { background: var(--surface); border-color: var(--ink-400); color: var(--ink-900); }
+.faq-btn:hover { background: var(--primary-700); border-color: var(--primary-700); color: #fff; }
+.faq-btn svg { transition: transform .25s ease; }
+.faq-btn:hover svg { transform: translateX(3px); }
+
+/* Rotating last word (ported from the framer-motion animated hero) */
+.faq-rotate {
+  position: relative;
+  display: block;
+  height: 1.2em;
+  margin-top: .1em;
+  overflow: hidden;
+  color: var(--primary);
+}
+.faq-rotate__w {
+  position: absolute; left: 0; top: 0;
+  white-space: nowrap;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(115%);
+  transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .45s ease;
+}
+.faq-rotate__w.is-on  { opacity: 1; transform: translateY(0); }
+.faq-rotate__w.is-out { opacity: 0; transform: translateY(-115%); }
+@media (prefers-reduced-motion: reduce) {
+  .faq-rotate__w { transition: none; }
+}
 
 /* Accordion — flat rows, border-bottom, underline on hover (shadcn style) */
 .faq { border-top: 1px solid var(--line); }
