@@ -158,6 +158,12 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   margin-bottom: 1rem;
 }
 .eyebrow--muted { color: var(--ink-500); }
+.eyebrow--pill {
+  border: 1px solid rgba(15,94,232,.22);
+  background: rgba(15,94,232,.06);
+  border-radius: 999px;
+  padding: .45rem .95rem .45rem .75rem;
+}
 .section--ink .eyebrow { color: #7FB0FF; }
 
 /* ── Buttons ────────────────────────────────────────────────────────────── */
@@ -300,8 +306,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 .hero__copy { max-width: 36rem; }
-.hero h1 { margin-top: .25rem; }
+.hero h1 { margin-top: .25rem; font-size: clamp(2.4rem, 1.4rem + 3.2vw, 3.45rem); }
 .hero h1 .accent { color: var(--primary); white-space: nowrap; }
+/* forced 3-line break relaxes on narrow screens */
+@media (max-width: 420px) {
+  .hero h1 br { display: none; }
+  .hero h1 .accent { white-space: normal; }
+}
 .hero__lead {
   margin-top: 1.2rem;
   font-size: var(--fs-lead);
