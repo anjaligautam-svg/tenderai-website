@@ -2284,6 +2284,28 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-size: 12px;
 }
 
+/* AI CVC risk-check header */
+.fa-cvc {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #E7EDF4;
+}
+.fa-cvc__ai {
+  display: inline-flex; align-items: center; gap: .34rem;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .03em;
+  color: var(--primary);
+}
+.fa-cvc__ai svg { color: var(--primary); flex-shrink: 0; }
+.fa-cvc__live {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: 9.5px; font-weight: 700; color: #64748B;
+}
+.fa-cvc__live i {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--primary);
+  animation: fa-pulse 1.2s ease-in-out infinite;
+}
+
 /* Compliance checklist */
 .fa-checks__row { display: flex; align-items: center; gap: .55rem; color: #334155; font-weight: 500; padding: .28rem 0; border-bottom: 1px dashed #EEF2F7; }
 .fa-checks__row:last-child { border-bottom: none; }
