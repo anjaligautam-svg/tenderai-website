@@ -1280,8 +1280,48 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 /* ── Stats section ──────────────────────────────────────────────────────── */
 .stats-section {
+  position: relative;
+  overflow: hidden;
+  --jx: 50%;   /* spotlight position, driven by pointer */
+  --jy: 50%;
+  --jtile: 34px;
   background: var(--ink-900);
   padding-block: var(--section-y);
+}
+@media (min-width: 768px) { .stats-section { --jtile: 48px; } }
+.stats-section .container { position: relative; z-index: 1; }
+
+/* Spotlight grid layers — same treatment as the other dark sections */
+.stats-bg { position: absolute; inset: 0; pointer-events: none; }
+.stats-bg__vignette {
+  position: absolute; inset: 0;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 35%, transparent 100%);
+}
+.stats-bg__base {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+}
+.stats-bg__overlay {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.65) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.65) 1px, transparent 1px);
+  background-size: var(--jtile) var(--jtile);
+  -webkit-mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+  mask-image: radial-gradient(300px circle at var(--jx) var(--jy), #000 0%, transparent 75%);
+}
+.stats-bg__glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(380px circle at var(--jx) var(--jy), rgba(110,135,248,.17), transparent 70%);
+  mix-blend-mode: screen;
+}
+.stats-bg__fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--ink-900) 0%, transparent 18%, transparent 82%, var(--ink-900) 100%);
 }
 .stats-grid {
   display: grid;

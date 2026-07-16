@@ -345,11 +345,11 @@
   window.addEventListener('resize', onScroll);
 })();
 
-/* ── Spotlight grid (How it works + closing CTA/footer backgrounds) ─────── */
+/* ── Spotlight grid (dark section backgrounds) ──────────────────────────── */
 /* Grid lines brighten in a circle around the pointer; a soft glow follows.
    Position is written as CSS vars on each host; rAF-throttled. */
 (function () {
-  var hosts = document.querySelectorAll('.journey-section, .ai-section, .close-wrap');
+  var hosts = document.querySelectorAll('.journey-section, .ai-section, .close-wrap, .stats-section');
   if (!hosts.length) return;
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

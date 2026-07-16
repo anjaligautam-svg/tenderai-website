@@ -19,7 +19,7 @@
   <!-- og:image needs an absolute URL once the domain is live -->
   <meta property="og:image" content="assets/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=78" />
+  <link rel="stylesheet" href="styles.css?v=79" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -299,6 +299,14 @@
          NUMBERS STRIP : 3 headline stats
     ================================================================ -->
     <section class="stats-section" aria-labelledby="stats-title">
+      <div class="stats-bg" aria-hidden="true">
+        <div class="stats-bg__vignette">
+          <div class="stats-bg__base"></div>
+          <div class="stats-bg__overlay"></div>
+          <div class="stats-bg__glow"></div>
+        </div>
+        <div class="stats-bg__fade"></div>
+      </div>
       <div class="container">
         <h2 id="stats-title" class="sr-only">What Scribe changes</h2>
         <div class="stats-grid">
@@ -966,6 +974,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=23"></script>
+  <script src="script.js?v=24"></script>
 </body>
 </html>
