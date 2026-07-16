@@ -712,7 +712,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
-  box-shadow: 0 14px 34px -10px rgba(11,18,32,.25);
+  box-shadow: 0 1px 2px rgba(11,18,32,.06), 0 26px 60px -14px rgba(11,18,32,.4), 0 0 0 5px rgba(15,94,232,.05);
   padding: .7rem .85rem .7rem;
   opacity: 0;
   transform: translateX(70px);
