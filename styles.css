@@ -1562,6 +1562,43 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   display: block;
 }
 
+/* Trust/security DOM cards (repurposed AI section) */
+.ai-card--trust {
+  background: linear-gradient(180deg, rgba(19,31,57,.97), rgba(12,21,42,.97));
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 30px 70px -22px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.05);
+  padding: 1.7rem 1.5rem;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.ai-tc__hd { display: inline-flex; align-items: center; gap: .55rem; }
+.ai-tc__icon {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  display: grid; place-items: center;
+  background: rgba(96,165,250,.14);
+  border: 1px solid rgba(96,165,250,.25);
+  color: #93C5FD;
+}
+.ai-tc__eyebrow {
+  font-size: 10.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: #93C5FD;
+}
+.ai-tc__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.85rem); font-weight: 700;
+  color: #fff; line-height: 1.12; letter-spacing: -.01em;
+  margin-top: 1.4rem;
+}
+.ai-tc__body { font-size: 14.5px; line-height: 1.65; color: #AEBCD4; margin-top: .85rem; }
+.ai-tc__chips { margin-top: auto; display: flex; flex-wrap: wrap; gap: .4rem; padding-top: 1.3rem; }
+.ai-tc__chips span {
+  font-size: 11px; font-weight: 600; color: #C7D4EA;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px;
+  padding: .3rem .6rem;
+}
+
 .ai-card__head {
   display: flex; align-items: center; gap: .5rem;
   padding: .85rem 1rem;
@@ -1656,28 +1693,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .faq-btn svg { transition: transform .25s ease; }
 .faq-btn:hover svg { transform: translateX(3px); }
 
-/* Rotating last word (ported from the framer-motion animated hero) */
-.faq-rotate {
-  position: relative;
-  display: block;
-  height: 1.2em;
-  margin-top: .1em;
-  overflow: hidden;
-  color: var(--primary);
-}
-.faq-rotate__w {
-  position: absolute; left: 0; top: 0;
-  white-space: nowrap;
-  font-weight: 700;
-  opacity: 0;
-  transform: translateY(115%);
-  transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .45s ease;
-}
-.faq-rotate__w.is-on  { opacity: 1; transform: translateY(0); }
-.faq-rotate__w.is-out { opacity: 0; transform: translateY(-115%); }
-@media (prefers-reduced-motion: reduce) {
-  .faq-rotate__w { transition: none; }
-}
+
 
 /* Accordion — flat rows, border-bottom, underline on hover (shadcn style) */
 .faq { border-top: 1px solid var(--line); }

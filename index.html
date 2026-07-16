@@ -19,7 +19,7 @@
   <!-- og:image needs an absolute URL once the domain is live -->
   <meta property="og:image" content="assets/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=73" />
+  <link rel="stylesheet" href="styles.css?v=74" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -99,8 +99,7 @@
           </span>
 
           <h1 id="hero-title">
-            Tenders that took <span class="accent">3 months.</span><br>
-            Done in <span class="accent">hours.</span>
+            Reduce the tender lifecycle from <span class="accent">months to hours.</span>
           </h1>
 
           <p class="hero__lead">
@@ -293,135 +292,6 @@
         </div>
         <!-- /hero__visual -->
 
-      </div>
-    </section>
-
-    <!-- ================================================================
-         PAIN SECTION : "The reality today"
-         Dark banded cards, stat-first, visual-led, minimal text.
-    ================================================================ -->
-    <section class="section pain-section pain-section--dark" id="pain" aria-labelledby="pain-title">
-      <div class="container">
-        <div class="section-head pain-head">
-          <h2 id="pain-title" class="pain-h2">Government procurement is built on paper. And paper breaks.</h2>
-        </div>
-
-        <div class="pain-grid">
-
-          <!-- 1 · Tender creation -->
-          <div class="pain-card pain-card--amber reveal" data-stagger-delay="0">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Timeline mini-viz -->
-              <div class="pviz pviz--timeline">
-                <div class="pviz__months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span></div>
-                <div class="pviz__track"><div class="pviz__prog"></div></div>
-                <div class="pviz__flag">Tender Approved ✓</div>
-              </div>
-              <span class="pain-band__num">01</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">2–3<em>mo</em></div>
-              <h3 class="pain-title">Tender creation takes months</h3>
-              <p class="pain-desc">12+ departments, counter-signatures, re-submissions, weeks lost before one clause is approved.</p>
-            </div>
-          </div>
-
-          <!-- 2 · Pre-bid queries -->
-          <div class="pain-card pain-card--violet reveal" data-stagger-delay="80">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Inbox stack mini-viz -->
-              <div class="pviz pviz--inbox">
-                <div class="pviz__msg"><span class="pviz__dot"></span><span class="pviz__mtext">Re: Clause 4.2 clarification…</span></div>
-                <div class="pviz__msg"><span class="pviz__dot"></span><span class="pviz__mtext">Please confirm the EMD amount…</span></div>
-                <div class="pviz__msg pviz__msg--fade"><span class="pviz__dot"></span><span class="pviz__mtext">Same as query #47, please…</span></div>
-                <div class="pviz__overflow">+197 more unread</div>
-              </div>
-              <span class="pain-band__num">02</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">200+<em>queries</em></div>
-              <h3 class="pain-title">No record of what was answered</h3>
-              <p class="pain-desc">The same question, a hundred phrasings, with no log of prior answers, one inconsistent reply can void the process.</p>
-            </div>
-          </div>
-
-          <!-- 3 · Evaluation confidentiality -->
-          <div class="pain-card pain-card--red pain-card--featured reveal" data-stagger-delay="160">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Pulse risk mini-viz -->
-              <div class="pviz pviz--risk">
-                <div class="pviz__ring pviz__ring--1"></div>
-                <div class="pviz__ring pviz__ring--2"></div>
-                <div class="pviz__core">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-                </div>
-              </div>
-              <span class="pain-band__num">03</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">ZERO<em>audit trail</em></div>
-              <h3 class="pain-title">Evaluation has no confidentiality guard</h3>
-              <p class="pain-desc">Physical boxes, handwritten scores, no access log, one allegation of bias stalls the project and ends careers.</p>
-            </div>
-          </div>
-
-          <!-- 4 · Requirement matching -->
-          <div class="pain-card pain-card--blue reveal" data-stagger-delay="0">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Comparison table mini-viz -->
-              <div class="pviz pviz--compare">
-                <div class="pviz__thead"><span>Tender req.</span><span>Bid doc.</span></div>
-                <div class="pviz__trow pviz__trow--ok"><span>Clause 4.1</span><span class="pviz__ok">✓</span></div>
-                <div class="pviz__trow pviz__trow--ok"><span>Clause 4.2</span><span class="pviz__ok">✓</span></div>
-                <div class="pviz__trow pviz__trow--err"><span>Clause 4.3</span><span class="pviz__err">✗ Missing</span></div>
-              </div>
-              <span class="pain-band__num">04</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">50+<em>clauses</em></div>
-              <h3 class="pain-title">Bids matched to tender by hand</h3>
-              <p class="pain-desc">Miss one clause and the evaluation fails, or worse, succeeds only to be legally challenged months later.</p>
-            </div>
-          </div>
-
-          <!-- 5 · Bid comparison -->
-          <div class="pain-card pain-card--teal reveal" data-stagger-delay="80">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Bar chart mini-viz -->
-              <div class="pviz pviz--bars">
-                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:68%"></div><span>A</span></div>
-                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:42%"></div><span>B</span></div>
-                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:91%"></div><span>C</span></div>
-                <div class="pviz__bar-col"><div class="pviz__bar-fill" style="--h:55%"></div><span>D</span></div>
-              </div>
-              <span class="pain-band__num">05</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">L1<em>on a spreadsheet</em></div>
-              <h3 class="pain-title">Bid evaluation with no standard</h3>
-              <p class="pain-desc">Four vendors, four formats, comparison is ad-hoc, scoring undocumented, and no trail of who decided what.</p>
-            </div>
-          </div>
-
-          <!-- 6 · Reference documents -->
-          <div class="pain-card pain-card--orange reveal" data-stagger-delay="160">
-            <div class="pain-band" aria-hidden="true">
-              <!-- Scattered files mini-viz -->
-              <div class="pviz pviz--files">
-                <div class="pviz__file" style="--rot:-13deg; --tx:-36px; --ty:6px">PWD_2019.pdf</div>
-                <div class="pviz__file" style="--rot:8deg; --tx:34px; --ty:-14px">Tender_old.docx</div>
-                <div class="pviz__file" style="--rot:-4deg; --tx:-4px; --ty:20px">GFR_ref.pdf</div>
-              </div>
-              <span class="pain-band__num">06</span>
-            </div>
-            <div class="pain-body">
-              <div class="pain-stat">LOST<em>every transfer</em></div>
-              <h3 class="pain-title">Institutional knowledge has no home</h3>
-              <p class="pain-desc">Reference docs buried in drawers or officers' heads, when someone transfers, that knowledge leaves too.</p>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -789,7 +659,7 @@
     </section>
 
     <!-- ================================================================
-         AI CO-PILOT : copy left, AI-moment card stack right
+         TRUST & SECURITY : copy left, trust card stack right
     ================================================================ -->
     <section class="section ai-section" id="ai" aria-labelledby="ai-title">
       <!-- Spotlight grid : brightens where the cursor moves -->
@@ -808,7 +678,7 @@
           <div class="ai-copy">
             <div class="ai-pill">
               <span class="ai-pill__dot" aria-hidden="true"></span>
-              <span>AI at every step</span>
+              <span>Built for trust</span>
             </div>
             <h2 id="ai-title" class="ai-h2">Assistance that <em>guides</em>.<br>Authority that stays.</h2>
             <p class="ai-desc">No AI output hard-blocks a procurement action. Every suggestion is advisory, every flag links to the field it concerns, and the decision, signature, and accountability stay with the officer and the competent authority.</p>
@@ -817,9 +687,9 @@
               <a class="btn ai-btn-ghost" href="#how-it-works">See how it works</a>
             </div>
             <div class="ai-stats">
-              <div><b>~2 min</b><span>to a structured DPR, compared to 25</span></div>
-              <div><b>&lt;1 min</b><span>to the first tender draft</span></div>
-              <div><b>100%</b><span>of decisions stay with officers</span></div>
+              <div><b>1,000+</b><span>tenders trained on</span></div>
+              <div><b>0</b><span>third-party AI APIs</span></div>
+              <div><b>100%</b><span>data stays in India</span></div>
             </div>
           </div>
 
@@ -829,28 +699,52 @@
               <div class="ai-ghost ai-ghost--1" aria-hidden="true"></div>
               <div class="ai-ghost ai-ghost--2" aria-hidden="true"></div>
 
-              <article class="ai-card ai-card--art" data-card="0">
-                <img src="assets/ai/card-describe.png" alt="DPR Creation. A description such as 'Repair 12 km of roads in Bandra West, Zone 4' is converted into a structured Detailed Project Report in under 2 minutes, compared to 25." loading="lazy" width="840" height="1089">
+              <article class="ai-card ai-card--trust" data-card="0">
+                <div class="ai-tc__hd">
+                  <span class="ai-tc__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                  <span class="ai-tc__eyebrow">Rule-based, not guesswork</span>
+                </div>
+                <h3 class="ai-tc__title">Compliance you can defend</h3>
+                <p class="ai-tc__body">The CVC pre-check is deterministic and rule-based, not LLM-generated. It follows GFR 2017, CVC guidelines, and the Manual for Procurement.</p>
+                <div class="ai-tc__chips"><span>GFR 2017 · Rule 170</span><span>CVC pre-check</span><span>Manual for Procurement</span></div>
               </article>
 
-              <article class="ai-card ai-card--art" data-card="1">
-                <img src="assets/ai/card-criteria.png" alt="Tender Creation. Minimum annual turnover and standard criteria are pre-filled by AI for the relevant sector and value, producing a first draft in under 1 minute." loading="lazy" width="840" height="1066">
+              <article class="ai-card ai-card--trust" data-card="1">
+                <div class="ai-tc__hd">
+                  <span class="ai-tc__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                  <span class="ai-tc__eyebrow">Self-hosted LLM</span>
+                </div>
+                <h3 class="ai-tc__title">Your data never leaves India</h3>
+                <p class="ai-tc__body">Scribe runs a self-hosted model on MeitY-empanelled cloud, entirely within India. No third-party AI API ever sees a single bid.</p>
+                <div class="ai-tc__chips"><span>MeitY-empanelled cloud</span><span>DPDP Act</span><span>IT Act 2000</span></div>
               </article>
 
-              <article class="ai-card ai-card--art" data-card="2">
-                <img src="assets/ai/card-prescreen.png" alt="Bid Evaluation. A vendor's criteria are auto-verified with pass and review flags. The qualified verdict remains with the officer." loading="lazy" width="840" height="1051">
+              <article class="ai-card ai-card--trust" data-card="2">
+                <div class="ai-tc__hd">
+                  <span class="ai-tc__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.7L18 9l-4.3 1.3L12 15l-1.7-4.7L6 9l4.3-1.3L12 3Z"/><path d="M19 14l.7 2L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7Z"/></svg></span>
+                  <span class="ai-tc__eyebrow">Domain-trained</span>
+                </div>
+                <h3 class="ai-tc__title">Trained on 1,000+ tenders</h3>
+                <p class="ai-tc__body">The model learned from over a thousand real government tenders, so its drafts and checks speak the language of Indian public procurement.</p>
+                <div class="ai-tc__chips"><span>DSR-aware</span><span>GFR-aware</span><span>Sector templates</span></div>
               </article>
 
-              <article class="ai-card ai-card--art" data-card="3">
-                <img src="assets/ai/card-amendment.png" alt="Corrigendum. 25 responses are distilled into 4 amendment points, drafted for EE approval." loading="lazy" width="840" height="1042">
+              <article class="ai-card ai-card--trust" data-card="3">
+                <div class="ai-tc__hd">
+                  <span class="ai-tc__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>
+                  <span class="ai-tc__eyebrow">Nothing off the record</span>
+                </div>
+                <h3 class="ai-tc__title">Every access, logged</h3>
+                <p class="ai-tc__body">Role-based access, quotes masked until the formal reveal, and an immutable audit trail of who did what, and when.</p>
+                <div class="ai-tc__chips"><span>Role-based access</span><span>Immutable audit trail</span><span>Masked quotes</span></div>
               </article>
-            </div>
+</div>
 
-            <div class="ai-dots" role="tablist" aria-label="AI assistance examples">
-              <button class="ai-dot active" data-go="0" role="tab" aria-selected="true">Describe</button>
-              <button class="ai-dot" data-go="1" role="tab" aria-selected="false">Criteria</button>
-              <button class="ai-dot" data-go="2" role="tab" aria-selected="false">Pre-screen</button>
-              <button class="ai-dot" data-go="3" role="tab" aria-selected="false">Corrigendum</button>
+            <div class="ai-dots" role="tablist" aria-label="Trust and security points">
+              <button class="ai-dot active" data-go="0" role="tab" aria-selected="true">Compliance</button>
+              <button class="ai-dot" data-go="1" role="tab" aria-selected="false">Sovereignty</button>
+              <button class="ai-dot" data-go="2" role="tab" aria-selected="false">Trained</button>
+              <button class="ai-dot" data-go="3" role="tab" aria-selected="false">Audit trail</button>
             </div>
           </div>
 
@@ -866,18 +760,7 @@
         <div class="faq-grid">
 
           <div class="faq-intro">
-            <h2 id="faq-title">
-              <span aria-hidden="true">Straight answers, kept
-                <span class="faq-rotate">
-                  <span class="faq-rotate__w is-on">simple</span>
-                  <span class="faq-rotate__w">clear</span>
-                  <span class="faq-rotate__w">on record</span>
-                  <span class="faq-rotate__w">audit-ready</span>
-                  <span class="faq-rotate__w">defensible</span>
-                </span>
-              </span>
-              <span class="sr-only">Straight answers, kept simple.</span>
-            </h2>
+            <h2 id="faq-title">Straight answers, kept simple.</h2>
             <p>Scribe touches confidential bids, public money, and audits, so these questions deserve direct answers. The following are the most common; further detail is available in a live walkthrough.</p>
             <a class="btn faq-btn" href="#request">
               Reach out
@@ -1083,6 +966,6 @@
   </footer>
   </div><!-- /close-wrap -->
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=23"></script>
 </body>
 </html>
