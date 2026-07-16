@@ -708,7 +708,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hs-bid {
   position: absolute;
   right: 5%;
-  width: 250px;
+  width: 280px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
@@ -812,19 +812,30 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 .hs[data-act="eval"] .hs-bid {
-  right: 10%;
-  width: 272px;
+  right: 9%;
+  width: 288px;
   transition: top .65s cubic-bezier(.22,1,.36,1), right .65s cubic-bezier(.22,1,.36,1),
               width .65s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.16,1,.3,1),
               opacity .5s ease, border-color .4s ease 1.5s, box-shadow .4s ease 1.5s;
 }
 .hs[data-act="eval"] .hs-bid--2 {
-  top: 16%;
+  top: 14%;
+  right: 6%;
+  width: 324px;
+  z-index: 9;
   border-color: rgba(16,185,129,.55);
-  box-shadow: 0 0 0 3px rgba(16,185,129,.14), 0 18px 40px -10px rgba(16,185,129,.3);
+  /* tender-card-grade elevation, applied immediately (no reveal delay) */
+  box-shadow:
+    0 1px 2px rgba(11,18,32,.05),
+    0 30px 70px -14px rgba(11,18,32,.35),
+    0 0 0 3px rgba(16,185,129,.2),
+    0 20px 44px -10px rgba(16,185,129,.3);
+  transition: top .65s cubic-bezier(.22,1,.36,1), right .65s cubic-bezier(.22,1,.36,1),
+              width .65s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.16,1,.3,1),
+              opacity .5s ease, border-color .4s ease, box-shadow .4s ease;
 }
-.hs[data-act="eval"] .hs-bid--1 { top: 42%; opacity: .82; }
-.hs[data-act="eval"] .hs-bid--3 { top: 68%; opacity: .82; }
+.hs[data-act="eval"] .hs-bid--1 { top: 44%; opacity: .68; }
+.hs[data-act="eval"] .hs-bid--3 { top: 69%; opacity: .68; }
 .hs[data-act="eval"] .hs__halo { opacity: .7; }
 
 /* the award chip lands on the winner */
@@ -895,8 +906,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .hs__tender { width: min(352px, 94%); }
   .hs[data-act="bids"] .hs__tender,
   .hs[data-act="eval"] .hs__tender { transform: translate(-50%,-50%) translate(-86px,-118px) scale(.4); }
-  .hs-bid { width: 208px; right: 2%; }
-  .hs[data-act="eval"] .hs-bid { width: 222px; right: 5%; }
+  .hs-bid { width: 220px; right: 2%; }
+  .hs[data-act="eval"] .hs-bid { width: 234px; right: 5%; }
+  .hs[data-act="eval"] .hs-bid--2 { width: 258px; right: 3%; }
   .hs-bid__rank { left: -4px; }
   .hs-chip--lock, .hs-chip--log { display: none; }
   .hs-chip--shield { right: 0; top: 10%; }
