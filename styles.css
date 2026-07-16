@@ -208,7 +208,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   border: 1px solid var(--line);
   line-height: 1;
 }
-.chip--primary { background: var(--primary-light);  color: var(--primary-700); border-color: var(--primary-border); }
 .chip--success  { background: var(--success-light); color: #047857;            border-color: #A7F3D0; }
 .chip--warning  { background: var(--warning-light); color: #B45309;            border-color: #FDE68A; }
 .chip--purple   { background: var(--purple-light);  color: #6D28D9;            border-color: #DDD6FE; }
