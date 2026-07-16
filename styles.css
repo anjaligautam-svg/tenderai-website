@@ -1525,7 +1525,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   border-top: 1px solid rgba(255,255,255,.1);
   max-width: 440px;
 }
-.ai-stats b { display: block; font-size: 1.25rem; font-weight: 700; color: #fff; }
+.ai-stats b { display: block; font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.2; }
 .ai-stats span { display: block; font-size: 11px; color: #7C8AA0; margin-top: .25rem; line-height: 1.45; }
 
 /* Card stack */
