@@ -524,6 +524,16 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
+/* ── Anchor links that target a FAQ item open it on arrival ─────────────── */
+(function () {
+  function openTarget() {
+    var el = location.hash && document.getElementById(location.hash.slice(1));
+    if (el && el.tagName === 'DETAILS') el.open = true;
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+
 /* ── FAQ heading: per-character stagger rise (StaggerText, ported) ──────── */
 /* Splits the heading into word-wrapped character spans; each character
    rises from below with a 50ms ladder when the heading scrolls into view. */
