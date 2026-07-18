@@ -214,7 +214,9 @@
     at(22300, cycle);
   }
 
-  cycle();
+  /* Hold the first cycle until the hero container has risen in */
+  var entranceDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1600;
+  setTimeout(cycle, entranceDelay);
 })();
 
 /* ── Journey Stage Auto-Switcher (pill tracker with traveling ball) ─────── */
