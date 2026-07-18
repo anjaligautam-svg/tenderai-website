@@ -2808,6 +2808,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 /* ── Video walkthrough section : copy left, video right ─────────────────── */
 /* Continues the bento's ending tint so Meet Scribe + wizard read as one band */
 .vidsec { background: #F2F6FB; }
+/* Phones skip the wizard walkthrough entirely */
+@media (max-width: 640px) { .vidsec { display: none; } }
 .vidsec__grid {
   display: grid;
   grid-template-columns: minmax(280px, .78fr) minmax(0, 1.42fr);
