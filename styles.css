@@ -1627,7 +1627,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .ai-h2 { margin-top: 1.1rem; font-size: clamp(1.8rem, 3.2vw, 2.6rem); color: #F1F5F9; line-height: 1.12; }
 .ai-h2 em { font-family: var(--font-display); font-style: normal; font-weight: 600; color: #DBEAFE; }
-.ai-desc { margin-top: 1rem; font-size: .95rem; color: #94A3B8; line-height: 1.7; max-width: 430px; }
 
 .ai-ctas { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
 .ai-btn-ghost {
@@ -1637,14 +1636,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .ai-btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.3); color: #fff; }
 
-.ai-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-  margin-top: 1.9rem; padding-top: 1.4rem;
-  border-top: 1px solid rgba(255,255,255,.1);
-  max-width: 440px;
-}
-.ai-stats b { display: block; font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.2; }
-.ai-stats span { display: block; font-size: 11px; color: #7C8AA0; margin-top: .25rem; line-height: 1.45; }
 
 /* Card stack */
 .ai-stack { position: relative; }
