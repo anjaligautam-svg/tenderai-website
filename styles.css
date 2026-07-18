@@ -296,6 +296,19 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
     linear-gradient(180deg, #fff 0%, var(--surface) 100%);
   z-index: -1;
 }
+/* Drafting-paper grid — the light polarity of the dark sections' blueprint grid.
+   Masked so it is strongest under the scene and dissolves before the copy column. */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(15,60,140,.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,60,140,.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(78% 85% at 63% 42%, #000 0%, rgba(0,0,0,.5) 56%, transparent 87%);
+  mask-image: radial-gradient(78% 85% at 63% 42%, #000 0%, rgba(0,0,0,.5) 56%, transparent 87%);
+  z-index: -1;
+}
 
 .hero__grid {
   display: grid;
@@ -378,6 +391,52 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   height: clamp(500px, 52vw, 640px);
   margin-inline: auto;
   font-family: var(--font-body);
+}
+
+/* Blueprint furniture behind the scene — nested document trays + a slow
+   compass orbit, the drawing-instrument counterpart of the grid texture */
+.hs__tray {
+  position: absolute;
+  border: 1px solid rgba(15,94,232,.11);
+  border-radius: 30px;
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 1px 2px rgba(11,18,32,.03);
+}
+.hs__tray--a { inset: 5% -2.5%; transform: rotate(-1.3deg); }
+.hs__tray--b {
+  inset: 2% -5.5%;
+  transform: rotate(1.5deg);
+  border-color: rgba(15,94,232,.07);
+  background: rgba(255,255,255,.32);
+}
+.hs__orbit {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 116%;
+  aspect-ratio: 1;
+  border: 1.5px dashed rgba(15,94,232,.15);
+  border-radius: 50%;
+  transform: translate(-50%,-50%) rotate(0deg);
+  animation: hs-orbit 90s linear infinite;
+  pointer-events: none;
+}
+.hs__orbit::before {
+  content: '';
+  position: absolute;
+  top: -4.5px; left: 50%;
+  width: 8px; height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #7CB0FF 0%, var(--primary) 70%);
+  box-shadow: 0 0 12px rgba(15,94,232,.45);
+}
+@keyframes hs-orbit {
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) { .hs__orbit { animation: none; } }
+@media (max-width: 640px) {
+  .hs__orbit { display: none; }
+  .hs__tray--b { display: none; }
 }
 
 /* Ambient halo that warms up for the payoff */
