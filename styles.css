@@ -1362,7 +1362,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   --jx: 50%;   /* spotlight position, driven by pointer */
   --jy: 50%;
   --jtile: 34px;
-  background: var(--ink-900);
+  /* matches the journey navy below so the two read as one dark band */
+  background: #070E1C;
   padding-block: var(--section-y);
 }
 @media (min-width: 768px) { .stats-section { --jtile: 48px; } }
@@ -1398,7 +1399,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .stats-bg__fade {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, var(--ink-900) 0%, transparent 18%, transparent 82%, var(--ink-900) 100%);
+  background: linear-gradient(180deg, #070E1C 0%, transparent 18%, transparent 82%, #070E1C 100%);
 }
 .stats-grid {
   display: grid;
@@ -2729,7 +2730,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .feat-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Video walkthrough section : copy left, video on a dark grid stage ──── */
+/* ── Video walkthrough section : copy left, video right ─────────────────── */
+/* Continues the bento's ending tint so Meet Scribe + wizard read as one band */
+.vidsec { background: #F2F6FB; }
 .vidsec__grid {
   display: grid;
   grid-template-columns: minmax(280px, .78fr) minmax(0, 1.42fr);
