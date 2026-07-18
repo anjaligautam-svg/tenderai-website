@@ -524,6 +524,45 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
+/* ── FAQ heading: per-character stagger rise (StaggerText, ported) ──────── */
+/* Splits the heading into word-wrapped character spans; each character
+   rises from below with a 50ms ladder when the heading scrolls into view. */
+(function () {
+  var h = document.getElementById('faq-title');
+  if (!h) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var words = h.textContent.trim().split(/\s+/);
+  h.textContent = '';
+  var ci = 0;
+  words.forEach(function (w, wi) {
+    var ws = document.createElement('span');
+    ws.className = 'stag-w';
+    for (var i = 0; i < w.length; i++) {
+      var cs = document.createElement('span');
+      cs.className = 'stag-c';
+      cs.style.setProperty('--d', (ci * 0.05).toFixed(2) + 's');
+      cs.textContent = w[i];
+      ws.appendChild(cs);
+      ci++;
+    }
+    h.appendChild(ws);
+    if (wi < words.length - 1) h.appendChild(document.createTextNode(' '));
+  });
+
+  function go() { h.classList.add('is-in'); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { go(); io.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    io.observe(h);
+  } else {
+    go();
+  }
+})();
+
 /* ── Walkthrough video: respect reduced motion ──────────────────────────── */
 (function () {
   var v = document.querySelector('.vidsec__frame video');
