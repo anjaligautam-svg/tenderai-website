@@ -869,8 +869,10 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   transition: opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1);
 }
 
-/* CST tag over the ranked bids — filled "working" status, flips green on done */
-.hs__eval-tag {
+/* CST tag over the ranked bids — filled "working" status, flips green on done.
+   The draft tag reuses the same anatomy over the drafting act. */
+.hs__eval-tag,
+.hs__draft-tag {
   position: absolute;
   left: 50%; top: 4%;
   transform: translate(-50%, 10px) scale(.92);
@@ -886,11 +888,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   opacity: 0;
   z-index: 8;
 }
-.hs[data-act="eval"] .hs__eval-tag {
+.hs[data-act="eval"] .hs__eval-tag,
+.hs[data-act="draft"] .hs__draft-tag,
+.hs[data-act="ready"] .hs__draft-tag {
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
   transition: opacity .45s ease .4s, transform .5s cubic-bezier(.16,1,.3,1) .4s;
 }
+.hs[data-act="scan"] .hs__draft-tag { opacity: 0; transition: opacity .35s ease; }
 .hs__eval-spin {
   width: 15px; height: 15px; flex-shrink: 0;
   border-radius: 50%;
@@ -901,18 +906,22 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @keyframes hs-spin { to { transform: rotate(1turn); } }
 @media (prefers-reduced-motion: reduce) { .hs__eval-spin { animation: none; } }
 .hs__eval-check { display: none; flex-shrink: 0; }
-.hs__eval-tag.is-done {
+.hs__eval-tag.is-done,
+.hs__draft-tag.is-done {
   background: linear-gradient(120deg, #10B981, #059669);
   box-shadow: 0 12px 30px -8px rgba(16,185,129,.5), 0 0 0 5px rgba(16,185,129,.14);
 }
-.hs__eval-tag.is-done .hs__eval-spin { display: none; }
-.hs__eval-tag.is-done .hs__eval-check { display: block; }
+.hs__eval-tag.is-done .hs__eval-spin,
+.hs__draft-tag.is-done .hs__eval-spin { display: none; }
+.hs__eval-tag.is-done .hs__eval-check,
+.hs__draft-tag.is-done .hs__eval-check { display: block; }
 @media (max-width: 640px) {
-  .hs__eval-tag { font-size: 13px; padding: .5rem .85rem; gap: .4rem; }
+  .hs__eval-tag, .hs__draft-tag { font-size: 13px; padding: .5rem .85rem; gap: .4rem; }
   .hs__eval-spin { width: 13px; height: 13px; }
 }
 .hs__eval-txt { transition: opacity .22s ease; }
-.hs__eval-tag.is-swap .hs__eval-txt { opacity: 0; }
+.hs__eval-tag.is-swap .hs__eval-txt,
+.hs__draft-tag.is-swap .hs__eval-txt { opacity: 0; }
 
 /* the new cast dissolves with everything else */
 .hs[data-act="reset"] .hs-bid { opacity: 0; transition: opacity .4s ease; }

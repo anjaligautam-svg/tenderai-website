@@ -89,7 +89,9 @@
   var caption = document.getElementById('hsCaption');
   var bids    = [].slice.call(scene.querySelectorAll('.hs-bid'));
   var evalTag  = scene.querySelector('.hs__eval-tag');
-  var evalTxt  = scene.querySelector('.hs__eval-txt');
+  var evalTxt  = scene.querySelector('.hs__eval-tag .hs__eval-txt');
+  var draftTag = scene.querySelector('.hs__draft-tag');
+  var draftTxt = scene.querySelector('.hs__draft-tag .hs__eval-txt');
 
   var CAPS = {
     chat:   'Start with a chat — describe the work',
@@ -143,6 +145,15 @@
     }, 220);
   }
 
+  function draftSay(text) {
+    if (!draftTag || !draftTxt) return;
+    draftTag.classList.add('is-swap');
+    setTimeout(function () {
+      draftTxt.textContent = text;
+      draftTag.classList.remove('is-swap');
+    }, 220);
+  }
+
   function cycle() {
     timers.forEach(clearTimeout);
     timers = [];
@@ -156,6 +167,8 @@
     bids.forEach(function (b) { b.classList.remove('is-up'); });
     if (evalTxt) evalTxt.textContent = 'Evaluating bids…';
     if (evalTag) evalTag.classList.remove('is-swap', 'is-done');
+    if (draftTxt) draftTxt.textContent = 'Generating tender draft…';
+    if (draftTag) draftTag.classList.remove('is-swap', 'is-done');
     if (pen) pen.style.top = '62px';
 
     at(350,  function () { bit('user'); });
@@ -173,7 +186,11 @@
     });
 
     /* Payoff — checks pass, chips float in, time badge lands. Held long. */
-    at(7550, function () { setAct('ready'); say(CAPS.ready); });
+    at(7550, function () {
+      setAct('ready'); say(CAPS.ready);
+      draftSay('Tender draft — ready');
+      if (draftTag) draftTag.classList.add('is-done');
+    });
 
     /* ACT 4 · publish — a scan beam seals the drafted tender */
     at(10500, function () { setAct('scan'); say(CAPS.scan); });
